@@ -2,10 +2,12 @@
 
 :root {
   /* Colors */
-  --color-primary: #13402b;
-  --color-secondary: #6d8966;
-  --color-tertiary: #a1bd8d;
+  --color-primary: #052c22;
+  --color-secondary: #2ab684;
+  --color-tertiary: #a7f3d0;
   --color-neutral: #f0f0f0;
+  --color-darker: #52525b;
+  --color-hover: #395f47;
 
   /* Font */
   --font-main: "Inter", sans-serif;

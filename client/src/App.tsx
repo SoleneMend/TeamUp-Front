@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, Outlet } from "react-router";
 import "./App.css";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       </nav>
 
       <main className="text-box">
+        <Outlet />
         <hgroup className="block-primary">
           <h2 className="block-primary-main">TeamUp</h2>
           <p className="block-primary-sub">Project 2</p>
