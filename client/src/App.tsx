@@ -1,11 +1,12 @@
 import { Link } from "react-router";
 import "./App.css";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
     <>
       <header>
-        <h1 className="logo">TeamUp</h1>
+        <SideBar />
       </header>
 
       <nav className="navbar">
