@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  grid-column: -2 / -1;
+  grid-row: 1;
+  align-self: end;
+  text-align: right;
+}
