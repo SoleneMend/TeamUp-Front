@@ -1,19 +1,12 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <header>
-        <h1 className="logo">TeamUp</h1>
-      </header>
-
-      <nav className="navbar">
-        <ul>
-          <li>
-            <Link to="/">testProfilUser</Link>
-          </li>
-        </ul>
+      <nav>
+        <Navbar />
       </nav>
 
       <main className="text-box">
