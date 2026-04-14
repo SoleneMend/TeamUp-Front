@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
+import "./Navbar.css";
 
 interface userProps {
   id: number;
@@ -20,14 +22,14 @@ function Navbar(): React.JSX.Element {
   }, []);
 
   return (
-    <section>
-      <div>
+    <section className="Navbar-section">
+      <div className="Navbar-div-notif">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          fill="none"
+          fill="CurrentColor"
           className="lucide lucide-bell-icon lucide-bell"
         >
           <title>notif</title>
@@ -35,9 +37,15 @@ function Navbar(): React.JSX.Element {
           <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
         </svg>
       </div>
-      <div>
-        <img src={user?.url_image} alt={user?.username} />
-      </div>
+      <Link to="/profil">
+        <div className="Navbar-div-profil">
+          <img
+            src={user?.url_image}
+            alt={user?.username}
+            className="Navbar-div-profil-img"
+          />
+        </div>
+      </Link>
     </section>
   );
 }
