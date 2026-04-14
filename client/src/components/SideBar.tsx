@@ -10,22 +10,32 @@ function SideBar() {
         Team<span className="sidebar-logo-up">Up</span>
       </h1>
       <nav className="sidebar-nav">
-        <NavLink to="/">
-          <House size={16} />
-          Accueil
-        </NavLink>
-        <NavLink to="/explorer">
-          <Search size={16} />
-          Explorer
-        </NavLink>
-        <NavLink to="/mes-sessions">
-          <CalendarDays size={16} />
-          Mes sessions
-        </NavLink>
-        <NavLink to="/messagerie">
-          <MessageSquareText size={16} />
-          Messagerie
-        </NavLink>
+        <ul>
+          <li>
+            <NavLink to="/">
+              <House size={16} aria-hidden="true" />
+              Accueil
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/explorer">
+              <Search size={16} aria-hidden="true" />
+              Explorer
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/sessions">
+              <CalendarDays size={16} aria-hidden="true" />
+              Mes sessions
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/chat">
+              <MessageSquareText size={16} aria-hidden="true" />
+              Messagerie
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </aside>
   );

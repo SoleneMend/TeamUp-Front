@@ -5,10 +5,7 @@ import SideBar from "./components/SideBar";
 function App() {
   return (
     <>
-      <header>
-        <SideBar />
-      </header>
-
+      <SideBar />
       <nav className="navbar">
         <ul>
           <li>
