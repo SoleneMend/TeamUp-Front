@@ -1,4 +1,5 @@
 import "./App.css";
+import Skills from "./components/Skills"
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
         </hgroup>
         <p>Vous avez lu le README ?</p>
       </main>
+
+      <Skills sport={[
+  { id: 1, name: "Football", niveau: "intermediate", duration: 3 }
+]} />
 
       <footer>
         Développé par la&nbsp;
