@@ -1,3 +1,4 @@
+import { Outlet } from "react-router";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -9,6 +10,7 @@ function App() {
       </nav>
 
       <main className="text-box">
+        <Outlet />
         <hgroup className="block-primary">
           <h2 className="block-primary-main">TeamUp</h2>
           <p className="block-primary-sub">Project 2</p>
