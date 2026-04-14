@@ -5,7 +5,7 @@ import "./SideBar.css";
 
 function SideBar() {
   return (
-    <aside className="sidebar">
+    <div className="sidebar">
       <h1 className="sidebar-logo">
         Team<span className="sidebar-logo-up">Up</span>
       </h1>
@@ -37,7 +37,7 @@ function SideBar() {
           </li>
         </ul>
       </nav>
-    </aside>
+    </div>
   );
 }
 
