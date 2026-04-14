@@ -1,20 +1,17 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
+
 import "./App.css";
 import Skills from "./components/Skills/Skills"
+
+import Navbar from "./components/Navbar/Navbar";
+import SideBar from "./components/Sidebar/SideBar";
 
 function App() {
   return (
     <>
-      <header>
-        <h1 className="logo">TeamUp</h1>
-      </header>
-
+      <SideBar />
       <nav className="navbar">
-        <ul>
-          <li>
-            <Link to="/">testProfilUser</Link>
-          </li>
-        </ul>
+        <Navbar />
       </nav>
 
       <main className="text-box">
