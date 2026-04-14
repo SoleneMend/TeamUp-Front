@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router";
 import "./App.css";
-import Skills from "./components/Skills"
+import Skills from "./components/Skills/Skills"
 
 function App() {
   return (
@@ -25,9 +25,12 @@ function App() {
         </hgroup>
       </main>
 
-      <Skills sport={[
-  { id: 1, name: "Football", niveau: "intermediate", duration: 3 }
+    <Skills sport={[
+  { id: 1, name: "Football", niveau: "intermediate", duration: 3 },
+  { id: 2, name: "Tennis", niveau: "advanced", duration: 5 },
+  { id: 3, name: "Basketball", niveau: "beginner", duration: 1 },
 ]} />
+
 
       <footer>
         Développé par la&nbsp;
