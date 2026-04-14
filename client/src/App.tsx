@@ -4,43 +4,25 @@ import "./App.css";
 
 import Navbar from "./components/Navbar/Navbar";
 import SideBar from "./components/Sidebar/SideBar";
-import CardProfil from "./components/CardProfil/CardProfil"
 
 function App() {
   return (
-    <>
-      <SideBar />
-      <nav className="navbar">
-        <Navbar />
-      </nav>
-
-      <main className="text-box">
+    <div className="app-layout">
+      <aside className="sidebar-container">
+        <SideBar />
+      </aside>
+      <header className="header-container">
+        <nav>
+          <Navbar />
+        </nav>
+      </header>
+      <main className="main-container">
         <Outlet />
-        <hgroup className="block-primary">
-          <h2 className="block-primary-main">TeamUp</h2>
-          <p className="block-primary-sub">Project 2</p>
-        </hgroup>
       </main>
-
-  <CardProfil 
-  name="Alice"
-  location="Paris"
-/>
-
-
-
-      <footer>
-        Développé par la&nbsp;
-        <a
-          href="https://www.wildcodeschool.com/"
-          className="wcs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          La TeamB des WildWalkers
-        </a>
+      <footer className="footer-container">
+        <p>Ici le footer</p>
       </footer>
-    </>
+    </div>
   );
 }
 
