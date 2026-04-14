@@ -7,32 +7,22 @@ import SideBar from "./components/Sidebar/SideBar";
 
 function App() {
   return (
-    <>
-      <SideBar />
-      <nav className="navbar">
-        <Navbar />
-      </nav>
-
-      <main className="text-box">
+    <div className="app-layout">
+      <aside className="sidebar-container">
+        <SideBar />
+      </aside>
+      <header>
+        <nav className="navbar-container">
+          <Navbar />
+        </nav>
+      </header>
+      <main className="main-containter">
         <Outlet />
-        <hgroup className="block-primary">
-          <h2 className="block-primary-main">TeamUp</h2>
-          <p className="block-primary-sub">Project 2</p>
-        </hgroup>
       </main>
-
-      <footer>
-        Développé par la&nbsp;
-        <a
-          href="https://www.wildcodeschool.com/"
-          className="wcs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          La TeamB des WildWalkers
-        </a>
+      <footer className="footer-container">
+        <p>Ici le footer</p>
       </footer>
-    </>
+    </div>
   );
 }
 
