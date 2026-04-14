@@ -11,12 +11,12 @@ function App() {
       <aside className="sidebar-container">
         <SideBar />
       </aside>
-      <header>
-        <nav className="navbar-container">
+      <header className="header-container">
+        <nav>
           <Navbar />
         </nav>
       </header>
-      <main className="main-containter">
+      <main className="main-container">
         <Outlet />
       </main>
       <footer className="footer-container">
