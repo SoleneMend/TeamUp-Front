@@ -1,17 +1,16 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
+
 import "./App.css";
-import SideBar from "./components/SideBar";
+
+import Navbar from "./components/Navbar/Navbar";
+import SideBar from "./components/Sidebar/SideBar";
 
 function App() {
   return (
     <>
       <SideBar />
       <nav className="navbar">
-        <ul>
-          <li>
-            <Link to="/">testProfilUser</Link>
-          </li>
-        </ul>
+        <Navbar />
       </nav>
 
       <main className="text-box">
