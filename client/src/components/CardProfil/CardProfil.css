@@ -1,0 +1,58 @@
+.card-profil {
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem;
+}
+
+.card-profil__image img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.card-profil__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.card-profil__name {
+  color: var(--color-neutral);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.card-profil__bio {
+  color: var(--color-neutral);
+  font-size: 0.9rem;
+}
+
+.card-profil__location {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: var(--color-hover);
+  color: var(--color-tertiary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  width: fit-content;
+}
+
+.card-profil__button {
+  background-color: var(--color-neutral);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: auto;
+  white-space: nowrap;
+}
