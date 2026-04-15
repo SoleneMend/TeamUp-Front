@@ -34,7 +34,9 @@ const Skills = ({ sport }: SkillsProps) => {
           <progress value={niveauToValue(element.niveau)} max={100} />
         </div>
       ))}
-      <button className="skills__button">Voir les détails</button>
+      <button type="button" className="skills__button">
+        Voir les détails
+      </button>
     </div>
   );
 };
