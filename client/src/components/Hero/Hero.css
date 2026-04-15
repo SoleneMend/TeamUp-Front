@@ -1,0 +1,52 @@
+.hero {
+  background: linear-gradient(to right, var(--color-primary), #02110d);
+  border-radius: 40px;
+  padding: 60px 60px;
+  margin: 30px 60px 100px 60px;
+  height: 100%;
+}
+
+.go-years {
+  color: var(--color-secondary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.hero-title {
+  color: var(--color-neutral);
+  font-size: 70px;
+}
+
+.hero-descr {
+  color: rgba(240, 240, 240, 0.7);
+  font-size: 1.5rem;
+  font-weight: 250;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.hero-link {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.hero-button-one a {
+  text-decoration: none;
+  background-color: var(--color-neutral);
+  color: var(--color-primary);
+  padding: 18px 80px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.hero-button-two a {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-neutral);
+  padding: 18px 80px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
