@@ -1,0 +1,100 @@
+.Footer-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 2.5rem;
+  justify-content: space-around;
+  background-color: var(--color-background-filter);
+  width: 100%;
+
+  .Footer-div-container-img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    .Footer-div-container-img-title {
+      text-align: center;
+      grid-column: span 3;
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--color-hover);
+    }
+    svg {
+      background-color: white;
+      box-shadow: 0px 0px 4px 0px #00000038;
+      border-radius: 10px;
+      width: 100%;
+
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 0px 0px 6px 0px #00000069;
+      }
+    }
+  }
+  .container-text-links {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .Footer-div-text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      gap: 24px;
+      .div-text-title {
+        color: var(--color-hover);
+        font-weight: 500;
+      }
+      .div-text-desc1 {
+        color: var(--color-primary);
+        font-size: 1rem;
+        text-shadow: 0px 0px 20px black;
+        border-radius: 50px;
+      }
+      .div-text-desc2 {
+        font-size: 2rem;
+        font-weight: 600;
+        span {
+          color: var(--color-hover);
+        }
+      }
+      .div-text-desc3 {
+        padding: 0.5rem;
+        width: 70%;
+        border-radius: 50px;
+      }
+      .logo-img {
+        width: 32px;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      .div-logo {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+    }
+    .Footer-div-links {
+      .Footer-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .Footer-list-links {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+
+          a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.499);
+            &:hover {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
