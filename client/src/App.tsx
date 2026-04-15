@@ -9,7 +9,6 @@ import "./components/Filters.css";
 
 import Navbar from "./components/Navbar/Navbar";
 import SideBar from "./components/Sidebar/SideBar";
-import Explorer from "./pages/Explorer/Explorer";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
       </header>
       <main className="main-container">
         <Outlet />
-        <Explorer />
       </main>
       <footer className="footer-container">
         <Footer />
