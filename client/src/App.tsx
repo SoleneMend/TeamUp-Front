@@ -19,9 +19,7 @@ function App() {
       <main className="main-container">
         <Outlet />
       </main>
-      <footer className="footer-container">
-        <p>Ici le footer</p>
-      </footer>
+      <footer className="footer-container"></footer>
     </div>
   );
 }
