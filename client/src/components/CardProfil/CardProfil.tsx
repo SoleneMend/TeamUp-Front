@@ -1,11 +1,6 @@
 import "./CardProfil.css";
-<<<<<<< HEAD
-import defaultAvatar from "../../assets/images/avatar.png";
-import { MapPin } from "lucide-react";
-=======
 import { MapPin } from "lucide-react";
 import defaultAvatar from "../../assets/images/avatar.png";
->>>>>>> dev
 
 interface CardProfilProps {
   name: string;
