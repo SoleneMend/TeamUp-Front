@@ -5,10 +5,15 @@
 }
 
 .sidebar {
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
   background-color: var(--color-primary);
   padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-logo {
@@ -28,11 +33,16 @@
 .sidebar-nav ul {
   list-style: none;
 }
+
+.sidebar-nav li {
+  width: 100%;
+}
+
 .sidebar-nav a {
   text-decoration: none;
   color: var(--color-tertiary);
-  padding: 0.75rem 1rem;
   display: flex;
+  padding: 0.75rem 1rem;
   margin: 0.5rem 0;
   border-radius: 1rem;
   align-items: center;
