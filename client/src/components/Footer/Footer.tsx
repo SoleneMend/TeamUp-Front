@@ -39,10 +39,18 @@ function Footer() {
             foot, ou un groupe de trail du dimanche.
           </p>
           <div className="div-logo">
-            <img src={imageinstagram} alt="" className="logo-img" />
-            <img src={imagegithub} alt="" className="logo-img" />
-            <img src={imagelinkedin} alt="" className="logo-img" />
-            <img src={imagetwitter} alt="" className="logo-img" />
+            <Link to="https://www.instagram.com/">
+              <img src={imageinstagram} alt="" className="logo-img" />
+            </Link>
+            <Link to="https://github.com/ChickenCodeSchool/Js-Crew-vert-wildwalker-P2-G3">
+              <img src={imagegithub} alt="" className="logo-img" />
+            </Link>
+            <Link to="https://fr.linkedin.com/">
+              <img src={imagelinkedin} alt="" className="logo-img" />
+            </Link>
+            <Link to="https://x.com/?lang=fr">
+              <img src={imagetwitter} alt="" className="logo-img" />{" "}
+            </Link>
           </div>
         </div>
       </div>
@@ -60,48 +68,48 @@ function Footer() {
           <rect width="160" height="110" fill="white" rx="8" />
           <circle
             cx="80"
-            cy="50"
+            cy="40"
             r="30"
             fill="none"
             stroke="#E84B2A"
             stroke-width="4"
           />
-          <circle cx="80" cy="50" r="6" fill="#E84B2A" />
+          <circle cx="80" cy="40" r="6" fill="#E84B2A" />
           <line
             x1="80"
-            y1="20"
+            y1="10"
             x2="80"
-            y2="80"
+            y2="70"
             stroke="#E84B2A"
             stroke-width="2"
           />
           <line
             x1="50"
-            y1="50"
+            y1="40"
             x2="110"
-            y2="50"
+            y2="40"
             stroke="#E84B2A"
             stroke-width="2"
           />
           <line
             x1="59"
-            y1="29"
+            y1="19"
             x2="101"
-            y2="71"
+            y2="61"
             stroke="#E84B2A"
             stroke-width="2"
           />
           <line
             x1="101"
-            y1="29"
+            y1="19"
             x2="59"
-            y2="71"
+            y2="61"
             stroke="#E84B2A"
             stroke-width="2"
           />
           <text
             x="80"
-            y="96"
+            y="88"
             text-anchor="middle"
             font-size="13"
             font-weight="500"
@@ -113,7 +121,7 @@ function Footer() {
           </text>
           <text
             x="80"
-            y="108"
+            y="100"
             text-anchor="middle"
             font-size="9"
             fill="#888"
