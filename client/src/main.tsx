@@ -3,10 +3,11 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 import App from "./App";
+import Explorer from "./pages/Explorer/Explorer";
 import Home from "./pages/Home/Home";
 
 import "./index.css";
-// import Explorer from "./pages/Explorer/Explorer";
+
 // import Events from "./pages/Events/Events";
 // import Sessions from "./pages/Sessions/Sessions";
 // import Chat from "./pages/Chat/Chat";
@@ -21,10 +22,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      // {
-      //   path: "/explorer",
-      //   element: <Explorer />,
-      // },
+      {
+        path: "/explorer",
+        element: <Explorer />,
+      },
       // {
       //   path: "/events",
       //   element: <Events />,
