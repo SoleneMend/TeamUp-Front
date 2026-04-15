@@ -17,10 +17,6 @@ const fakeMatch = {
 function Explorer() {
   return (
     <main className="content">
-      <hgroup className="block-primary">
-        <h2 className="block-primary-main">TeamUp</h2>
-        <p className="block-primary-sub">Project 2</p>
-      </hgroup>
       <div className="layout">
         <Filters />
 
@@ -28,6 +24,7 @@ function Explorer() {
           <div className="upcoming-list">
             <h2>Événements à venir</h2>
             <div className="horizontal-card">
+              <EventsCard match={fakeMatch} />
               <EventsCard match={fakeMatch} />
             </div>
           </div>
