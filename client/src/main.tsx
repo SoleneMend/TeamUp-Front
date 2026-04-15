@@ -1,15 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import "./index.css";
-import App from "./App";
 
-// import Home from "./pages/Home";
-// import Explorer from "./pages/Explorer";
-// import Events from "./pages/Events";
-// import Sessions from "./pages/Sessions";
-// import Chat from "./pages/Chat";
-// import Profil from "./pages/Profil";
+import App from "./App";
+import Home from "./pages/Home/Home";
+
+import "./index.css";
+// import Explorer from "./pages/Explorer/Explorer";
+// import Events from "./pages/Events/Events";
+// import Sessions from "./pages/Sessions/Sessions";
+// import Chat from "./pages/Chat/Chat";
+// import Profil from "./pages/Profil/Profil";
 
 // Create router configuration with routes & You can add more routes as you build out your app!
 const router = createBrowserRouter([
@@ -18,12 +19,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>En construction</div>,
+        element: <Home />,
       },
-      // {
-      //   path: "/",
-      //   element: <Home />,
-      // },
       // {
       //   path: "/explorer",
       //   element: <Explorer />,
