@@ -1,0 +1,25 @@
+.Navbar-section {
+  display: flex;
+  justify-content: end;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.132);
+  padding: 16px;
+  align-items: center;
+  z-index: -1;
+  .Navbar-div-profil {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.129);
+  }
+  .Navbar-div-profil-img {
+    margin-left: 16px;
+    width: 48px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    padding: 2px;
+  }
+  .Navbar-div-notif {
+    padding-right: 16px;
+    display: flex;
+    align-items: center;
+  }
+}
