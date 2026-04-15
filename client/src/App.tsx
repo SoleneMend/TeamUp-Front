@@ -1,27 +1,28 @@
 import { Outlet } from "react-router";
 
 import "./App.css";
-
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import SideBar from "./components/Sidebar/SideBar";
 
 function App() {
   return (
-    <>
-      <nav className="navbar">
-        <Navbar />
-      </nav>
-      <SideBar />
-
-      <main className="text-box">
+    <div className="app-layout">
+      <aside className="sidebar-container">
+        <SideBar />
+      </aside>
+      <header className="header-container">
+        <nav>
+          <Navbar />
+        </nav>
+      </header>
+      <main className="main-container">
         <Outlet />
       </main>
-
-      <footer>
+      <footer className="footer-container">
         <Footer />
       </footer>
-    </>
+    </div>
   );
 }
 
