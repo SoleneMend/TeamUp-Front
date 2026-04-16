@@ -1,0 +1,121 @@
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 50px;
+}
+
+.filters {
+  background: #e5e9e7;
+  padding: 25px;
+  border-radius: 16px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-self: stretch;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+}
+
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters-header h3 {
+  font-size: 1.5 rem;
+  font-weight: 700;
+}
+
+.clear-btn {
+  font-size: 0.8rem;
+  border: 1px solid #395f47;
+  border-radius: 50px;
+  color: #052c22;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.clear-btn:hover {
+  color: #395f47;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-group p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #052c22;
+}
+
+/* BOUTONS SPORT */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.buttons button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #395f47;
+  background: #f5f5f5;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttons button:hover {
+  background: #eaeaea;
+}
+
+.buttons .active {
+  background: #13402b;
+  color: white;
+  border-color: #13402b;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+input[type="date"] {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.apply-btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #13402b;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.apply-btn:hover {
+  opacity: 0.9;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px 20px;
+}

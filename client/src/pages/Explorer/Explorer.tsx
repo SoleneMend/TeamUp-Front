@@ -1,5 +1,5 @@
-import EventsCard from "../../components/EventsCard";
-import Filters from "../../components/Filters";
+import EventsCard from "../../components/EventsCard/EventsCard";
+import Filters from "../../components/Filters/Filters";
 import "./Explorer.css";
 
 const fakeMatch = {
