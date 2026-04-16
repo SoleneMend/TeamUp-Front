@@ -6,9 +6,9 @@ import "./SideBar.css";
 function SideBar() {
   return (
     <div className="sidebar">
-      <h1 className="sidebar-logo">
+      {/* <h1 className="sidebar-logo">
         Team<span className="sidebar-logo-up">Up</span>
-      </h1>
+      </h1> */}
       <nav className="sidebar-nav">
         <ul>
           <li>
