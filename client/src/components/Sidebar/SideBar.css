@@ -5,27 +5,19 @@
 }
 
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 280px;
-  height: 100vh;
-  background-color: var(--color-primary);
+  height: 100%;
+  background-color: var(--color-white);
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
-}
-
-.sidebar-logo {
-  color: var(--color-neutral);
-}
-
-.sidebar-logo-up {
-  color: var(--color-tertiary);
+  box-shadow: 1px 0px 2px 0px #0000004a;
 }
 
 .sidebar-nav {
   display: flex;
+  position: sticky;
+  top: 0;
   flex-direction: column;
   margin-top: 2.5rem;
 }
@@ -40,7 +32,7 @@
 
 .sidebar-nav a {
   text-decoration: none;
-  color: var(--color-tertiary);
+  color: var(--color-darker);
   display: flex;
   padding: 0.75rem 1rem;
   margin: 0.5rem 0;
@@ -54,10 +46,10 @@
 
 .sidebar-nav a:hover {
   background-color: var(--color-hover);
-  color: var(--color-neutral);
+  color: var(--color-secondary);
 }
 
 .sidebar-nav a.active {
   background-color: var(--color-hover);
-  color: var(--color-neutral);
+  color: var(--color-secondary);
 }

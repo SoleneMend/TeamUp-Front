@@ -13,14 +13,14 @@ import SideBar from "./components/Sidebar/SideBar";
 function App() {
   return (
     <div className="app-layout">
-      <aside className="sidebar-container">
-        <SideBar />
-      </aside>
       <header className="header-container">
         <nav>
           <Navbar />
         </nav>
       </header>
+      <aside className="sidebar-container">
+        <SideBar />
+      </aside>
       <main className="main-container">
         <Outlet />
       </main>

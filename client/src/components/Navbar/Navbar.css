@@ -1,24 +1,40 @@
 .Navbar-section {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.132);
   padding: 16px;
   align-items: center;
-  .Navbar-div-profil {
+  background-color: var(--color-primary);
+  box-shadow: 1px 0px 2px 0px #0000004a;
+
+  .Navbar-div-notif-profil {
     display: flex;
     align-items: center;
-    border-left: 1px solid rgba(0, 0, 0, 0.129);
+
+    .Navbar-div-profil {
+      display: flex;
+      align-items: center;
+      border-left: 1px solid rgba(0, 0, 0, 0.129);
+    }
+    .Navbar-div-profil-img {
+      margin-left: 16px;
+      width: 48px;
+      border-radius: 50%;
+      background-color: var(--color-secondary);
+      padding: 2px;
+    }
+    .Navbar-div-notif {
+      padding-right: 16px;
+      display: flex;
+      align-items: center;
+    }
   }
-  .Navbar-div-profil-img {
-    margin-left: 16px;
-    width: 48px;
-    border-radius: 50%;
-    background-color: var(--color-secondary);
-    padding: 2px;
+
+  .Navbar-logo {
+    color: var(--color-white);
   }
-  .Navbar-div-notif {
-    padding-right: 16px;
-    display: flex;
-    align-items: center;
+
+  .Navbar-logo-up {
+    color: var(--color-secondary);
   }
 }

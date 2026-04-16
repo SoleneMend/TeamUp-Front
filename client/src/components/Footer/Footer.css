@@ -16,7 +16,7 @@
       grid-column: span 3;
       font-weight: 600;
       font-size: 2rem;
-      color: var(--color-hover);
+      color: var(--color-secondary);
     }
     svg {
       background-color: white;
@@ -42,7 +42,7 @@
       align-items: center;
       gap: 24px;
       .div-text-title {
-        color: var(--color-hover);
+        color: var(--color-secondary);
         font-weight: 500;
       }
       .div-text-desc1 {
@@ -55,7 +55,7 @@
         font-size: 2rem;
         font-weight: 600;
         span {
-          color: var(--color-hover);
+          color: var(--color-secondary);
         }
       }
       .div-text-desc3 {
