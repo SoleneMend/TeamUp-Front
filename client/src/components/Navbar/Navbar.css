@@ -14,7 +14,7 @@
     .Navbar-div-profil {
       display: flex;
       align-items: center;
-      border-left: 1px solid rgba(0, 0, 0, 0.129);
+      border-left: 1px solid var(--color-neutral);
     }
     .Navbar-div-profil-img {
       margin-left: 16px;
