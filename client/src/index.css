@@ -2,13 +2,14 @@
 
 :root {
   /* Colors */
-  --color-primary: #052c22;
-  --color-secondary: #2ab684;
-  --color-tertiary: #a7f3d0;
+  --color-primary: #181818;
+  --color-secondary: #ff5c01;
+  --color-tertiary: #f88b50;
   --color-neutral: #f0f0f0;
   --color-darker: #52525b;
-  --color-hover: #395f47;
-  --color-background-filter: #e5e9e7;
+  --color-hover: #ffeee5;
+  --color-background-filter: #faf9f8;
+
   /* Font */
   --font-main: "Inter", sans-serif;
 }

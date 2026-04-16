@@ -1,8 +1,10 @@
 import Hero from "../../components/Hero/Hero";
 
+import "./Home.css";
+
 function Home() {
   return (
-    <div>
+    <div className="home-wrap">
       <Hero />
     </div>
   );
