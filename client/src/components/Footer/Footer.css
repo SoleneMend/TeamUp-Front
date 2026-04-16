@@ -4,7 +4,7 @@
   padding: 1.5rem;
   gap: 2.5rem;
   justify-content: space-around;
-  background-color: var(--color-background-filter);
+  background-color: var(--color-primary);
   width: 100%;
 
   .Footer-div-container-img {
@@ -19,7 +19,7 @@
       color: var(--color-secondary);
     }
     svg {
-      background-color: white;
+      background-color: var(--color-neutral);
       box-shadow: 0px 0px 4px 0px #00000038;
       border-radius: 10px;
       width: 100%;
@@ -46,12 +46,13 @@
         font-weight: 500;
       }
       .div-text-desc1 {
-        color: var(--color-primary);
+        color: var(--color-neutral);
         font-size: 1rem;
         text-shadow: 0px 0px 20px black;
         border-radius: 50px;
       }
       .div-text-desc2 {
+        color: var(--color-neutral);
         font-size: 2rem;
         font-weight: 600;
         span {
@@ -59,6 +60,7 @@
         }
       }
       .div-text-desc3 {
+        color: var(--color-neutral);
         padding: 0.5rem;
         width: 70%;
         border-radius: 50px;
@@ -88,9 +90,9 @@
 
           a {
             text-decoration: none;
-            color: rgba(0, 0, 0, 0.499);
+            color: var(--color-neutral);
             &:hover {
-              color: black;
+              color: var(--color-tertiary);
             }
           }
         }

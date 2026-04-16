@@ -7,10 +7,12 @@
 .app-layout {
   display: grid;
   grid-template-areas: "header header" "sidebar main" "sidebar footer";
+  grid-template-columns: 360px 1fr;
 }
 
 .header-container {
   grid-area: header;
+  z-index: 2000;
 }
 
 .main-container {
@@ -19,11 +21,11 @@
 
 .sidebar-container {
   grid-area: sidebar;
-  box-shadow: 1px 0px 2px 0px #0000004a;
   height: 100%;
+  z-index: 1000;
 }
 
 .footer-container {
   grid-area: footer;
-  z-index: -1;
+  /* z-index: -1; */
 }
