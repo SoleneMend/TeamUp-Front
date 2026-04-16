@@ -5,9 +5,9 @@
 }
 
 .filters {
-  background: #e5e9e7;
+  background: var(--color-background-filter);
+  /* border: 1px solid var(--color-darker); */
   padding: 25px;
-  border-radius: 16px;
   width: 260px;
   display: flex;
   flex-direction: column;
@@ -19,26 +19,27 @@
 .filters-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .filters-header h3 {
+  color: var(--color-primary);
   font-size: 1.5 rem;
   font-weight: 700;
 }
 
 .clear-btn {
   font-size: 0.8rem;
-  border: 1px solid #395f47;
-  border-radius: 50px;
-  color: #052c22;
-  background-color: #f5f5f5;
+  border: none;
+  color: var(--color-tertiary);
+  font-weight: 600;
+  background-color: var(--color-background-filter);
   cursor: pointer;
   padding: 6px 12px;
 }
 
 .clear-btn:hover {
-  color: #395f47;
+  color: var(--color-secondary);
 }
 
 .filter-group {
@@ -50,7 +51,7 @@
 .filter-group p {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #052c22;
+  color: var(--color-secondary);
 }
 
 /* BOUTONS SPORT */
@@ -63,7 +64,7 @@
 .buttons button {
   padding: 6px 12px;
   border-radius: 20px;
-  border: 1px solid #395f47;
+  border: 1px solid var(--color-tertiary);
   background: #f5f5f5;
   font-size: 0.8rem;
   cursor: pointer;
@@ -71,13 +72,14 @@
 }
 
 .buttons button:hover {
-  background: #eaeaea;
+  background: var(--color-hover);
+  color: var(--color-primary);
 }
 
 .buttons .active {
-  background: #13402b;
-  color: white;
-  border-color: #13402b;
+  background: var(--color-secondary);
+  color: var(--color-neutral);
+  border-color: var(--color-secondary);
 }
 
 .filter-group label {
@@ -88,9 +90,68 @@
   cursor: pointer;
 }
 
-input[type="range"] {
-  width: 100%;
+input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid #888;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s;
 }
+
+input[type="checkbox"]:checked {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+input[type="range"] {
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary) var(--v, 50%),
+    var(--color-hover) var(--v, 50%)
+  );
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #185fa5;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+/* .filter-input {
+  color:
+} */
 
 input[type="date"] {
   padding: 8px;
@@ -102,7 +163,7 @@ input[type="date"] {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background: #13402b;
+  background: var(--color-secondary);
   color: white;
   font-weight: 600;
   cursor: pointer;
