@@ -23,27 +23,28 @@ function Filters() {
       <div className="filter-group">
         <p>Niveau</p>
         <label>
-          <input type="checkbox" /> Pro{" "}
+          <input className="filter-input" type="checkbox" /> Pro{" "}
         </label>
         <label>
-          <input type="checkbox" defaultChecked /> Avancé
+          <input className="filter-input" type="checkbox" defaultChecked />{" "}
+          Avancé
         </label>
         <label>
-          <input type="checkbox" /> Intermediaire
+          <input className="filter-input" type="checkbox" /> Intermediaire
         </label>
         <label>
-          <input type="checkbox" /> Débutant
+          <input className="filter-input" type="checkbox" /> Débutant
         </label>
       </div>
 
       <div className="filter-group">
         <p>Distance maximale</p>
-        <input type="range" min="1" max="20" />
+        <input className="filter-input" type="range" min="1" max="20" />
         <span>15 km</span>
       </div>
       <div className="filter-group">
         <p>Date preferée</p>
-        <input type="date" />
+        <input className="filter-input" type="date" />
       </div>
 
       <button type="button" className="apply-btn">
