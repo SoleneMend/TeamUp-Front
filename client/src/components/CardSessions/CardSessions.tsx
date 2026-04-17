@@ -1,4 +1,4 @@
-import CardSessions from "./CardSessions.css";
+import "./CardSessions.css";
 
 function CardSessions() {
   return <div className="CardSessions-wrap">CardSessions</div>;
