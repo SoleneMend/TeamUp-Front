@@ -5,7 +5,7 @@
 }
 
 .filters {
-  background: var(--color-background-filter);
+  background: var(--color-hover);
   /* border: 1px solid var(--color-darker); */
   padding: 25px;
   width: 260px;
@@ -33,7 +33,7 @@
   border: none;
   color: var(--color-tertiary);
   font-weight: 600;
-  background-color: var(--color-background-filter);
+  background-color: var(--color-hover);
   cursor: pointer;
   padding: 6px 12px;
 }
@@ -51,7 +51,7 @@
 .filter-group p {
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 /* BOUTONS SPORT */
@@ -64,7 +64,7 @@
 .buttons button {
   padding: 6px 12px;
   border-radius: 20px;
-  border: 1px solid var(--color-tertiary);
+  border: 1px solid var(--color-darker);
   background: #f5f5f5;
   font-size: 0.8rem;
   cursor: pointer;
@@ -72,14 +72,14 @@
 }
 
 .buttons button:hover {
-  background: var(--color-hover);
-  color: var(--color-primary);
+  background: var(--color-darker);
+  color: var(--color-hover);
 }
 
 .buttons .active {
-  background: var(--color-secondary);
+  background: var(--color-darker);
   color: var(--color-neutral);
-  border-color: var(--color-secondary);
+  border-color: var(--color-darker);
 }
 
 .filter-group label {
@@ -123,11 +123,9 @@ input[type="range"] {
   appearance: none;
   height: 6px;
   border-radius: 3px;
-  background: linear-gradient(
-    to right,
-    var(--color-secondary) var(--v, 50%),
-    var(--color-hover) var(--v, 50%)
-  );
+  background: linear-gradient(to right,
+      var(--color-darker) var(--v, 50%),
+      var(--color-hover) var(--v, 50%));
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -135,7 +133,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--color-secondary);
+  background: var(--color-darker);
   border: 2px solid white;
   cursor: pointer;
 }
@@ -163,14 +161,15 @@ input[type="date"] {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background: var(--color-secondary);
-  color: white;
+  background: var(--color-darker);
+  color: var(--color-neutral);
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
 }
 
 .apply-btn:hover {
+  background-color: var(--color-secondary);
   opacity: 0.9;
 }
 
