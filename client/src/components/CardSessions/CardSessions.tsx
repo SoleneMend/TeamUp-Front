@@ -17,7 +17,9 @@ function CardSessions() {
           </div>
         </div>
       </div>
-      <button onClick={() => setFlipped(!flipped)}>Retourner</button>
+      <button type="button" onClick={() => setFlipped(!flipped)}>
+        Retourner
+      </button>
     </>
   );
 }
