@@ -1,26 +1,14 @@
+import "./Profil.css";
+
 import CardProfil from "../../components/CardProfil/CardProfil";
 import Performances from "../../components/Performances/Performances";
 import Skills from "../../components/Skills/Skills";
 
 const Profil = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "1.5rem",
-        padding: "1.5rem",
-      }}
-    >
+    <div className="profil">
       <CardProfil name="Marcus Thompson" location="Seattle, WA" />
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 2fr",
-          gap: "1.5rem",
-        }}
-      >
+      <div className="profil__content">
         <Skills
           sport={[
             { id: 1, name: "Soccer", niveau: "advanced", duration: 5 },

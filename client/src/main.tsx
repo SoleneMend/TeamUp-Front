@@ -13,46 +13,23 @@ import "./index.css";
 // import Events from "./pages/Events/Events";
 // import Sessions from "./pages/Sessions/Sessions";
 
-// Create router configuration with routes & You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/explorer",
-        element: <Explorer />,
-      },
-      // {
-      //   path: "/events",
-      //   element: <Events />,
-      // },
-      // {
-      //   path: "/sessions",
-      //   element: <Sessions />,
-      // },
-      {
-        path: "/chat",
-        element: <Chat />,
-      },
-      {
-        path: "/profil",
-        element: <Profil />,
-      },
+      { path: "/", element: <Home /> },
+      { path: "/explorer", element: <Explorer /> },
+      { path: "/chat", element: <Chat /> },
+      { path: "/profil", element: <Profil /> },
     ],
   },
 ]);
 
-// Find the root element in the HTML document
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
   throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
 }
 
-// Render the app inside the root element
 createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
