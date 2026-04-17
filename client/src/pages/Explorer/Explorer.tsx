@@ -24,8 +24,8 @@ function Explorer() {
           <div className="upcoming-list">
             <h2>Évènements à venir</h2>
             <div className="horizontal-card">
-              <EventsCard match={fakeMatch} />
-              <EventsCard match={fakeMatch} />
+              <EventsCard event={fakeMatch} />
+              <EventsCard event={fakeMatch} />
             </div>
           </div>
 
@@ -33,12 +33,12 @@ function Explorer() {
             <h2>Tous les évènements</h2>
 
             <div className="events-grid">
-              <EventsCard match={fakeMatch} />
-              <EventsCard match={fakeMatch} />
-              <EventsCard match={fakeMatch} />
-              <EventsCard match={fakeMatch} />
-              <EventsCard match={fakeMatch} />
-              <EventsCard match={fakeMatch} />
+              <EventsCard event={fakeMatch} />
+              <EventsCard event={fakeMatch} />
+              <EventsCard event={fakeMatch} />
+              <EventsCard event={fakeMatch} />
+              <EventsCard event={fakeMatch} />
+              <EventsCard event={fakeMatch} />
             </div>
           </section>
         </div>
