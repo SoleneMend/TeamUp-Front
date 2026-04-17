@@ -1,57 +1,54 @@
-import { Calendar, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
 
 import "./UpComingEvent.css";
 
-function UpComingEvent() {
+type UpEvent = {
+  id: number;
+  name: string;
+  location: string;
+  date: string;
+  user_joining: string[];
+};
+
+type UpComingEventProps = {
+  avenir: UpEvent;
+};
+
+function UpComingEvent({ avenir }: UpComingEventProps) {
+  const dateObj = new Date(avenir.date);
+  const day = dateObj.getDate().toString().padStart(2, "0");
+  const month = dateObj
+    .toLocaleString("fr-FR", { month: "short" })
+    .toUpperCase();
+  const users = avenir.user_joining ?? [];
+  const visibleUsers = users.slice(0, 2);
+  const remainingCount = Math.max(users.length - 2, 0);
+
   return (
-    <section className="Up-coming-section">
-      <div className="Up-coming-title-details">
-        <div className="Up-coming-title">
-          <p>
-            <Calendar />
-          </p>
-          <h2>Évènements à venir</h2>
-        </div>
-        <Link to="/explorer" className="Up-coming-details">
-          VOIR TOUT
-        </Link>
-      </div>
+    <section>
       <div className="Up-comming-Event">
         <div className="Up-coming-date">
-          <p className="Up-coming-month">AVR</p>
-          <p className="Up-coming-number">30</p>
+          <p className="Up-coming-month">{month}</p>
+          <p className="Up-coming-number">{day}</p>
         </div>
         <div className="Up-coming-lieux">
-          <h3>Soccer LeagueSoccer LeagueSoccer League</h3>
-          <p>Arena Decathlon</p>
+          <h3>{avenir.name}</h3>
+          <p>{avenir.location}</p>
         </div>
         <div className="Up-coming-avatar">
           <div className="avatar-stack">
-            <img src="#" className="avatar" alt="" />
-            <img src="#" className="avatar" alt="" />
-            <div className="avatar avatar-count">+3</div>
-          </div>
-          <Link to="/explorer">
-            <ChevronRight />
-          </Link>
-        </div>
-      </div>
-      <br />
-      <div className="Up-comming-Event">
-        <div className="Up-coming-date">
-          <p className="Up-coming-month">JUN</p>
-          <p className="Up-coming-number">04</p>
-        </div>
-        <div className="Up-coming-lieux">
-          <h3>Soccer LeagueSoccer LeagueSoccer League</h3>
-          <p>Arena Decathlon</p>
-        </div>
-        <div className="Up-coming-avatar">
-          <div className="avatar-stack">
-            <img src="#" className="avatar" alt="" />
-            <img src="#" className="avatar" alt="" />
-            <div className="avatar avatar-count">+3</div>
+            {visibleUsers.map((user) => (
+              <img
+                key={user}
+                src={`https://api.dicebear.com/7.x/initials/svg?seed=${user}`}
+                className="avatar"
+                alt={user}
+              />
+            ))}
+            {remainingCount > 0 && (
+              <div className="avatar avatar-count">+{remainingCount}</div>
+            )}
           </div>
           <Link to="/explorer">
             <ChevronRight />
