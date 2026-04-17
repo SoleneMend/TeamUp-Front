@@ -1,10 +1,16 @@
-// import CardProfil from "../../components/CardProfil/CardProfil";
-// import useUsers from "../../services/useUsers";
+import "./Profil.css";
+
+import CardProfil from "../../components/CardProfil/CardProfil";
+
+// import Performances from "../../components/Performances/Performances";
+// import Skills from "../../components/Skills/Skills";
 
 const Profil = () => {
-  // const users = useUsers();
-
-  return <div></div>;
+  return (
+    <div className="profil">
+      <CardProfil name="Marcus Thompson" location="Seattle, WA" />
+    </div>
+  );
 };
 
 export default Profil;
