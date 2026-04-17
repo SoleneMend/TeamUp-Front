@@ -15,6 +15,17 @@ Tu poses des questions naturelles sur : le sport pratiqué, le niveau, la ville,
 Tu réponds de façon courte, chaleureuse et conversationnelle, comme un ami.
 Tu n'utilises pas de listes ou de bullet points. Tu parles comme un humain.`;
 
+const FALLBACK_RESPONSES = [
+  "Oui super ! Dimanche ça me va parfaitement. Tu veux jouer où ?",
+  "Bonne idée ! Quel sport tu avais en tête ?",
+  "Avec plaisir ! Tu es plutôt quel niveau ?",
+  "Carrément, je suis partant ! T'as un terrain en tête ?",
+  "Nickel ! On se retrouve à quelle heure ?",
+];
+
+const getFallback = () =>
+  FALLBACK_RESPONSES[Math.floor(Math.random() * FALLBACK_RESPONSES.length)];
+
 const getTime = () =>
   new Date().toLocaleTimeString("fr-FR", {
     hour: "2-digit",
@@ -27,7 +38,7 @@ const Chatbot = () => {
       id: 0,
       role: "assistant",
       content:
-        "Salut ! Moi c'est Alex 👋 Je suis là pour t'aider à trouver ton partenaire sportif idéal. Tu pratiques quel sport ?",
+        "Salut ! C'est Alex 🎾 Je suis nouveau sur la plateforme. Ca te dit de faire un tennis ?",
       time: getTime(),
     },
   ]);
@@ -82,7 +93,7 @@ const Chatbot = () => {
         {
           id: Date.now() + 1,
           role: "assistant",
-          content: "Oups, une erreur s'est produite. Réessaie !",
+          content: getFallback(),
           time: getTime(),
         },
       ]);
