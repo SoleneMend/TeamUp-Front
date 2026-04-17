@@ -6,7 +6,6 @@
 
 .content {
   flex: 1;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -16,7 +15,7 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 2rem;
   margin-bottom: 50px;
-  color: #13402b;
+  color: var(--color-primary);
 }
 
 .content p.subtitle {
@@ -26,8 +25,8 @@
 }
 
 .card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
+  background-color: var(--color-neutral);
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   transition:
@@ -53,7 +52,7 @@
 
 .card-body p {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--color-primary);
   margin-bottom: 0.4rem;
 }
 
@@ -61,8 +60,9 @@
   margin-top: 1rem;
   width: 100%;
   padding: 0.75rem;
-  background: transparent;
-  border: 1.5px solid #13402b;
+  color: var(--color-neutral);
+  background-color: var(--color-secondary);
+  border: 1.5px solid var(--color-secondary);
   border-radius: 10px;
   font-family: "DM Sans", sans-serif;
   font-weight: 600;
@@ -135,6 +135,7 @@
 }
 
 .card-header h3 {
+  color: var(--color-secondary);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;

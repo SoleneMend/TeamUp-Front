@@ -19,7 +19,7 @@ type Props = {
 function EventsCard({ match }: Props) {
   return (
     <div className="card">
-      {match.verified && <span className="badge">✔ Evenement verifié</span>}
+      {match.verified && <span className="badge">✔ Evènements verifiés</span>}
       {match.spotsLeft && (
         <span className="badge">{match.spotsLeft} Places restantes</span>
       )}
@@ -43,7 +43,7 @@ function EventsCard({ match }: Props) {
 
         <button type="button" className="join-btn">
           {" "}
-          Rejoindre l'événement
+          Rejoindre l'évènement
         </button>
       </div>
     </div>

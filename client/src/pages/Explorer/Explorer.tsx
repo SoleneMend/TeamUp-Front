@@ -1,5 +1,5 @@
-import EventsCard from "../../components/EventsCard";
-import Filters from "../../components/Filters";
+import EventsCard from "../../components/EventsCard/EventsCard";
+import Filters from "../../components/Filters/Filters";
 import "./Explorer.css";
 
 const fakeMatch = {
@@ -17,23 +17,20 @@ const fakeMatch = {
 function Explorer() {
   return (
     <main className="content">
-      <hgroup className="block-primary">
-        <h2 className="block-primary-main">TeamUp</h2>
-        <p className="block-primary-sub">Project 2</p>
-      </hgroup>
       <div className="layout">
         <Filters />
 
         <div className="right-content">
           <div className="upcoming-list">
-            <h2>Événements à venir</h2>
+            <h2>Évènements à venir</h2>
             <div className="horizontal-card">
+              <EventsCard match={fakeMatch} />
               <EventsCard match={fakeMatch} />
             </div>
           </div>
 
           <section>
-            <h2>Tous les événments</h2>
+            <h2>Tous les évènements</h2>
 
             <div className="events-grid">
               <EventsCard match={fakeMatch} />
