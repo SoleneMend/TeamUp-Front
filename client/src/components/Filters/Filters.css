@@ -123,9 +123,11 @@ input[type="range"] {
   appearance: none;
   height: 6px;
   border-radius: 3px;
-  background: linear-gradient(to right,
-      var(--color-darker) var(--v, 50%),
-      var(--color-hover) var(--v, 50%));
+  background: linear-gradient(
+    to right,
+    var(--color-darker) var(--v, 50%),
+    var(--color-hover) var(--v, 50%)
+  );
 }
 
 input[type="range"]::-webkit-slider-thumb {
