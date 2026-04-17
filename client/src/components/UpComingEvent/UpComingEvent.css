@@ -2,6 +2,7 @@
   border: 1px solid rgb(216, 216, 216);
   padding: 30px;
   border-radius: 30px;
+  max-width: 700px;
 }
 
 .Up-coming-title-details {
@@ -82,12 +83,14 @@
   height: 35px;
   border-radius: 50%;
   border: 2px solid white;
-  margin-left: -10px; /* ← c'est ça qui crée le chevauchement */
+  margin-left: -10px;
+  /* ← c'est ça qui crée le chevauchement */
   object-fit: cover;
 }
 
 .avatar:first-child {
-  margin-left: 0; /* le premier n'a pas de décalage */
+  margin-left: 0;
+  /* le premier n'a pas de décalage */
 }
 
 .avatar-count {
