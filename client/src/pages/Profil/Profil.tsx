@@ -1,6 +1,7 @@
 import CardProfil from "../../components/CardProfil/CardProfil";
 import Performances from "../../components/Performances/Performances";
 import Skills from "../../components/Skills/Skills";
+import UpComingEvent from "../../components/UpComingEvent/UpComingEvent";
 
 const Profil = () => {
   return (
@@ -29,6 +30,7 @@ const Profil = () => {
           ]}
         />
         <Performances matches={142} victories={105} mvpCount={28} streak={5} />
+        <UpComingEvent />
       </div>
     </div>
   );
