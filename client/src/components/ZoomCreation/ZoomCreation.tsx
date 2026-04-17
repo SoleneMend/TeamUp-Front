@@ -2,23 +2,14 @@ import { useState } from "react";
 import "./ZoomCreation.css";
 
 function ZoomCreation() {
-  const [userId, setUserId] = useState("");
-  const [sportId, setSportId] = useState("");
-  const [levelId, setLevelId] = useState("");
-  const [frequencyNum, setFrequencyNum] = useState("");
+  const [userName, setUserName] = useState("");
 
-  function AddNewSport() {
-    fetch("http://localhost:3310/bdd/2/addsport", {
-      method: "POST",
+  function ShowUser() {
+    fetch(`http://localhost:3310/bdd/users?username=${userName}`, {
+      method: "GET",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        user_id: userId,
-        sport_id: sportId,
-        level_id: levelId,
-        frequency: frequencyNum,
-      }),
     })
-      .then((res) => res.text())
+      .then((res) => res.json())
       .then((data) => {
         console.log(data);
       })
@@ -30,27 +21,12 @@ function ZoomCreation() {
   return (
     <form>
       <input
-        type="number"
-        placeholder="Enter id of user"
-        onChange={(e) => setUserId(e.target.value)}
+        type="text"
+        placeholder="Enter username of user"
+        onChange={(e) => setUserName(e.target.value)}
       />
-      <input
-        type="number"
-        placeholder="Enter id of sport"
-        onChange={(e) => setSportId(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Enter id of level"
-        onChange={(e) => setLevelId(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Enter the frequency"
-        onChange={(e) => setFrequencyNum(e.target.value)}
-      />
-      <button type="button" onClick={AddNewSport}>
-        Ajoute un sport
+      <button type="button" onClick={ShowUser}>
+        Chech this users
       </button>
     </form>
   );
