@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Chatbot.css";
 
 type Message = {
@@ -8,10 +8,9 @@ type Message = {
   time: string;
 };
 
-const SYSTEM_PROMPT = `Tu es Alex, un assistant sympa et humain de la plateforme TeamUp.
-TeamUp est une plateforme qui aide les gens à trouver des partenaires sportifs.
-Ton rôle est d'aider l'utilisateur à trouver le partenaire idéal.
-Tu poses des questions naturelles sur : le sport pratiqué, le niveau, la ville, les disponibilités.
+const SYSTEM_PROMPT = `Tu es un utilisateur sympa de la plateforme TeamUp.
+Tu cherches quelqu'un pour faire du sport.
+Tu poses des questions naturelles sur les disponibilités, le niveau, le terrain.
 Tu réponds de façon courte, chaleureuse et conversationnelle, comme un ami.
 Tu n'utilises pas de listes ou de bullet points. Tu parles comme un humain.`;
 
@@ -32,18 +31,32 @@ const getTime = () =>
     minute: "2-digit",
   });
 
-const Chatbot = () => {
+interface ChatbotProps {
+  contactName: string;
+}
+
+const Chatbot = ({ contactName }: ChatbotProps) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 0,
       role: "assistant",
-      content:
-        "Salut ! C'est Alex 🎾 Je suis nouveau sur la plateforme. Ca te dit de faire un tennis ?",
+      content: `Salut ! C'est ${contactName} 🎾 Je suis nouveau sur la plateforme. Ça te dit de faire un tennis ?`,
       time: getTime(),
     },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    setMessages([
+      {
+        id: 0,
+        role: "assistant",
+        content: `Salut ! C'est ${contactName} 🎾 Je suis nouveau sur la plateforme. Ça te dit de faire un tennis ?`,
+        time: getTime(),
+      },
+    ]);
+  }, [contactName]);
 
   const sendMessage = async () => {
     if (input.trim() === "" || isTyping) return;
@@ -111,8 +124,8 @@ const Chatbot = () => {
       <div className="chatbot__header">
         <div className="chatbot__header-icon">💬</div>
         <div>
-          <p className="chatbot__name">Match Chat</p>
-          <p className="chatbot__status">Assistant TeamUp en ligne</p>
+          <p className="chatbot__name">{contactName}</p>
+          <p className="chatbot__status">En ligne</p>
         </div>
       </div>
 
@@ -123,11 +136,11 @@ const Chatbot = () => {
             className={`chatbot__row chatbot__row--${message.role}`}
           >
             {message.role === "assistant" && (
-              <div className="chatbot__avatar">A</div>
+              <div className="chatbot__avatar">{contactName.charAt(0)}</div>
             )}
             <div className={`chatbot__bubble chatbot__bubble--${message.role}`}>
               {message.role === "assistant" && (
-                <p className="chatbot__sender">Alex</p>
+                <p className="chatbot__sender">{contactName}</p>
               )}
               <p className="chatbot__content">{message.content}</p>
               <p className="chatbot__time">{message.time}</p>
@@ -136,7 +149,7 @@ const Chatbot = () => {
         ))}
         {isTyping && (
           <div className="chatbot__row chatbot__row--assistant">
-            <div className="chatbot__avatar">A</div>
+            <div className="chatbot__avatar">{contactName.charAt(0)}</div>
             <div className="chatbot__bubble chatbot__bubble--assistant chatbot__bubble--typing">
               <span />
               <span />

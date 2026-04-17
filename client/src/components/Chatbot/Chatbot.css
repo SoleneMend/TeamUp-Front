@@ -1,10 +1,9 @@
 .chatbot {
   display: flex;
   flex-direction: column;
-  height: 600px;
-  max-width: 480px;
-  border-radius: 12px;
-  border: 1px solid var(--color-neutral);
+  flex: 1;
+  height: 100%;
+  border-left: 1px solid var(--color-neutral);
   overflow: hidden;
   font-family: var(--font-main);
 }

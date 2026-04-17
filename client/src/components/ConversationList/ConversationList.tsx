@@ -12,36 +12,57 @@ type Conversation = {
 const CONVERSATIONS: Conversation[] = [
   {
     id: 1,
-    name: "Alex M.",
+    name: "Yoan",
     preview: "Toujours dispo dimanche ?",
     time: "12:45",
-    avatar: "A",
+    avatar: "Y",
   },
   {
     id: 2,
-    name: "Coach Marcus",
-    preview: "Séance confirmée pour 08h00.",
+    name: "Léo",
+    preview: "Ok pour la salle à 05h30.",
     time: "Hier",
-    avatar: "M",
+    avatar: "L",
   },
   {
     id: 3,
-    name: "Sarah L.",
+    name: "Coline",
     preview: "J'apporte les balles !",
     time: "Lun",
-    avatar: "S",
+    avatar: "C",
   },
   {
     id: 4,
-    name: "Sprint Dynamics",
-    preview: "Nouveau rapport disponible.",
+    name: "Giogi",
+    preview: "On fait un foot mardi, dispo ?",
     time: "Oct 12",
-    avatar: "SD",
+    avatar: "G",
+  },
+  {
+    id: 5,
+    name: "Solène",
+    preview: "Chaud pour coder une base de données ?",
+    time: "Oct 10",
+    avatar: "S",
   },
 ];
 
-const ConversationList = () => {
+interface ConversationListProps {
+  onSelect: (name: string) => void;
+}
+
+const ConversationList = ({ onSelect }: ConversationListProps) => {
   const [selected, setSelected] = useState<number>(1);
+  const [search, setSearch] = useState("");
+
+  const filtered = CONVERSATIONS.filter((conv) =>
+    conv.name.toLowerCase().includes(search.toLowerCase()),
+  );
+
+  const handleSelect = (id: number, name: string) => {
+    setSelected(id);
+    onSelect(name);
+  };
 
   return (
     <div className="conversation-list">
@@ -50,14 +71,16 @@ const ConversationList = () => {
         className="conversation-list__search"
         type="text"
         placeholder="Rechercher..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
       <ul className="conversation-list__items">
-        {CONVERSATIONS.map((conv) => (
+        {filtered.map((conv) => (
           <li
             key={conv.id}
             className={`conversation-list__item ${selected === conv.id ? "conversation-list__item--active" : ""}`}
-            onClick={() => setSelected(conv.id)}
-            onKeyDown={() => setSelected(conv.id)}
+            onClick={() => handleSelect(conv.id, conv.name)}
+            onKeyDown={() => handleSelect(conv.id, conv.name)}
           >
             <div className="conversation-list__avatar">{conv.avatar}</div>
             <div className="conversation-list__info">
