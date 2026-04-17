@@ -7,7 +7,7 @@
 .app-layout {
   display: grid;
   grid-template-areas: "header header" "sidebar main" "sidebar footer";
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 280px 1fr;
 }
 
 .header-container {
