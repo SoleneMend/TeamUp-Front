@@ -66,6 +66,7 @@
   color: var(--color-primary);
   transform: rotateY(180deg);
 }
+
 .cardSessions-back-infos {
   display: flex;
   gap: 25px;
@@ -78,6 +79,7 @@
 .cardSessions-back-info-B,
 .cardSessions-back-info-C,
 .cardSessions-back-info-D {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -115,14 +117,42 @@
   transform: scale(1.2);
 }
 
-
-
-
-
-
-
-
-.overlay {
+.cardSessions-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
   border: none;
   cursor: default;
+}
+
+.cardSessions-overlay button {
+  display: none;
+}
+
+.cardSessions-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-hover);
+  color: var(--color-primary);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-secondary);
+  z-index: 20;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cardSessions-modal-button {
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 60%;
+  right: 3%;
 }

@@ -36,26 +36,42 @@ function CardSessions({ imageUrl }: CardSessionsProps) {
             <div className="cardSessions-back-infos">
               <div className="cardSessions-back-info-A">
                 Date de l'event
-                <button type="button" onClick={() => setActiveInfo("A")}>
-                  ···
+                <button
+                  type="button"
+                  className="cardSessions-modal-button"
+                  onClick={() => setActiveInfo("A")}
+                >
+                  ...
                 </button>
               </div>
               <div className="cardSessions-back-info-B">
                 Horaires de l'event
-                <button type="button" onClick={() => setActiveInfo("B")}>
-                  ···
+                <button
+                  type="button"
+                  className="cardSessions-modal-button"
+                  onClick={() => setActiveInfo("B")}
+                >
+                  +
                 </button>
               </div>
               <div className="cardSessions-back-info-C">
                 TeamUp players
-                <button type="button" onClick={() => setActiveInfo("C")}>
-                  ···
+                <button
+                  type="button"
+                  className="cardSessions-modal-button"
+                  onClick={() => setActiveInfo("C")}
+                >
+                  +
                 </button>
               </div>
               <div className="cardSessions-back-info-D">
                 Places restantes
-                <button type="button" onClick={() => setActiveInfo("D")}>
-                  ···
+                <button
+                  type="button"
+                  className="cardSessions-modal-button"
+                  onClick={() => setActiveInfo("D")}
+                >
+                  +
                 </button>
               </div>
             </div>
@@ -72,14 +88,14 @@ function CardSessions({ imageUrl }: CardSessionsProps) {
 
       {activeInfo !== null && (
         <>
-          <div className="overlay">
+          <div className="cardSessions-overlay">
             <button type="button" onClick={() => setActiveInfo(null)}></button>
           </div>
-          <div className="modal">
-            {activeInfo === "A" && <p>Détail de la date</p>}
-            {activeInfo === "B" && <p>Détail des horaires</p>}
-            {activeInfo === "C" && <p>Détail TeamUp players</p>}
-            {activeInfo === "D" && <p>Détail places restantes</p>}
+          <div className="cardSessions-modal">
+            {activeInfo === "A" && <p>Détails date</p>}
+            {activeInfo === "B" && <p>Détails horaires</p>}
+            {activeInfo === "C" && <p>Détails players</p>}
+            {activeInfo === "D" && <p>Détails places restantes</p>}
             <button type="button" onClick={() => setActiveInfo(null)}>
               Fermer
             </button>
