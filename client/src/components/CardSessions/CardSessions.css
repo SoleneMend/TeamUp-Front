@@ -114,3 +114,15 @@
   color: var(--color-neutral);
   transform: scale(1.2);
 }
+
+
+
+
+
+
+
+
+.overlay {
+  border: none;
+  cursor: default;
+}
