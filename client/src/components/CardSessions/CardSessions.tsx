@@ -1,3 +1,4 @@
+import { MapPinned, Calendar, Clock, Users } from "lucide-react";
 import { useState } from "react";
 import type { Event } from "../../services/useEvents";
 import "./CardSessions.css";
@@ -33,19 +34,32 @@ function CardSessions({ event }: CardSessionsProps) {
           <div className="flip-cardSessions-back">
             <p className="cardSessions-title">{event.name}</p>
             <div className="cardSessions-back-infos">
-              <div className="cardSessions-back-info-A">{event.date}</div>
-              <div className="cardSessions-back-info-B">{event.heure}</div>
+              <div className="cardSessions-back-info-A">
+                <Calendar size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">DATE</span>
+                <span className="cardSessions-info-value">{event.date}</span>
+              </div>
+              <div className="cardSessions-back-info-B">
+                <Clock size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">HORAIRE</span>
+                <span className="cardSessions-info-value">{event.heure}</span>
+              </div>
               <div className="cardSessions-back-info-C">
-                {event.people_joining?.length ?? 0} / {event.max_people}
+                <Users size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">JOUEURS</span>
+                <span className="cardSessions-info-value">
+                  {event.people_joining?.length ?? 0} / {event.max_people}
+                </span>
               </div>
               <div className="cardSessions-back-info-D">
-                Places restantes
+                <MapPinned size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">LIEUX DU RDV</span>
                 <button
                   type="button"
                   className="cardSessions-modal-button"
                   onClick={() => setModalOpen(true)}
                 >
-                  MAP
+                  Voir
                 </button>
               </div>
             </div>

@@ -3,6 +3,7 @@
   height: 400px;
   perspective: 1000px;
 }
+
 .cardSessions-badge {
   position: absolute;
   top: 30px;
@@ -85,17 +86,39 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  padding: 13px;
+  gap: 6px;
+  padding: 16px 13px;
   border-radius: 10px;
   background-color: var(--color-neutral);
-  font-size: 0.85rem;
+}
+
+.cardSessions-info-icon {
+  color: var(--color-secondary);
+}
+
+.cardSessions-info-label {
+  font-size: 0.7rem;
   font-weight: 600;
+  color: var(--color-primary);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cardSessions-info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .cardSessions-back-info-D {
   background-color: var(--color-secondary);
+}
+
+.cardSessions-back-info-D .cardSessions-info-icon,
+.cardSessions-back-info-D .cardSessions-info-label {
   color: var(--color-neutral);
+  opacity: 1;
 }
 
 .flip-cardSession-button {
@@ -115,6 +138,23 @@
   border: 1px solid var(--color-darker);
   color: var(--color-neutral);
   transform: scale(1.2);
+}
+
+.cardSessions-modal-button {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-neutral);
+  background: transparent;
+  border: 1px solid var(--color-neutral);
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.cardSessions-modal-button:hover {
+  background: var(--color-neutral);
+  color: var(--color-secondary);
 }
 
 .cardSessions-overlay {
@@ -146,13 +186,4 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-}
-
-.cardSessions-modal-button {
-  width: 16px;
-  height: 16px;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 60%;
-  right: 3%;
 }
