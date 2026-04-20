@@ -70,7 +70,7 @@
 
 .Up-coming-lieux {
   margin-right: 50px;
-  min-width: 300px;
+  flex: 1;
 }
 
 .Up-coming-avatar {

@@ -1,0 +1,54 @@
+.activity-title-tab {
+  display: flex;
+}
+
+.activity-descriptions-event {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.activity-left-part {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.activity-name-details-logo {
+  display: flex;
+  gap: 30px;
+}
+
+.activity-middle-part {
+  display: flex;
+  gap: 60px;
+}
+
+.activity-part-A {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.activity-part-B {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.activity-part-C {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.activity-part-C p {
+  font-weight: 900;
+}
+
+.activity-right-part {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
