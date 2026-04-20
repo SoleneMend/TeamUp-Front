@@ -1,15 +1,14 @@
 import { useState } from "react";
+import type { Event } from "../../services/useEvents";
 import "./CardSessions.css";
 
 interface CardSessionsProps {
-  imageUrl: string;
+  event: Event;
 }
 
-type ActiveInfo = "A" | "B" | "C" | "D" | null;
-
-function CardSessions({ imageUrl }: CardSessionsProps) {
+function CardSessions({ event }: CardSessionsProps) {
   const [flipped, setFlipped] = useState(false);
-  const [activeInfo, setActiveInfo] = useState<ActiveInfo>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -17,11 +16,11 @@ function CardSessions({ imageUrl }: CardSessionsProps) {
         <div className="flip-cardSessions-container">
           <div
             className="flip-cardSessions-front"
-            style={{ backgroundImage: `url(${imageUrl})` }}
+            style={{ backgroundImage: `url(${event.img_url_event})` }}
           >
-            <span className="cardSessions-badge">NOM DU SPORT</span>
-            <p className="cardSessions-title">NOM DE L'EVENEMENT</p>
-            <p>LOCALISATION DE L'EVENEMENT</p>
+            <span className="cardSessions-badge">{event.sport?.name}</span>
+            <p className="cardSessions-title">{event.name}</p>
+            <p>{event.localisation}</p>
             <button
               type="button"
               className="flip-cardSession-button"
@@ -32,46 +31,21 @@ function CardSessions({ imageUrl }: CardSessionsProps) {
           </div>
 
           <div className="flip-cardSessions-back">
-            <p className="cardSessions-title">Nom de l'event</p>
+            <p className="cardSessions-title">{event.name}</p>
             <div className="cardSessions-back-infos">
-              <div className="cardSessions-back-info-A">
-                Date de l'event
-                <button
-                  type="button"
-                  className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("A")}
-                >
-                  ...
-                </button>
-              </div>
-              <div className="cardSessions-back-info-B">
-                Horaires de l'event
-                <button
-                  type="button"
-                  className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("B")}
-                >
-                  +
-                </button>
-              </div>
+              <div className="cardSessions-back-info-A">{event.date}</div>
+              <div className="cardSessions-back-info-B">{event.heure}</div>
               <div className="cardSessions-back-info-C">
-                TeamUp players
-                <button
-                  type="button"
-                  className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("C")}
-                >
-                  +
-                </button>
+                {event.people_joining?.length ?? 0} / {event.max_people}
               </div>
               <div className="cardSessions-back-info-D">
                 Places restantes
                 <button
                   type="button"
                   className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("D")}
+                  onClick={() => setModalOpen(true)}
                 >
-                  +
+                  MAP
                 </button>
               </div>
             </div>
@@ -86,17 +60,14 @@ function CardSessions({ imageUrl }: CardSessionsProps) {
         </div>
       </div>
 
-      {activeInfo !== null && (
+      {modalOpen && (
         <>
           <div className="cardSessions-overlay">
-            <button type="button" onClick={() => setActiveInfo(null)}></button>
+            <button type="button" onClick={() => setModalOpen(false)}></button>
           </div>
           <div className="cardSessions-modal">
-            {activeInfo === "A" && <p>Détails date</p>}
-            {activeInfo === "B" && <p>Détails horaires</p>}
-            {activeInfo === "C" && <p>Détails players</p>}
-            {activeInfo === "D" && <p>Détails places restantes</p>}
-            <button type="button" onClick={() => setActiveInfo(null)}>
+            <p>{event.description}</p>
+            <button type="button" onClick={() => setModalOpen(false)}>
               Fermer
             </button>
           </div>
