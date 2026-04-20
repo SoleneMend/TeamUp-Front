@@ -1,0 +1,8 @@
+.profil-wrap {
+  display: flex;
+  margin: 30px;
+}
+
+.profil {
+  flex: 1;
+}
