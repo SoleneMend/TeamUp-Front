@@ -1,8 +1,30 @@
-.profil-wrap {
-  display: flex;
-  margin: 30px;
+/* On se dit qu'il y a 3 colonnes */
+.profil {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin: 60px;
 }
 
-.profil {
-  flex: 1;
+/* Pour prendre toute la largeur */
+.card-profil {
+  grid-column: 1 / -1;
+}
+
+/* Conteneur de Skills et Performances */
+.profil__content {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 1.5rem;
+}
+
+/* Doit prendre les 2 premières colonnes (avant achievements) */
+.Up-coming-section {
+  grid-column: span 2;
+}
+
+/* En attente mais devra prendre la dernière colonne */
+.achievements {
+  grid-column: span 1;
 }
