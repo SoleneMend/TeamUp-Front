@@ -1,18 +1,11 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
+import type { Event } from "../../services/useEvents";
 
 import "./UpComingEvent.css";
 
-type UpEvent = {
-  id: number;
-  name: string;
-  location: string;
-  date: string;
-  user_joining: string[];
-};
-
 type UpComingEventProps = {
-  avenir: UpEvent;
+  avenir: Event;
 };
 
 function UpComingEvent({ avenir }: UpComingEventProps) {
@@ -21,8 +14,8 @@ function UpComingEvent({ avenir }: UpComingEventProps) {
   const month = dateObj
     .toLocaleString("fr-FR", { month: "short" })
     .toUpperCase();
-  const users = avenir.user_joining ?? [];
-  const visibleUsers = users.slice(0, 2);
+  const users = avenir.people_joining ?? [];
+  const smallyAvatar = users.slice(0, 2);
   const remainingCount = Math.max(users.length - 2, 0);
 
   return (
@@ -34,11 +27,11 @@ function UpComingEvent({ avenir }: UpComingEventProps) {
         </div>
         <div className="Up-coming-lieux">
           <h3>{avenir.name}</h3>
-          <p>{avenir.location}</p>
+          <p>{avenir.localisation}</p>
         </div>
         <div className="Up-coming-avatar">
           <div className="avatar-stack">
-            {visibleUsers.map((user) => (
+            {smallyAvatar.map((user) => (
               <img
                 key={user}
                 src={`https://api.dicebear.com/7.x/initials/svg?seed=${user}`}

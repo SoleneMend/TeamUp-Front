@@ -1,29 +1,17 @@
 import { Calendar } from "lucide-react";
 import { Link } from "react-router";
+import CardProfil from "../../components/CardProfil/CardProfil";
+import Performances from "../../components/Performances/Performances";
+import Skills from "../../components/Skills/Skills";
+
+import UpComingEvent from "../../components/UpComingEvent/UpComingEvent";
+import useEvents from "../../services/useEvents";
 
 import "./Profil.css";
 import "../../components/UpComingEvent/UpComingEvent.css";
 
-import CardProfil from "../../components/CardProfil/CardProfil";
-import Performances from "../../components/Performances/Performances";
-import Skills from "../../components/Skills/Skills";
-import UpComingEvent from "../../components/UpComingEvent/UpComingEvent";
-
-const fakeUpComingEvent = {
-  id: 1,
-  name: "Yoga en plein air",
-  location: "Berges du Rhône, Lyon",
-  date: "2026-05-01",
-  user_joining: [
-    "emma_zen",
-    "maya_flow",
-    "lina_pilates",
-    "chloe_dance",
-    "tom_climb",
-  ],
-};
-
 const Profil = () => {
+  const events = useEvents();
   return (
     <div className="profil-wrap">
       <div className="profil">
@@ -56,10 +44,9 @@ const Profil = () => {
             </div>
 
             <div className="Up-coming-grid">
-              <UpComingEvent avenir={fakeUpComingEvent} />
-              <UpComingEvent avenir={fakeUpComingEvent} />
-              <UpComingEvent avenir={fakeUpComingEvent} />
-              <UpComingEvent avenir={fakeUpComingEvent} />
+              {events.slice(0, 4).map((event) => (
+                <UpComingEvent key={event.id} avenir={event} />
+              ))}
             </div>
           </section>
         </div>
