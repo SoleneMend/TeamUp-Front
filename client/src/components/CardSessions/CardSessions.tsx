@@ -1,4 +1,4 @@
-import { MapPinned, Calendar, Clock, Users } from "lucide-react";
+import { Calendar, Clock, MapPinned, Users } from "lucide-react";
 import { useState } from "react";
 import type { Event } from "../../services/useEvents";
 import "./CardSessions.css";
