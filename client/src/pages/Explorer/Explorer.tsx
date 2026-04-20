@@ -1,20 +1,11 @@
 import EventsCard from "../../components/EventsCard/EventsCard";
 import Filters from "../../components/Filters/Filters";
+import useEvents from "../../services/useEvents";
 import "./Explorer.css";
 
-const fakeMatch = {
-  id: 1,
-  title: "Match de foot",
-  location: "Paris",
-  date: "2026-05-01",
-  distance: "0.5 km",
-  time: "18:00 - 19:30",
-  level: "Intermédiaire",
-  price: 5,
-  image: "",
-};
-
 function Explorer() {
+  const events = useEvents();
+
   return (
     <main className="content">
       <div className="layout">
@@ -24,8 +15,9 @@ function Explorer() {
           <div className="upcoming-list">
             <h2>Évènements à venir</h2>
             <div className="horizontal-card">
-              <EventsCard event={fakeMatch} />
-              <EventsCard event={fakeMatch} />
+              {events.slice(0, 2).map((event) => (
+                <EventsCard key={event.id} event={event} />
+              ))}
             </div>
           </div>
 
@@ -33,12 +25,9 @@ function Explorer() {
             <h2>Tous les évènements</h2>
 
             <div className="events-grid">
-              <EventsCard event={fakeMatch} />
-              <EventsCard event={fakeMatch} />
-              <EventsCard event={fakeMatch} />
-              <EventsCard event={fakeMatch} />
-              <EventsCard event={fakeMatch} />
-              <EventsCard event={fakeMatch} />
+              {events.map((event) => (
+                <EventsCard key={event.id} event={event} />
+              ))}
             </div>
           </section>
         </div>
