@@ -1,3 +1,4 @@
+import { Gauge } from "lucide-react";
 import "./Skills.css";
 
 type Sport = {
@@ -24,11 +25,19 @@ const Skills = ({ sport }: SkillsProps) => {
 
   return (
     <div className="skills">
-      <h1 className="skills__title">Skills levels</h1>
+      <div className="Skills-title-details">
+        <div className="Skills-title">
+          <p>
+            <Gauge />
+          </p>
+          <h2>Skills Level</h2>
+        </div>
+      </div>
+
       {sport.map((element) => (
         <div key={element.id} className="skills__item">
           <div className="skills__item-header">
-            <h2 className="skills__item-name">{element.name}</h2>
+            <h3 className="skills__item-name">{element.name}</h3>
             <p className="skills__item-level">{element.niveau}</p>
           </div>
           <progress value={niveauToValue(element.niveau)} max={100} />

@@ -1,31 +1,49 @@
 .performances {
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid var(--color-neutral);
-  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  padding: 1.8rem;
+  border-radius: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.performances__title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin: 0 0 1.25rem;
+.performances-title-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.performances-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.performances-title p {
+  background-color: var(--color-hover);
+  padding: 8px 11px;
+  border-radius: 20px;
+  color: var(--color-secondary);
 }
 
 .performances__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
+  flex: 1;
+  align-items: stretch;
 }
 
 .performances__card {
-  background: var(--color-neutral);
-  border-radius: 8px;
+  background: var(--color-background-filter);
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  height: 100%;
 }
 
 .performances__card-label {
@@ -38,7 +56,7 @@
 }
 
 .performances__card-value {
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--color-primary);
   margin: 0;

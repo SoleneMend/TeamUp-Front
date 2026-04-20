@@ -1,3 +1,5 @@
+import { TrendingUp } from "lucide-react";
+
 import "./Performances.css";
 
 interface PerformancesProps {
@@ -17,7 +19,14 @@ const Performances = ({
 
   return (
     <div className="performances">
-      <h1 className="performances__title">Performance Analytics</h1>
+      <div className="performances-title-details">
+        <div className="performances-title">
+          <p>
+            <TrendingUp />
+          </p>
+          <h2>Performance Analytics</h2>
+        </div>
+      </div>
 
       <div className="performances__grid">
         <div className="performances__card">

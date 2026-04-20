@@ -1,28 +1,43 @@
 .skills {
-  background-color: var(--color-neutral);
-  border-radius: 10px;
-  padding: 1rem;
+  border: 1px solid var(--color-border);
+  padding: 1.8rem;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 300px;
+  width: auto;
 }
 
-.skills__title {
-  color: var(--color-primary);
-  font-weight: bold;
-  font-size: 1rem;
+.Skills-title-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.Skills-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Skills-title p {
+  background-color: var(--color-hover);
+  padding: 8px 11px;
+  border-radius: 20px;
+  color: var(--color-secondary);
 }
 
 .skills__item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-bottom: 15px;
 }
 
 .skills__item-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .skills__item-name {
@@ -30,21 +45,21 @@
 }
 
 .skills__item-level {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-weight: bold;
 }
 
 progress {
   width: 100%;
-  accent-color: var(--color-primary);
+  accent-color: var(--color-secondary);
 }
 
 .skills__button {
-  background-color: var(--color-neutral);
-  color: var(--color-primary);
+  background-color: var(--color-hover);
   border-radius: 10px;
   padding: 1rem;
   cursor: pointer;
   width: 100%;
-  border: 1px solid var(--color-primary);
+  margin-top: 2rem;
+  border: 1px solid var(--color-border);
 }

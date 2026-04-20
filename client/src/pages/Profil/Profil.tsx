@@ -18,8 +18,8 @@ const Profil = () => {
           ]}
         />
         <Performances matches={142} victories={105} mvpCount={28} streak={5} />
-        <UpComingEvent />
       </div>
+      <UpComingEvent />
     </div>
   );
 };
