@@ -1,0 +1,103 @@
+.Up-coming-section {
+  border: 1px solid rgb(216, 216, 216);
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 700px;
+}
+
+.Up-coming-title-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.Up-coming-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Up-coming-title p {
+  background-color: var(--color-hover);
+  padding: 8px 11px;
+  border-radius: 20px;
+  color: var(--color-secondary);
+}
+
+.Up-coming-details {
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.Up-comming-Event {
+  background-color: var(--color-background-filter);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Up-coming-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: var(--color-neutral);
+  border: 1px solid rgb(216, 216, 216);
+}
+
+.Up-coming-month {
+  color: var(--color-darker);
+  font-size: 0.7rem;
+}
+
+.Up-coming-number {
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.Up-coming-lieux {
+  margin-right: 50px;
+  min-width: 300px;
+}
+
+.Up-coming-avatar {
+  display: flex;
+  gap: 20px;
+}
+
+.avatar-stack {
+  display: flex;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -10px;
+  /* ← c'est ça qui crée le chevauchement */
+  object-fit: cover;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+  /* le premier n'a pas de décalage */
+}
+
+.avatar-count {
+  background-color: var(--color-background-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
