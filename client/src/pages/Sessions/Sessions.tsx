@@ -8,7 +8,7 @@ function Sessions() {
   return (
     <div>
       {events.map((event) => (
-        <CardSessions key={event.id} imageUrl={event.image_url} />
+        <CardSessions key={event.id} event={event} />
       ))}
     </div>
   );
