@@ -1,40 +1,28 @@
-type Match = {
-  id: number;
-  title: string;
-  location: string;
-  distance: string;
-  date: string;
-  time: string;
-  level: string;
-  price: number;
-  spotsLeft?: number;
-  verified?: boolean;
-  image: string;
-};
+import type { Event } from "../../services/useEvents";
 
 type Props = {
-  event: Match;
+  event: Event;
 };
 
 function EventsCard({ event }: Props) {
   return (
     <div className="card">
-      {event.verified && <span className="badge">✔ Evènements verifiés</span>}
-      {event.spotsLeft && (
-        <span className="badge">{event.spotsLeft} Places restantes</span>
+      {event.id && <span className="badge">✔ Evènements verifiés</span>}
+      {event.name && (
+        <span className="badge">{event.people_joining} Places restantes</span>
       )}
 
-      <img src={event.image} alt={event.title} />
+      <img src={event.img_url_event} alt={event.name} />
 
       <div className="card-body">
         <div className="card-header">
-          <h3>{event.title}</h3>
+          <h3>{event.name}</h3>
         </div>
         <p className="location">
-          📍 {event.location} ({event.distance})
+          📍 {event.localisation} ({event.localisation})
         </p>
         <p className="date">
-          🕐 {event.date}, {event.time}
+          🕐 {event.date}, {event.heure}
         </p>
         <button type="button" className="join-btn">
           {" "}

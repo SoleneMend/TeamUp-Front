@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
 
-interface Event {
+export interface Event {
   id: number;
-  title: string;
-  image_url: string;
+  name: string;
+  localisation: string;
+  host: string;
+  description: string;
+  date: number;
+  heure: number;
+  max_people: number;
+  people_joining?: [];
+  sport?: {
+    name: string;
+    niveau: string;
+  };
+  is_done: boolean;
+  comments: [];
+  img_url_event: string;
 }
 
 const useEvents = () => {
-  const [events, setEvents] = useState<Event[]>([
-    {
-      id: 1,
-      title: "Test",
-      image_url:
-        "https://histoiredupsg.fr/wp-content/uploads/2017/07/Parc-2017.jpg",
-      // lien à virer quand backend tournera on laissera le tableau vide pour aller chercher les infos nécessaires
-    },
-  ]);
+  const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3310/events")
