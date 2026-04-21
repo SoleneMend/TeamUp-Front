@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPinned, Users } from "lucide-react";
+import { Calendar, CircleX, Clock, Info, MapPinned, Users } from "lucide-react";
 import { useState } from "react";
 import type { Event } from "../../services/useEvents";
 import "./CardSessions.css";
@@ -33,7 +33,7 @@ function CardSessions({ event }: CardSessionsProps) {
               className="flip-cardSession-button"
               onClick={() => setFlipped(!flipped)}
             >
-              Informations
+              <Info />
             </button>
           </div>
 
@@ -71,10 +71,10 @@ function CardSessions({ event }: CardSessionsProps) {
             </div>
             <button
               type="button"
-              className="flip-cardSession-button"
+              className="flip-cardSession-button-bottom"
               onClick={() => setFlipped(!flipped)}
             >
-              Retourner
+              <CircleX />
             </button>
           </div>
         </div>
@@ -86,10 +86,31 @@ function CardSessions({ event }: CardSessionsProps) {
             <button type="button" onClick={() => setModalOpen(false)}></button>
           </div>
           <div className="cardSessions-modal">
-            <p>{event.description}</p>
-            <button type="button" onClick={() => setModalOpen(false)}>
-              Fermer
-            </button>
+            <div className="cardSessions-modal-map">
+              <iframe
+                title="Localisation"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(event.localisation)}&output=embed`}
+              />
+            </div>
+            <div className="cardSessions-modal-info">
+              <div className="cardSessions-modal-title-group">
+                <MapPinned size={23} className="cardSessions-info-icon" />
+                <h3 className="cardSessions-modal-title">Localisation</h3>
+              </div>
+              <p className="cardSessions-modal-location">
+                {event.localisation}
+              </p>
+              <button
+                type="button"
+                className="cardSessions-modal-close"
+                onClick={() => setModalOpen(false)}
+              >
+                Fermer
+              </button>
+            </div>
           </div>
         </>
       )}

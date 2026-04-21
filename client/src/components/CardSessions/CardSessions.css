@@ -2,7 +2,7 @@
   width: 800px;
   height: 320px;
   perspective: 1000px;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .cardSessions-front-text-global {
@@ -18,7 +18,7 @@
   align-items: flex-start;
   width: 80%;
   /* padding-left: 90px; */
-  gap: 8px;
+  gap: 2px;
 }
 
 .cardSessions-badge {
@@ -29,7 +29,9 @@
   backdrop-filter: blur(2px);
   color: var(--color-neutral);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   padding: 4px 18px;
   border-radius: 25px;
 }
@@ -43,11 +45,12 @@
 }
 
 .cardSessions-undertitle {
-  font-size: 0.8rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 300;
   text-align: start;
   width: 100%;
   word-break: break-word;
+  padding-right: 51px;
 }
 
 .flip-cardSessions-container {
@@ -74,7 +77,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 10px;
+  border-radius: 25px;
   overflow: hidden;
 }
 
@@ -83,15 +86,16 @@
   background-position: center;
   font-weight: 700;
   color: var(--color-neutral);
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .flip-cardSessions-back {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     var(--color-hover) 32%,
     var(--color-neutral)
-  );
+  ); */
+  background-color: var(--color-hover);
   color: var(--color-primary);
   transform: rotateY(180deg);
   display: flex;
@@ -123,9 +127,8 @@
   align-items: center;
   gap: 6px;
   padding: 16px 13px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: var(--color-neutral);
-  border: 1px solid var(--color-darker);
 }
 
 .cardSessions-info-icon {
@@ -159,21 +162,36 @@
 
 .flip-cardSession-button {
   position: absolute;
-  bottom: 15px;
-  right: 25px;
-  padding: 6px 12px;
-  border: 1px solid var(--color-secondary);
-  border-radius: 10px;
-  background: transparent;
+  top: 30px;
+  right: 30px;
+  border: 0px solid var(--color-secondary);
+  border-radius: 50px;
+  background: none;
   color: var(--color-secondary);
   cursor: pointer;
 }
 
 .flip-cardSession-button:hover {
-  background: var(--color-secondary);
-  border: 1px solid var(--color-darker);
+  background: none;
   color: var(--color-neutral);
-  transform: scale(1.2);
+  transform: scale(1.4);
+}
+
+.flip-cardSession-button-bottom {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border: 0px solid var(--color-secondary);
+  border-radius: 50px;
+  background: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.flip-cardSession-button-bottom:hover {
+  background: none;
+  color: var(--color-primary);
+  transform: scale(1.4);
 }
 
 .cardSessions-modal-button {
@@ -213,13 +231,69 @@
   transform: translate(-50%, -50%);
   background: var(--color-hover);
   color: var(--color-primary);
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--color-secondary);
+  padding: 32px;
+  border-radius: 25px;
+  /* border: 0px solid var(--color-secondary); */
   z-index: 20;
-  min-width: 300px;
+  width: 700px;
+  height: 320px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.cardSessions-modal-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-width: 200px;
+  height: 100%;
+}
+
+.cardSessions-modal-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.cardSessions-modal-title-group {
+  display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 8px;
+}
+
+.cardSessions-modal-location {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-darker);
+}
+
+.cardSessions-modal-close {
+  align-self: center;
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--color-hover);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  border-radius: 5px;
+  padding: 6px 14px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.cardSessions-modal-close:hover {
+  background: var(--color-secondary);
+  color: var(--color-hover);
+  border: 1px solid var(--color-secondary);
+}
+
+.cardSessions-modal-map {
+  flex: 1;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.cardSessions-modal-map iframe {
+  border: none;
 }
