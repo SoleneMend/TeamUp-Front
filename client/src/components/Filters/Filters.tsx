@@ -1,13 +1,11 @@
 // import { useState } from "react";
-// import useEvents from "../../services/useEvents";
+// import useEvents from "../../services/useEvents"
 
-function Filters() {
-  // const [city, setCity] = useState("");
-  // let events = useEvents();
-
-  // let filteredEvents = events.filter((e) =>
-  //   e.localisation?.toLowerCase().includes(city.toLowerCase()),
-  // );
+type FiltersProps = {
+  city: string;
+  setCity: React.Dispatch<React.SetStateAction<string>>;
+};
+function Filters({ city, setCity }: FiltersProps) {
   return (
     <aside className="filters">
       <div className="filters-header">
@@ -30,8 +28,8 @@ function Filters() {
       </div>
       <div className="filter-group">
         <input
-          // value={city}
-          // onChange={(e) => setCity(e.target.value)}
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
           className="filter-search"
           type="search"
           placeholder="Ecrivez votre ville..."
