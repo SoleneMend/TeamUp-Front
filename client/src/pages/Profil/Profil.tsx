@@ -47,7 +47,7 @@ const Profil = () => {
       </section>
       <section className="achievements-grid"></section>
       <section className="recent-activity-grid">
-        <RecentActivity />
+        <RecentActivity events={events.slice(8, 11)} />
       </section>
     </div>
   );

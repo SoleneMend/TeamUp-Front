@@ -43,7 +43,6 @@
   display: flex;
   align-items: center;
   padding: 15px 20px;
-  justify-content: space-between;
 }
 
 .Up-coming-date {
@@ -59,23 +58,33 @@
 
 .Up-coming-month {
   color: var(--color-darker);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
 .Up-coming-number {
   color: var(--color-secondary);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .Up-coming-lieux {
-  margin-right: 50px;
-  flex: 1;
+  margin-right: 10px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.Up-coming-lieux h3 {
+  font-size: 1rem;
+}
+
+.Up-coming-lieux p {
+  font-size: 12px;
 }
 
 .Up-coming-avatar {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
 }
 
 .avatar-stack {
