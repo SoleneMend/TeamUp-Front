@@ -17,11 +17,17 @@ function CardSessions({ event }: CardSessionsProps) {
         <div className="flip-cardSessions-container">
           <div
             className="flip-cardSessions-front"
-            style={{ backgroundImage: `url(${event.img_url_event})` }}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.60)), url(${event.img_url_event})`,
+            }}
           >
-            <span className="cardSessions-badge">{event.sport?.name}</span>
-            <p className="cardSessions-title">{event.name}</p>
-            <p>{event.localisation}</p>
+            <div className="cardSessions-front-text-global">
+              <div className="cardSessions-front-text">
+                <span className="cardSessions-badge">{event.sport?.name}</span>
+                <h2 className="cardSessions-title">{event.name}</h2>
+                <h3 className="cardSessions-undertitle">{event.description}</h3>
+              </div>
+            </div>
             <button
               type="button"
               className="flip-cardSession-button"
@@ -32,7 +38,7 @@ function CardSessions({ event }: CardSessionsProps) {
           </div>
 
           <div className="flip-cardSessions-back">
-            <p className="cardSessions-title">{event.name}</p>
+            <h2 className="cardSessions-title-back">{event.name}</h2>
             <div className="cardSessions-back-infos">
               <div className="cardSessions-back-info-A">
                 <Calendar size={20} className="cardSessions-info-icon" />

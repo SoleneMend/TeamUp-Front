@@ -1,25 +1,53 @@
 .flip-cardSessions {
   width: 800px;
-  height: 400px;
+  height: 320px;
   perspective: 1000px;
+  border-radius: 10px;
+}
+
+.cardSessions-front-text-global {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.cardSessions-front-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  /* padding-left: 90px; */
+  gap: 8px;
 }
 
 .cardSessions-badge {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  background-color: var(--color-secondary);
+  /* position: absolute; */
+  top: 80px;
+  left: 90px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
   color: var(--color-neutral);
   font-size: 1rem;
   font-weight: 700;
-  padding: 6px 12px;
+  padding: 4px 18px;
   border-radius: 25px;
 }
-
 .cardSessions-title {
   font-size: 2.4rem;
   font-weight: 900;
-  text-align: center;
+  margin-top: 12px;
+  text-align: start;
+  width: 100%;
+  word-break: break-word;
+}
+
+.cardSessions-undertitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: start;
+  width: 100%;
+  word-break: break-word;
 }
 
 .flip-cardSessions-container {
@@ -46,7 +74,6 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid var(--color-secondary);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -56,6 +83,7 @@
   background-position: center;
   font-weight: 700;
   color: var(--color-neutral);
+  border-radius: 10px;
 }
 
 .flip-cardSessions-back {
@@ -66,8 +94,15 @@
   );
   color: var(--color-primary);
   transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
 }
-
+.cardSessions-title-back {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  width: 100%;
+}
 .cardSessions-back-infos {
   display: flex;
   gap: 25px;
@@ -90,6 +125,7 @@
   padding: 16px 13px;
   border-radius: 10px;
   background-color: var(--color-neutral);
+  border: 1px solid var(--color-darker);
 }
 
 .cardSessions-info-icon {
