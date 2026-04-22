@@ -18,9 +18,7 @@ function EventsCard({ event }: Props) {
         <div className="card-header">
           <h3>{event.name}</h3>
         </div>
-        <p className="location">
-          📍 {event.localisation} ({event.localisation})
-        </p>
+        <p className="location">📍 {event.localisation}</p>
         <p className="date">
           🕐 {event.date}, {event.heure}
         </p>

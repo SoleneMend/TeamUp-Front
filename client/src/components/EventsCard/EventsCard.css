@@ -1,20 +1,12 @@
-/* LAYOUT */
 .layout {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 260px 1fr;
 }
 
-.content {
-  flex: 1;
+.right-content {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-}
-
-.content p.subtitle {
-  color: var(--muted);
-  margin-bottom: 2rem;
-  font-size: 0.9rem;
+  padding: 20px;
 }
 
 .card {
@@ -114,6 +106,12 @@
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 20px;
+}
+
+.badge:nth-child(2) {
+  top: 12px;
+  left: auto;
+  right: 12px;
 }
 
 .card-header {
