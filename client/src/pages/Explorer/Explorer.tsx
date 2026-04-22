@@ -1,21 +1,26 @@
+import { useState } from "react";
 import EventsCard from "../../components/EventsCard/EventsCard";
 import Filters from "../../components/Filters/Filters";
 import useEvents from "../../services/useEvents";
-import "./Explorer.css";
 
 function Explorer() {
+  const [city, setCity] = useState("");
   const events = useEvents();
+
+  const filteredEvents = events.filter((e) =>
+    e.localisation?.toLowerCase().includes(city.toLowerCase()),
+  );
 
   return (
     <main className="content">
       <div className="layout">
-        <Filters />
+        <Filters city={city} setCity={setCity} />
 
         <div className="right-content">
           <div className="upcoming-list">
             <h2>Évènements à venir</h2>
             <div className="horizontal-card">
-              {events.slice(0, 2).map((event) => (
+              {filteredEvents.slice(0, 2).map((event) => (
                 <EventsCard key={event.id} event={event} />
               ))}
             </div>
@@ -25,7 +30,7 @@ function Explorer() {
             <h2>Tous les évènements</h2>
 
             <div className="events-grid">
-              {events.map((event) => (
+              {filteredEvents.map((event) => (
                 <EventsCard key={event.id} event={event} />
               ))}
             </div>

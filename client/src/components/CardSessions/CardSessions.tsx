@@ -1,4 +1,4 @@
-import { MapPinned, Calendar, Clock, Users } from "lucide-react";
+import { Calendar, CircleX, Clock, Info, MapPinned, Users } from "lucide-react";
 import { useState } from "react";
 import type { Event } from "../../services/useEvents";
 import "./CardSessions.css";
@@ -17,22 +17,28 @@ function CardSessions({ event }: CardSessionsProps) {
         <div className="flip-cardSessions-container">
           <div
             className="flip-cardSessions-front"
-            style={{ backgroundImage: `url(${event.img_url_event})` }}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.60)), url(${event.img_url_event})`,
+            }}
           >
-            <span className="cardSessions-badge">{event.sport?.name}</span>
-            <p className="cardSessions-title">{event.name}</p>
-            <p>{event.localisation}</p>
+            <div className="cardSessions-front-text-global">
+              <div className="cardSessions-front-text">
+                <span className="cardSessions-badge">{event.sport?.name}</span>
+                <h2 className="cardSessions-title">{event.name}</h2>
+                <h3 className="cardSessions-undertitle">{event.description}</h3>
+              </div>
+            </div>
             <button
               type="button"
               className="flip-cardSession-button"
               onClick={() => setFlipped(!flipped)}
             >
-              Informations
+              <Info />
             </button>
           </div>
 
           <div className="flip-cardSessions-back">
-            <p className="cardSessions-title">{event.name}</p>
+            <h2 className="cardSessions-title-back">{event.name}</h2>
             <div className="cardSessions-back-infos">
               <div className="cardSessions-back-info-A">
                 <Calendar size={20} className="cardSessions-info-icon" />
@@ -65,10 +71,10 @@ function CardSessions({ event }: CardSessionsProps) {
             </div>
             <button
               type="button"
-              className="flip-cardSession-button"
+              className="flip-cardSession-button-bottom"
               onClick={() => setFlipped(!flipped)}
             >
-              Retourner
+              <CircleX />
             </button>
           </div>
         </div>
@@ -80,10 +86,31 @@ function CardSessions({ event }: CardSessionsProps) {
             <button type="button" onClick={() => setModalOpen(false)}></button>
           </div>
           <div className="cardSessions-modal">
-            <p>{event.description}</p>
-            <button type="button" onClick={() => setModalOpen(false)}>
-              Fermer
-            </button>
+            <div className="cardSessions-modal-map">
+              <iframe
+                title="Localisation"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(event.localisation)}&output=embed`}
+              />
+            </div>
+            <div className="cardSessions-modal-info">
+              <div className="cardSessions-modal-title-group">
+                <MapPinned size={23} className="cardSessions-info-icon" />
+                <h3 className="cardSessions-modal-title">Localisation</h3>
+              </div>
+              <p className="cardSessions-modal-location">
+                {event.localisation}
+              </p>
+              <button
+                type="button"
+                className="cardSessions-modal-close"
+                onClick={() => setModalOpen(false)}
+              >
+                Fermer
+              </button>
+            </div>
           </div>
         </>
       )}
