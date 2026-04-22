@@ -1,5 +1,6 @@
 import { Calendar } from "lucide-react";
 import { Link } from "react-router";
+import Achievements from "../../components/Achievements/Achievements";
 import CardProfil from "../../components/CardProfil/CardProfil";
 import Performances from "../../components/Performances/Performances";
 import RecentActivity from "../../components/RecentActivity/RecentActivity";
@@ -14,7 +15,7 @@ import "../../components/UpComingEvent/UpComingEvent.css";
 const Profil = () => {
   const events = useEvents();
   const users = useUsers();
-  const user = users[0];
+  const user = users[3];
 
   if (!user) return <p>Chargement...</p>;
 
@@ -27,7 +28,7 @@ const Profil = () => {
         location={user.location}
       />
       <div className="profil__content">
-        <Skills sport={user.sports} />
+        <Skills sport={user.sport} />
         <Performances matches={142} victories={105} mvpCount={28} streak={5} />
       </div>
       <section className="Up-coming-section">
@@ -48,7 +49,9 @@ const Profil = () => {
           ))}
         </div>
       </section>
-      <section className="achievements-grid"></section>
+      <section className="achievements-grid">
+        <Achievements />
+      </section>
       <section className="recent-activity-grid">
         <RecentActivity events={events.slice(8, 11)} />
       </section>
