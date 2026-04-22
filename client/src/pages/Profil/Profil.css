@@ -25,6 +25,11 @@
 }
 
 /* En attente mais devra prendre la dernière colonne */
-.achievements {
+.achievements-grid {
   grid-column: span 1;
+}
+
+/* Pour prendre toute la largeur */
+.recent-activity-grid {
+  grid-column: 1 / -1;
 }
