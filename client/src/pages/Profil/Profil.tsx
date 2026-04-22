@@ -4,26 +4,30 @@ import CardProfil from "../../components/CardProfil/CardProfil";
 import Performances from "../../components/Performances/Performances";
 import RecentActivity from "../../components/RecentActivity/RecentActivity";
 import Skills from "../../components/Skills/Skills";
-
 import UpComingEvent from "../../components/UpComingEvent/UpComingEvent";
 import useEvents from "../../services/useEvents";
+import useUsers from "../../services/useUsers";
 
 import "./Profil.css";
 import "../../components/UpComingEvent/UpComingEvent.css";
 
 const Profil = () => {
   const events = useEvents();
+  const users = useUsers();
+  const user = users[0];
+
+  if (!user) return <p>Chargement...</p>;
+
   return (
     <div className="profil">
-      <CardProfil name="Marcus Thompson" location="Seattle, WA" />
+      <CardProfil
+        name={user.name}
+        bio={user.bio}
+        url_image={user.url_image}
+        location={user.location}
+      />
       <div className="profil__content">
-        <Skills
-          sport={[
-            { id: 1, name: "Soccer", niveau: "advanced", duration: 5 },
-            { id: 2, name: "Tennis", niveau: "intermediate", duration: 3 },
-            { id: 3, name: "Basketball", niveau: "beginner", duration: 1 },
-          ]}
-        />
+        <Skills sport={user.sports} />
         <Performances matches={142} victories={105} mvpCount={28} streak={5} />
       </div>
       <section className="Up-coming-section">
@@ -38,7 +42,6 @@ const Profil = () => {
             VOIR TOUT
           </Link>
         </div>
-
         <div className="Up-coming-grid">
           {events.slice(0, 4).map((event) => (
             <UpComingEvent key={event.id} avenir={event} />
