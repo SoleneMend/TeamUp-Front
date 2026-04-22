@@ -1,15 +1,15 @@
+import { Calendar, CircleX, Clock, Info, MapPinned, Users } from "lucide-react";
 import { useState } from "react";
+import type { Event } from "../../services/useEvents";
 import "./CardSessions.css";
 
 interface CardSessionsProps {
-  imageUrl: string;
+  event: Event;
 }
 
-type ActiveInfo = "A" | "B" | "C" | "D" | null;
-
-function CardSessions({ imageUrl }: CardSessionsProps) {
+function CardSessions({ event }: CardSessionsProps) {
   const [flipped, setFlipped] = useState(false);
-  const [activeInfo, setActiveInfo] = useState<ActiveInfo>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -17,62 +17,15 @@ function CardSessions({ imageUrl }: CardSessionsProps) {
         <div className="flip-cardSessions-container">
           <div
             className="flip-cardSessions-front"
-            style={{ backgroundImage: `url(${imageUrl})` }}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.60)), url(${event.img_url_event})`,
+            }}
           >
-            <span className="cardSessions-badge">NOM DU SPORT</span>
-            <p className="cardSessions-title">NOM DE L'EVENEMENT</p>
-            <p>LOCALISATION DE L'EVENEMENT</p>
-            <button
-              type="button"
-              className="flip-cardSession-button"
-              onClick={() => setFlipped(!flipped)}
-            >
-              Informations
-            </button>
-          </div>
-
-          <div className="flip-cardSessions-back">
-            <p className="cardSessions-title">Nom de l'event</p>
-            <div className="cardSessions-back-infos">
-              <div className="cardSessions-back-info-A">
-                Date de l'event
-                <button
-                  type="button"
-                  className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("A")}
-                >
-                  ...
-                </button>
-              </div>
-              <div className="cardSessions-back-info-B">
-                Horaires de l'event
-                <button
-                  type="button"
-                  className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("B")}
-                >
-                  +
-                </button>
-              </div>
-              <div className="cardSessions-back-info-C">
-                TeamUp players
-                <button
-                  type="button"
-                  className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("C")}
-                >
-                  +
-                </button>
-              </div>
-              <div className="cardSessions-back-info-D">
-                Places restantes
-                <button
-                  type="button"
-                  className="cardSessions-modal-button"
-                  onClick={() => setActiveInfo("D")}
-                >
-                  +
-                </button>
+            <div className="cardSessions-front-text-global">
+              <div className="cardSessions-front-text">
+                <span className="cardSessions-badge">{event.sport?.name}</span>
+                <h2 className="cardSessions-title">{event.name}</h2>
+                <h3 className="cardSessions-undertitle">{event.description}</h3>
               </div>
             </div>
             <button
@@ -80,25 +33,84 @@ function CardSessions({ imageUrl }: CardSessionsProps) {
               className="flip-cardSession-button"
               onClick={() => setFlipped(!flipped)}
             >
-              Retourner
+              <Info />
+            </button>
+          </div>
+
+          <div className="flip-cardSessions-back">
+            <h2 className="cardSessions-title-back">{event.name}</h2>
+            <div className="cardSessions-back-infos">
+              <div className="cardSessions-back-info-A">
+                <Calendar size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">DATE</span>
+                <span className="cardSessions-info-value">{event.date}</span>
+              </div>
+              <div className="cardSessions-back-info-B">
+                <Clock size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">HORAIRE</span>
+                <span className="cardSessions-info-value">{event.heure}</span>
+              </div>
+              <div className="cardSessions-back-info-C">
+                <Users size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">JOUEURS</span>
+                <span className="cardSessions-info-value">
+                  {event.people_joining?.length ?? 0} / {event.max_people}
+                </span>
+              </div>
+              <div className="cardSessions-back-info-D">
+                <MapPinned size={20} className="cardSessions-info-icon" />
+                <span className="cardSessions-info-label">LIEUX DU RDV</span>
+                <button
+                  type="button"
+                  className="cardSessions-modal-button"
+                  onClick={() => setModalOpen(true)}
+                >
+                  Voir
+                </button>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="flip-cardSession-button-bottom"
+              onClick={() => setFlipped(!flipped)}
+            >
+              <CircleX />
             </button>
           </div>
         </div>
       </div>
 
-      {activeInfo !== null && (
+      {modalOpen && (
         <>
           <div className="cardSessions-overlay">
-            <button type="button" onClick={() => setActiveInfo(null)}></button>
+            <button type="button" onClick={() => setModalOpen(false)}></button>
           </div>
           <div className="cardSessions-modal">
-            {activeInfo === "A" && <p>Détails date</p>}
-            {activeInfo === "B" && <p>Détails horaires</p>}
-            {activeInfo === "C" && <p>Détails players</p>}
-            {activeInfo === "D" && <p>Détails places restantes</p>}
-            <button type="button" onClick={() => setActiveInfo(null)}>
-              Fermer
-            </button>
+            <div className="cardSessions-modal-map">
+              <iframe
+                title="Localisation"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(event.localisation)}&output=embed`}
+              />
+            </div>
+            <div className="cardSessions-modal-info">
+              <div className="cardSessions-modal-title-group">
+                <MapPinned size={23} className="cardSessions-info-icon" />
+                <h3 className="cardSessions-modal-title">Localisation</h3>
+              </div>
+              <p className="cardSessions-modal-location">
+                {event.localisation}
+              </p>
+              <button
+                type="button"
+                className="cardSessions-modal-close"
+                onClick={() => setModalOpen(false)}
+              >
+                Fermer
+              </button>
+            </div>
           </div>
         </>
       )}

@@ -1,24 +1,56 @@
 .flip-cardSessions {
   width: 800px;
-  height: 400px;
+  height: 320px;
   perspective: 1000px;
-}
-.cardSessions-badge {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  background-color: var(--color-secondary);
-  color: var(--color-neutral);
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 6px 12px;
   border-radius: 25px;
 }
 
+.cardSessions-front-text-global {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.cardSessions-front-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  /* padding-left: 90px; */
+  gap: 2px;
+}
+
+.cardSessions-badge {
+  /* position: absolute; */
+  top: 80px;
+  left: 90px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  color: var(--color-neutral);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 18px;
+  border-radius: 25px;
+}
 .cardSessions-title {
   font-size: 2.4rem;
   font-weight: 900;
-  text-align: center;
+  margin-top: 12px;
+  text-align: start;
+  width: 100%;
+  word-break: break-word;
+}
+
+.cardSessions-undertitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: start;
+  width: 100%;
+  word-break: break-word;
+  padding-right: 51px;
 }
 
 .flip-cardSessions-container {
@@ -45,8 +77,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid var(--color-secondary);
-  border-radius: 10px;
+  border-radius: 25px;
   overflow: hidden;
 }
 
@@ -55,18 +86,27 @@
   background-position: center;
   font-weight: 700;
   color: var(--color-neutral);
+  border-radius: 25px;
 }
 
 .flip-cardSessions-back {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     var(--color-hover) 32%,
     var(--color-neutral)
-  );
+  ); */
+  background-color: var(--color-hover);
   color: var(--color-primary);
   transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
 }
-
+.cardSessions-title-back {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  width: 100%;
+}
 .cardSessions-back-infos {
   display: flex;
   gap: 25px;
@@ -85,36 +125,90 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  padding: 13px;
-  border-radius: 10px;
+  gap: 6px;
+  padding: 16px 13px;
+  border-radius: 20px;
   background-color: var(--color-neutral);
-  font-size: 0.85rem;
+}
+
+.cardSessions-info-icon {
+  color: var(--color-secondary);
+}
+
+.cardSessions-info-label {
+  font-size: 0.7rem;
   font-weight: 600;
+  color: var(--color-primary);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cardSessions-info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .cardSessions-back-info-D {
   background-color: var(--color-secondary);
+}
+
+.cardSessions-back-info-D .cardSessions-info-icon,
+.cardSessions-back-info-D .cardSessions-info-label {
   color: var(--color-neutral);
+  opacity: 1;
 }
 
 .flip-cardSession-button {
   position: absolute;
-  bottom: 15px;
-  right: 25px;
-  padding: 6px 12px;
-  border: 1px solid var(--color-secondary);
-  border-radius: 10px;
-  background: transparent;
+  top: 30px;
+  right: 30px;
+  border: 0px solid var(--color-secondary);
+  border-radius: 50px;
+  background: none;
   color: var(--color-secondary);
   cursor: pointer;
 }
 
 .flip-cardSession-button:hover {
-  background: var(--color-secondary);
-  border: 1px solid var(--color-darker);
+  background: none;
   color: var(--color-neutral);
-  transform: scale(1.2);
+  transform: scale(1.4);
+}
+
+.flip-cardSession-button-bottom {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border: 0px solid var(--color-secondary);
+  border-radius: 50px;
+  background: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.flip-cardSession-button-bottom:hover {
+  background: none;
+  color: var(--color-primary);
+  transform: scale(1.4);
+}
+
+.cardSessions-modal-button {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-neutral);
+  background: transparent;
+  border: 1px solid var(--color-neutral);
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.cardSessions-modal-button:hover {
+  background: var(--color-neutral);
+  color: var(--color-secondary);
 }
 
 .cardSessions-overlay {
@@ -137,22 +231,69 @@
   transform: translate(-50%, -50%);
   background: var(--color-hover);
   color: var(--color-primary);
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--color-secondary);
+  padding: 32px;
+  border-radius: 25px;
+  /* border: 0px solid var(--color-secondary); */
   z-index: 20;
-  min-width: 300px;
+  width: 700px;
+  height: 320px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: row;
+  gap: 32px;
 }
 
-.cardSessions-modal-button {
-  width: 16px;
-  height: 16px;
+.cardSessions-modal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-width: 200px;
+  height: 100%;
+}
+
+.cardSessions-modal-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.cardSessions-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardSessions-modal-location {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-darker);
+}
+
+.cardSessions-modal-close {
+  align-self: center;
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--color-hover);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
   border-radius: 5px;
-  position: absolute;
-  bottom: 60%;
-  right: 3%;
+  padding: 6px 14px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.cardSessions-modal-close:hover {
+  background: var(--color-secondary);
+  color: var(--color-hover);
+  border: 1px solid var(--color-secondary);
+}
+
+.cardSessions-modal-map {
+  flex: 1;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.cardSessions-modal-map iframe {
+  border: none;
 }

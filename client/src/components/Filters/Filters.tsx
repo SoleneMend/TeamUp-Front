@@ -1,4 +1,11 @@
-function Filters() {
+// import { useState } from "react";
+// import useEvents from "../../services/useEvents"
+
+type FiltersProps = {
+  city: string;
+  setCity: React.Dispatch<React.SetStateAction<string>>;
+};
+function Filters({ city, setCity }: FiltersProps) {
   return (
     <aside className="filters">
       <div className="filters-header">
@@ -19,6 +26,16 @@ function Filters() {
           <button type="button">🏐 Volley</button>
         </div>
       </div>
+      <div className="filter-group">
+        <input
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          className="filter-search"
+          type="search"
+          placeholder="Ecrivez votre ville..."
+        />
+        {/* <input className="filter-input" type="range" min="1" max="20" /> */}
+      </div>
 
       <div className="filter-group">
         <p>Niveau</p>
@@ -37,11 +54,6 @@ function Filters() {
         </label>
       </div>
 
-      <div className="filter-group">
-        <p>Distance maximale</p>
-        <input className="filter-input" type="range" min="1" max="20" />
-        <span>15 km</span>
-      </div>
       <div className="filter-group">
         <p>Date preferée</p>
         <input className="filter-input" type="date" />
