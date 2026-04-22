@@ -1,18 +1,21 @@
 import { Calendar } from "lucide-react";
 import { Link } from "react-router";
+import Achievements from "../../components/Achievements/Achievements";
 import CardProfil from "../../components/CardProfil/CardProfil";
 import Performances from "../../components/Performances/Performances";
 import RecentActivity from "../../components/RecentActivity/RecentActivity";
 import Skills from "../../components/Skills/Skills";
-
 import UpComingEvent from "../../components/UpComingEvent/UpComingEvent";
 import useEvents from "../../services/useEvents";
+import useUsers from "../../services/useUsers";
 
 import "./Profil.css";
 import "../../components/UpComingEvent/UpComingEvent.css";
 
 const Profil = () => {
   const events = useEvents();
+  const users = useUsers();
+
   return (
     <div className="profil">
       <CardProfil name="Marcus Thompson" location="Seattle, WA" />
@@ -38,14 +41,15 @@ const Profil = () => {
             VOIR TOUT
           </Link>
         </div>
-
         <div className="Up-coming-grid">
           {events.slice(0, 4).map((event) => (
-            <UpComingEvent key={event.id} avenir={event} />
+            <UpComingEvent key={event.id} avenir={event} users={users} />
           ))}
         </div>
       </section>
-      <section className="achievements-grid"></section>
+      <section className="achievements-grid">
+        <Achievements />
+      </section>
       <section className="recent-activity-grid">
         <RecentActivity events={events.slice(8, 11)} />
       </section>

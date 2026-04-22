@@ -1,0 +1,82 @@
+.achievements-section {
+  border: 1px solid var(--color-border);
+  padding: 1.8rem;
+  border-radius: 30px;
+}
+
+.achievements-title-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.achievements-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.achievements-title p {
+  background-color: var(--color-hover);
+  padding: 8px 11px;
+  border-radius: 20px;
+  color: var(--color-secondary);
+}
+
+.achievements-top {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.achievements-bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.achievements-badge {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+
+.achievements-badge-orange,
+.achievements-badge-darker,
+.achievements-badge-lock,
+.achievements-badge-undefined {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.achievements-badge-orange div {
+  background-color: var(--color-hover);
+  color: var(--color-secondary);
+  padding: 25px 30px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.achievements-badge-darker div {
+  background-color: var(--color-background-filter);
+  color: var(--color-darker);
+  padding: 25px 30px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.achievements-badge-lock div {
+  background-color: rgba(200, 191, 191, 0.051);
+  color: rgba(71, 67, 67, 0.116);
+  padding: 25px 30px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.achievements-badge-undefined div {
+  border: 2px dashed rgba(71, 67, 67, 0.116);
+  color: var(--color-border);
+  padding: 25px 30px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}

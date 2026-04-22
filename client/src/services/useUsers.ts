@@ -25,16 +25,15 @@ export interface Users {
     mvp_count: number;
   };
 }
-[];
 
 const useUsers = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<Users[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3310/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
-  }, []); // <- le [] est important !
+  }, []);
 
   return users;
 };
