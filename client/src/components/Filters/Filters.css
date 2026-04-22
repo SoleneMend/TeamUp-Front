@@ -1,7 +1,6 @@
 .layout {
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: 50px;
 }
 
 .filters {
@@ -182,6 +181,6 @@ input[type="date"] {
 .right-content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 10px 20px;
+
+  padding: 20px;
 }

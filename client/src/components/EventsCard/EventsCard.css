@@ -11,13 +11,6 @@
   align-items: stretch;
 }
 
-.content h2 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 50px;
-  color: var(--color-primary);
-}
-
 .content p.subtitle {
   color: var(--muted);
   margin-bottom: 2rem;
@@ -33,7 +26,8 @@
     transform 0.2s,
     box-shadow 0.2s;
 
-  width: 320px;
+  width: 100%;
+  position: relative;
 }
 
 .horizontal-card .card {
@@ -93,11 +87,11 @@
   width: 100%;
 }
 
-.upcoming-list {
+/* .upcoming-list {
   margin-bottom: 10px;
   padding-bottom: 20px;
   border-bottom: 2px solid #e5e5e5;
-}
+} */
 
 .card:hover {
   transform: translateY(-4px);
