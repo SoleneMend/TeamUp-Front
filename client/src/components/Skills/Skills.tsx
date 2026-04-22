@@ -3,8 +3,8 @@ import "./Skills.css";
 
 type Sport = {
   name: string;
-  level: string;
-  level_comp: number;
+  niveau: string;
+  duration: number;
 };
 
 interface SkillsProps {
@@ -27,9 +27,9 @@ const Skills = ({ sport }: SkillsProps) => {
         <div key={element.name} className="skills__item">
           <div className="skills__item-header">
             <h3 className="skills__item-name">{element.name}</h3>
-            <p className="skills__item-level">{element.level}</p>
+            <p className="skills__item-level">{element.niveau}</p>
           </div>
-          <progress value={element.level_comp} max={100} />
+          <progress value={element.duration} max={6} />
         </div>
       ))}
 

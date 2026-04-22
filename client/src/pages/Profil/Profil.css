@@ -24,7 +24,7 @@
   grid-column: span 2;
 }
 
-/* En attente mais devra prendre la dernière colonne */
+/* Doit prendre la dernière colonne */
 .achievements-grid {
   grid-column: span 1;
 }
