@@ -2,10 +2,9 @@ import { Gauge } from "lucide-react";
 import "./Skills.css";
 
 type Sport = {
-  id: number;
   name: string;
-  niveau: string;
-  duration: number;
+  level: string;
+  level_comp: number;
 };
 
 interface SkillsProps {
@@ -13,16 +12,6 @@ interface SkillsProps {
 }
 
 const Skills = ({ sport }: SkillsProps) => {
-  const niveauToValue = (niveau: string): number => {
-    if (niveau === "advanced") {
-      return 75;
-    } else if (niveau === "intermediate") {
-      return 50;
-    } else {
-      return 25;
-    }
-  };
-
   return (
     <div className="skills">
       <div className="Skills-title-details">
@@ -35,14 +24,15 @@ const Skills = ({ sport }: SkillsProps) => {
       </div>
 
       {sport.map((element) => (
-        <div key={element.id} className="skills__item">
+        <div key={element.name} className="skills__item">
           <div className="skills__item-header">
             <h3 className="skills__item-name">{element.name}</h3>
-            <p className="skills__item-level">{element.niveau}</p>
+            <p className="skills__item-level">{element.level}</p>
           </div>
-          <progress value={niveauToValue(element.niveau)} max={100} />
+          <progress value={element.level_comp} max={100} />
         </div>
       ))}
+
       <button type="button" className="skills__button">
         Voir les détails
       </button>
