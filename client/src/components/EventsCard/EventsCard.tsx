@@ -14,14 +14,15 @@ function EventsCard({ event }: Props) {
 
       <img src={event.img_url_event} alt={event.name} />
 
+      <div className="card-header">
+        <h3>{event.name}</h3>
+      </div>
       <div className="card-body">
-        <div className="card-header">
-          <h3>{event.name}</h3>
-        </div>
         <p className="location">📍 {event.localisation}</p>
         <p className="date">
           🕐 {event.date}, {event.heure}
         </p>
+
         <button type="button" className="join-btn">
           {" "}
           Rejoindre l'évènement

@@ -1,14 +1,3 @@
-.layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-}
-
-.right-content {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
 .card {
   background-color: var(--color-neutral);
   border-radius: 10px;
@@ -20,16 +9,6 @@
 
   width: 100%;
   position: relative;
-}
-
-.horizontal-card .card {
-  display: flex;
-  height: 140px;
-}
-
-.horizontal-card img {
-  width: 140px;
-  height: 100%;
 }
 
 .card-body {
@@ -61,29 +40,9 @@
 
 .card-body button:hover {
   background: var(--green);
-  color: #13402b;
+  color: var(--color-primary);
   border-color: var(--green);
 }
-
-.horizontal-card {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-}
-
-/* .upcoming-list {
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #e5e5e5;
-} */
 
 .card:hover {
   transform: translateY(-4px);
@@ -115,6 +74,7 @@
 }
 
 .card-header {
+  padding: 1rem 1.2rem 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
