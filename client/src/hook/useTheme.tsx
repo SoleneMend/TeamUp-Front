@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, type ReactNode, useState } from "react";
 
 // 1. Le contexte contient aussi toggleTheme
 interface ThemeContextType {
@@ -6,7 +6,7 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 interface ThemeContextProviderType {
-  children: string;
+  children: ReactNode;
 }
 export const ThemeContext = createContext<ThemeContextType>({
   theme: "Détente",

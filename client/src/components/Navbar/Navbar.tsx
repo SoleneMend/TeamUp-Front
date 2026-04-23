@@ -20,7 +20,7 @@ function Navbar(): React.JSX.Element {
   useEffect(() => {
     fetch("http://localhost:3310/users")
       .then((res) => res.json())
-      .then((res) => setUser(res[0]));
+      .then((res) => setUser(res[1]));
   }, []);
 
   return (

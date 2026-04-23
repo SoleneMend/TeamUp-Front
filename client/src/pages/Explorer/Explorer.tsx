@@ -4,24 +4,54 @@ import Filters from "../../components/Filters/Filters";
 import useEvents from "../../services/useEvents";
 
 function Explorer() {
-  const [city, setCity] = useState("");
+  // const [event, setEvent] = useState("");
   const events = useEvents();
-  const [findSport, setFindSport] = useState("");
+  // // const [findSport, setFindSport] = useState("");
   // const filteredSport = events.filter((s) =>
   //   s.sport?.name.toLocaleLowerCase().includes(findSport.toLocaleLowerCase()),
   // );
-  const filteredEvents = events.filter((e) =>
-    e.localisation?.toLowerCase().includes(city.toLowerCase()),
-  );
+  // const filteredEvents = events.filter((e) =>
+  //   e.localisation?.toLowerCase().includes(city.toLowerCase()),
+  // );
+  const [filtreSport, setFiltreSport] = useState<string>("");
+  const [filtreVille, setFiltreVille] = useState<string>("");
+  const [filtreDate, setFiltreDate] = useState<string>("");
+  const reinitialiserFiltres = () => {
+    setFiltreSport("");
+    setFiltreVille("");
+    setFiltreDate("");
+  };
+
+  const eventsFiltres = events
+    .filter((e) =>
+      filtreSport
+        ? e.sport?.name.toLocaleLowerCase() === filtreSport.toLocaleLowerCase()
+        : true,
+    )
+    .filter((e) =>
+      filtreVille
+        ? e.localisation
+            .toLocaleLowerCase()
+            .includes(filtreVille.toLocaleLowerCase())
+        : true,
+    )
+    .filter((e) =>
+      filtreDate
+        ? String(e.date).toLocaleLowerCase() === filtreDate.toLocaleLowerCase()
+        : true,
+    );
 
   return (
     <main className="content">
       <div className="layout">
         <Filters
-          city={city}
-          setCity={setCity}
-          findSport={findSport}
-          setFindSport={setFindSport}
+          filtreDate={filtreDate}
+          setFiltreDate={setFiltreDate}
+          filtreSport={filtreSport}
+          setFiltreSport={setFiltreSport}
+          filtreVille={filtreVille}
+          setFiltreVille={setFiltreVille}
+          reinitialiserFiltres={reinitialiserFiltres}
         />
 
         <div className="right-content">
@@ -38,7 +68,7 @@ function Explorer() {
             {/* <h2>Tous les évènements</h2> */}
 
             <div className="events-grid">
-              {filteredEvents.map((event) => (
+              {eventsFiltres.map((event) => (
                 <EventsCard key={event.id} event={event} />
               ))}
               {/* {filteredSport.map((sport)=> (
