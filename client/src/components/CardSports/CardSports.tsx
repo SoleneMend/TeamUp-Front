@@ -1,22 +1,27 @@
+import { Link } from "react-router";
+import type { Sports } from "../../services/useSports";
 import "./CardSports.css";
 
-type CardSportsProps = {
-  name: string;
-  description: string;
-  image: string;
-  link: string;
-};
+interface CardSportsProps {
+  sports: Sports;
+}
 
-function CardSports({ name, description, image, link }: CardSportsProps) {
+function CardSports({ sports }: CardSportsProps) {
   return (
     <div
       className="cardSports_Wrap"
-      style={{ backgroundImage: `url(${image})` }}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.40)), url(${sports.img_url_event})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <div className="cardSports_Content">
-        <h3>{name}</h3>
-        <p>{description}</p>
-        <a href={link}>Explore</a>
+        <h3>{sports.sport?.name}</h3>
+        <p>{sports.description}</p>
+        <Link to="/explorer" className="cardSports_Content-link">
+          Explore
+        </Link>
       </div>
     </div>
   );

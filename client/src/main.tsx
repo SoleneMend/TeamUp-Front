@@ -11,9 +11,6 @@ import Sessions from "./pages/Sessions/Sessions";
 
 import "./index.css";
 
-// import Events from "./pages/Events/Events";
-// import Sessions from "./pages/Sessions/Sessions";
-
 const router = createBrowserRouter([
   {
     element: <App />,
