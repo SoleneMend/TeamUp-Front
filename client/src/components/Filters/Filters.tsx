@@ -4,8 +4,10 @@
 type FiltersProps = {
   city: string;
   setCity: React.Dispatch<React.SetStateAction<string>>;
+  findSport: string;
+  setFindSport: React.Dispatch<React.SetStateAction<string>>;
 };
-function Filters({ city, setCity }: FiltersProps) {
+function Filters({ city, setCity, findSport, setFindSport }: FiltersProps) {
   return (
     <aside className="filters">
       <div className="filters-header">
