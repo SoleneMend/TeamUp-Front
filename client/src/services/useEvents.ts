@@ -9,7 +9,7 @@ export interface Event {
   date: number;
   heure: number;
   max_people: number;
-  people_joining?: [];
+  people_joining?: string[];
   sport?: {
     name: string;
     niveau: string;
