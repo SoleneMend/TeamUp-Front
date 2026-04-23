@@ -16,7 +16,7 @@ function Home() {
         <div className="container-card-sports">
           {sports
             // Ajout du filtre pour sélectionner les cards qu'on veut afficher
-            .filter((sport) => [3, 5, 6, 8, 10, 14].includes(sport.id))
+            .filter((sport) => [2, 5, 15, 3, 6, 11].includes(sport.id))
             .map((sports) => (
               <CardSports key={sports.id} sports={sports} />
             ))}

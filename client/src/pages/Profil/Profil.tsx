@@ -15,7 +15,7 @@ import "../../components/UpComingEvent/UpComingEvent.css";
 const Profil = () => {
   const events = useEvents();
   const users = useUsers();
-  const user = users[3];
+  const user = users[1];
 
   if (!user) return <p>Chargement...</p>;
 
@@ -53,7 +53,7 @@ const Profil = () => {
         <Achievements />
       </section>
       <section className="recent-activity-grid">
-        <RecentActivity events={events.slice(8, 11)} />
+        <RecentActivity events={events.slice(6, 9)} />
       </section>
     </div>
   );
