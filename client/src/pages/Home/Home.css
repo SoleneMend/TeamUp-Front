@@ -1,4 +1,23 @@
-/* .home-wrap {
+.home-wrap {
   display: flex;
+  flex-direction: column;
   margin: 60px;
-} */
+}
+
+.home-cardSports-title {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  letter-spacing: 8px;
+}
+
+.container-card-sports {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}

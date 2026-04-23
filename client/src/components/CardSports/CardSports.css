@@ -1,7 +1,8 @@
 .cardSports_Wrap {
   position: relative;
-  width: 420px;
-  height: 420px;
+  /* Voir avec Yoan, avant 420px */
+  width: 380px;
+  height: 380px;
   border-radius: 25px;
   overflow: hidden;
   background-size: cover;
