@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { Event } from "../../services/useEvents";
 import "./Chatbot.css";
 
 type Message = {
@@ -32,15 +33,18 @@ const getTime = () =>
   });
 
 interface ChatbotProps {
-  contactName: string;
+  event?: Event;
+  contactName?: string;
 }
 
-const Chatbot = ({ contactName }: ChatbotProps) => {
+const Chatbot = ({ event, contactName: nameProp }: ChatbotProps) => {
+  const contactName = event?.name ?? nameProp ?? "Inconnu";
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 0,
       role: "assistant",
-      content: `Salut ! C'est ${contactName} 🎾 Je suis nouveau sur la plateforme. Ça te dit de faire un tennis ?`,
+      content: `Salut ! Tu es intéressé(e) par "${contactName}" ? N'hésite pas à me poser tes questions ! 👋`,
       time: getTime(),
     },
   ]);
@@ -52,7 +56,7 @@ const Chatbot = ({ contactName }: ChatbotProps) => {
       {
         id: 0,
         role: "assistant",
-        content: `Salut ! C'est ${contactName} 🎾 Je suis nouveau sur la plateforme. Ça te dit de faire un tennis ?`,
+        content: `Salut ! Tu es intéressé(e) par "${contactName}" ? N'hésite pas à me poser tes questions ! 👋`,
         time: getTime(),
       },
     ]);

@@ -5,15 +5,21 @@ import "./CardSessions.css";
 
 interface CardSessionsProps {
   event: Event;
+  isActive?: boolean;
+  onClick?: () => void;
 }
 
-function CardSessions({ event }: CardSessionsProps) {
+function CardSessions({ event, isActive, onClick }: CardSessionsProps) {
   const [flipped, setFlipped] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
-      <div className={`flip-cardSessions ${flipped ? "flipped" : ""}`}>
+      <button
+        type="button"
+        className={`flip-cardSessions ${flipped ? "flipped" : ""} ${isActive ? "flip-cardSessions--active" : ""}`}
+        onClick={onClick}
+      >
         <div className="flip-cardSessions-container">
           <div
             className="flip-cardSessions-front"
@@ -31,7 +37,10 @@ function CardSessions({ event }: CardSessionsProps) {
             <button
               type="button"
               className="flip-cardSession-button"
-              onClick={() => setFlipped(!flipped)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setFlipped(!flipped);
+              }}
             >
               <Info />
             </button>
@@ -63,7 +72,10 @@ function CardSessions({ event }: CardSessionsProps) {
                 <button
                   type="button"
                   className="cardSessions-modal-button"
-                  onClick={() => setModalOpen(true)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setModalOpen(true);
+                  }}
                 >
                   Voir
                 </button>
@@ -72,13 +84,16 @@ function CardSessions({ event }: CardSessionsProps) {
             <button
               type="button"
               className="flip-cardSession-button-bottom"
-              onClick={() => setFlipped(!flipped)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setFlipped(!flipped);
+              }}
             >
               <CircleX />
             </button>
           </div>
         </div>
-      </div>
+      </button>
 
       {modalOpen && (
         <>
