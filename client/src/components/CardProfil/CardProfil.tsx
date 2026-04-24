@@ -9,16 +9,11 @@ interface CardProfilProps {
   location: string;
 }
 
-const CardProfil = ({
-  name,
-  bio = "Passionné de sport et toujours prêt pour un nouveau défi.",
-  url_image = defaultAvatar,
-  location,
-}: CardProfilProps) => {
+const CardProfil = ({ name, bio, url_image, location }: CardProfilProps) => {
   return (
     <div className="card-profil">
       <div className="card-profil__image">
-        <img src={url_image} alt={name} />
+        <img src={url_image ?? defaultAvatar} alt={name} />
       </div>
       <div className="card-profil__content">
         <h2 className="card-profil__name">{name}</h2>
@@ -27,7 +22,7 @@ const CardProfil = ({
           <span className="card-profil__location">
             <MapPin size={16} />
             {location}
-          </span>{" "}
+          </span>
           <button type="button" className="card-profil__button">
             <Pencil size={16} />
             Edit profile
