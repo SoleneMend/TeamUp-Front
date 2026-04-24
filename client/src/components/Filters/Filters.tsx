@@ -2,15 +2,31 @@
 // import useEvents from "../../services/useEvents"
 
 type FiltersProps = {
-  city: string;
-  setCity: React.Dispatch<React.SetStateAction<string>>;
+  filtreSport: string;
+  setFiltreSport: React.Dispatch<React.SetStateAction<string>>;
+  filtreVille: string;
+  setFiltreVille: React.Dispatch<React.SetStateAction<string>>;
+  filtreDate: string;
+  setFiltreDate: React.Dispatch<React.SetStateAction<string>>;
+  reinitialiserFiltres: () => void;
 };
-function Filters({ city, setCity }: FiltersProps) {
+function Filters({
+  reinitialiserFiltres,
+  filtreDate,
+  setFiltreDate,
+  setFiltreSport,
+  filtreVille,
+  setFiltreVille,
+}: FiltersProps) {
   return (
     <aside className="filters">
       <div className="filters-header">
         <h3>Filters</h3>
-        <button type="button" className="clear-btn">
+        <button
+          onClick={reinitialiserFiltres}
+          type="button"
+          className="clear-btn"
+        >
           Effacer
         </button>
       </div>
@@ -18,18 +34,26 @@ function Filters({ city, setCity }: FiltersProps) {
       <div className="filter-group">
         <p>Sport</p>
         <div className="buttons">
-          <button type="button" className="active">
+          <button type="button" onClick={() => setFiltreSport("football")}>
             ⚽ Football
           </button>
-          <button type="button">🎾 Tennis</button>
-          <button type="button">🏀 Basket</button>
-          <button type="button">🏐 Volley</button>
+          <button type="button" onClick={() => setFiltreSport("tennis")}>
+            🎾 Tennis
+          </button>
+
+          <button onClick={() => setFiltreSport("basketball")} type="button">
+            🏀 Basket
+          </button>
+          <button onClick={() => setFiltreSport("volleyball")} type="button">
+            🏐 Volley
+          </button>
         </div>
       </div>
       <div className="filter-group">
+        <p>Localisation</p>
         <input
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
+          value={filtreVille}
+          onChange={(e) => setFiltreVille(e.target.value)}
           className="filter-search"
           type="search"
           placeholder="Ecrivez votre ville..."
@@ -56,7 +80,12 @@ function Filters({ city, setCity }: FiltersProps) {
 
       <div className="filter-group">
         <p>Date preferée</p>
-        <input className="filter-input" type="date" />
+        <input
+          value={filtreDate}
+          onChange={(e) => setFiltreDate(e.target.value)}
+          className="filter-input"
+          type="date"
+        />
       </div>
 
       <button type="button" className="apply-btn">
