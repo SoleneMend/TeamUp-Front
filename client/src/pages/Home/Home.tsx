@@ -1,11 +1,16 @@
 import CardSports from "../../components/CardSports/CardSports";
+import EventsCard from "../../components/EventsCard/EventsCard";
 import Hero from "../../components/Hero/Hero";
+import useEvents from "../../services/useEvents";
 import useSports from "../../services/useSports";
+
 import "./Home.css";
 
 function Home() {
   const sports = useSports();
+  const events = useEvents();
 
+  const homeEventIds = [1, 2, 28, 46];
   return (
     <div className="home-wrap">
       <section className="home-hero_container">
@@ -16,7 +21,7 @@ function Home() {
         <div className="container-card-sports">
           {sports
             // Ajout du filtre pour sélectionner les cards qu'on veut afficher
-            .filter((sport) => [2, 5, 15, 3, 6, 11].includes(sport.id))
+            .filter((sport) => [1, 2, 15, 17, 47, 28].includes(sport.id))
             .map((sports) => (
               <CardSports key={sports.id} sports={sports} />
             ))}
@@ -24,7 +29,13 @@ function Home() {
       </section>
       <section className="home-suggestEvent-container">
         <h2 className="home-suggestEvent-title">Suggestions d'évènements</h2>
-        <div className="container-suggestEvent"></div>
+        <div className="container-event-grid-home">
+          {events
+            .filter((event) => homeEventIds.includes(event.id))
+            .map((event) => (
+              <EventsCard key={event.id} event={event} />
+            ))}
+        </div>
       </section>
     </div>
   );

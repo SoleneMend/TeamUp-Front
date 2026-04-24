@@ -43,7 +43,7 @@ function UpComingEvent({ avenir }: UpComingEventProps) {
               <div className="avatar avatar-count">+{remainingCount}</div>
             )}
           </div>
-          <Link to="/explorer">
+          <Link to="/sessions">
             <ChevronRight />
           </Link>
         </div>
