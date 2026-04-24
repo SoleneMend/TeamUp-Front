@@ -10,7 +10,7 @@ function Home() {
   const sports = useSports();
   const events = useEvents();
 
-  const homeEventIds = [3, 7, 15, 21, 4, 9, 12, 18];
+  const homeEventIds = [1, 2, 28, 46];
   return (
     <div className="home-wrap">
       <section className="home-hero_container">
