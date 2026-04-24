@@ -1,11 +1,16 @@
 import CardSports from "../../components/CardSports/CardSports";
+import EventsCard from "../../components/EventsCard/EventsCard";
 import Hero from "../../components/Hero/Hero";
+import useEvents from "../../services/useEvents";
 import useSports from "../../services/useSports";
+
 import "./Home.css";
 
 function Home() {
   const sports = useSports();
+  const events = useEvents();
 
+  const homeEventIds = [3, 7, 15, 21, 4, 9, 12, 18];
   return (
     <div className="home-wrap">
       <section className="home-hero_container">
@@ -24,7 +29,13 @@ function Home() {
       </section>
       <section className="home-suggestEvent-container">
         <h2 className="home-suggestEvent-title">Suggestions d'évènements</h2>
-        <div className="container-suggestEvent"></div>
+        <div className="container-event-grid-home">
+          {events
+            .filter((event) => homeEventIds.includes(event.id))
+            .map((event) => (
+              <EventsCard key={event.id} event={event} />
+            ))}
+        </div>
       </section>
     </div>
   );

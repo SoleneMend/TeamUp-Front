@@ -20,7 +20,7 @@ function Hero() {
           <NavLink to="/explorer">Explorer</NavLink>
         </li>
         <li className="hero-button-two">
-          <NavLink to="/explorer">à modifier</NavLink>
+          <NavLink to="/explorer">Créer une session</NavLink>
         </li>
       </ul>
     </section>
