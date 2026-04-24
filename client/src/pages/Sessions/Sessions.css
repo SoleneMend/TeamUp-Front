@@ -1,0 +1,37 @@
+.sessions-wrap {
+  padding: 0 1.5rem;
+}
+.sessions-wrap h1 {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  letter-spacing: 2px;
+}
+
+.sessions-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.sessions-col-cards > h2,
+.sessions-col-chat > h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.sessions-col-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sessions-placeholder {
+  color: var(--color-darker);
+  text-align: center;
+  font-style: italic;
+}
