@@ -47,21 +47,24 @@
 }
 
 .hero-button-one a {
-  text-decoration: none;
   background-color: var(--color-secondary);
-  color: var(--color-neutral);
-  padding: 18px 80px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1.2rem;
 }
 
 .hero-button-two a {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.hero-button-one a,
+.hero-button-two a {
   text-decoration: none;
-  background-color: var(--color-darker);
   color: var(--color-neutral);
-  padding: 18px 80px;
   border-radius: 10px;
   font-weight: 700;
   font-size: 1.2rem;
+  display: inline-block;
+  width: 220px;
+  text-align: center;
+  padding: 18px 0;
 }
