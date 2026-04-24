@@ -35,7 +35,7 @@ function Sessions() {
           <div className="sessions-col-chat">
             <h2>Contact session</h2>
             {selectedEvent ? (
-              <Chatbot event={selectedEvent} />
+              <Chatbot event={selectedEvent} mode="session" />
             ) : (
               <p className="sessions-placeholder">
                 Clique sur une session pour démarrer le TeamUp chat!
