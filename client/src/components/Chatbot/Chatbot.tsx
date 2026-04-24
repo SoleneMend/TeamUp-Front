@@ -76,7 +76,7 @@ Tu n'utilises pas de listes ou de bullet points. Tu parles comme un humain.`;
         time: getTime(),
       },
     ]);
-  }, [contactName, mode]);
+  }, [introMessage]);
 
   const sendMessage = async () => {
     if (input.trim() === "" || isTyping) return;
