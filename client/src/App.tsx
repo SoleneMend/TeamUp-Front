@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, ScrollRestoration } from "react-router";
 
 import "./App.css";
 import Footer from "./components/Footer/Footer";
@@ -22,6 +22,7 @@ function App() {
         <SideBar />
       </aside>
       <main className="main-container">
+        <ScrollRestoration />
         <Outlet />
       </main>
       <footer className="footer-container">

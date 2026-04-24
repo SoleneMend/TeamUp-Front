@@ -69,11 +69,16 @@ function RecentActivity({ events }: RecentActivityProps) {
               </div>
             </div>
             <div className="activity-middle-data">
-              <span>{formatDateRelative(fakeDates[index])}</span>
+              <span className="activity-date">
+                {formatDateRelative(fakeDates[index])}
+              </span>
               <span className={result === "WIN" ? "result-win" : "result-lose"}>
                 {result}
               </span>
               <span className="activity-score">{fakeScores[index]}</span>
+            </div>
+            <div>
+              <span className="activity-stars">{fakeStars[index]}</span>
             </div>
             <div>
               <span>{fakeStars[index]}</span>
