@@ -3,14 +3,17 @@ import "./Chat.css";
 
 import Chatbot from "../../components/Chatbot/Chatbot";
 import ConversationList from "../../components/ConversationList/ConversationList";
+import useUsers from "../../services/useUsers";
 
 const Chat = () => {
-  const [selectedName, setSelectedName] = useState("Yoan C.");
+  const users = useUsers();
+  const [selectedUser, setSelectedUser] = useState<string>("");
+  const contactName = selectedUser || users[0]?.name || "";
 
   return (
     <div className="chat-page">
-      <ConversationList onSelect={setSelectedName} />
-      <Chatbot contactName={selectedName} />
+      <ConversationList users={users} onSelect={setSelectedUser} />
+      <Chatbot contactName={contactName} />
     </div>
   );
 };
