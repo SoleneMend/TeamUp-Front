@@ -63,7 +63,7 @@ function Filters({
           />
         </div>
 
-        <div className="filter-group">
+        {/* <div className="filter-group">
           <p>Niveau</p>
           <label>
             <input className="filter-input" type="checkbox" /> Pro{" "}
@@ -78,7 +78,7 @@ function Filters({
           <label>
             <input className="filter-input" type="checkbox" /> Débutant
           </label>
-        </div>
+        </div> */}
 
         <div className="filter-group">
           <p>Date </p>
