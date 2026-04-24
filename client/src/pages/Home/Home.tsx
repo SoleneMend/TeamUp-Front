@@ -12,7 +12,7 @@ function Home() {
         <Hero />
       </section>
       <section className="home-cardSports-container">
-        <h2 className="home-cardSports-title">Top sports</h2>
+        <h2 className="home-cardSports-title">Vos top sports</h2>
         <div className="container-card-sports">
           {sports
             // Ajout du filtre pour sélectionner les cards qu'on veut afficher
@@ -21,6 +21,10 @@ function Home() {
               <CardSports key={sports.id} sports={sports} />
             ))}
         </div>
+      </section>
+      <section className="home-suggestEvent-container">
+        <h2 className="home-suggestEvent-title">Suggestions d'évènements</h2>
+        <div className="container-suggestEvent"></div>
       </section>
     </div>
   );
