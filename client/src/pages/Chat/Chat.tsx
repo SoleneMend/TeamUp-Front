@@ -13,7 +13,7 @@ const Chat = () => {
   return (
     <div className="chat-page">
       <ConversationList users={users} onSelect={setSelectedUser} />
-      <Chatbot contactName={contactName} />
+      <Chatbot contactName={contactName} mode="chat" />
     </div>
   );
 };

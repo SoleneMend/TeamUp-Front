@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { Event } from "../../services/useEvents";
 import "./Chatbot.css";
 
 type Message = {
@@ -7,12 +8,6 @@ type Message = {
   content: string;
   time: string;
 };
-
-const SYSTEM_PROMPT = `Tu es un utilisateur sympa de la plateforme TeamUp.
-Tu cherches quelqu'un pour faire du sport.
-Tu poses des questions naturelles sur les disponibilités, le niveau, le terrain.
-Tu réponds de façon courte, chaleureuse et conversationnelle, comme un ami.
-Tu n'utilises pas de listes ou de bullet points. Tu parles comme un humain.`;
 
 const FALLBACK_RESPONSES = [
   "Oui super ! Dimanche ça me va parfaitement. Tu veux jouer où ?",
@@ -32,15 +27,40 @@ const getTime = () =>
   });
 
 interface ChatbotProps {
-  contactName: string;
+  event?: Event;
+  contactName?: string;
+  mode?: "session" | "chat";
 }
 
-const Chatbot = ({ contactName }: ChatbotProps) => {
+const Chatbot = ({
+  event,
+  contactName: nameProp,
+  mode = "chat",
+}: ChatbotProps) => {
+  const contactName = event?.name ?? nameProp ?? "Inconnu";
+
+  const systemPrompt =
+    mode === "session"
+      ? `Tu es un assistant pour l'événement sportif "${contactName}" sur TeamUp.
+Tu aides les participants à poser des questions sur l'événement : lieu, horaire, niveau requis, équipement.
+Tu réponds de façon courte, chaleureuse et conversationnelle.
+Tu n'utilises pas de listes ou de bullet points. Tu parles comme un humain.`
+      : `Tu es un utilisateur sympa de la plateforme TeamUp.
+Tu cherches quelqu'un pour faire du sport.
+Tu poses des questions naturelles sur les disponibilités, le niveau, le terrain.
+Tu réponds de façon courte, chaleureuse et conversationnelle, comme un ami.
+Tu n'utilises pas de listes ou de bullet points. Tu parles comme un humain.`;
+
+  const introMessage =
+    mode === "session"
+      ? `Salut ! Tu as des questions sur "${contactName}" ? Je suis là 👋`
+      : `Salut ! C'est ${contactName} 👋 On fait du sport ensemble ?`;
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 0,
       role: "assistant",
-      content: `Salut ! C'est ${contactName} 🎾 Je suis nouveau sur la plateforme. Ça te dit de faire un tennis ?`,
+      content: introMessage,
       time: getTime(),
     },
   ]);
@@ -52,11 +72,11 @@ const Chatbot = ({ contactName }: ChatbotProps) => {
       {
         id: 0,
         role: "assistant",
-        content: `Salut ! C'est ${contactName} 🎾 Je suis nouveau sur la plateforme. Ça te dit de faire un tennis ?`,
+        content: introMessage,
         time: getTime(),
       },
     ]);
-  }, [contactName]);
+  }, [introMessage]);
 
   const sendMessage = async () => {
     if (input.trim() === "" || isTyping) return;
@@ -80,7 +100,7 @@ const Chatbot = ({ contactName }: ChatbotProps) => {
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
-          system: SYSTEM_PROMPT,
+          system: systemPrompt,
           messages: updatedMessages.map(({ role, content }) => ({
             role,
             content,
