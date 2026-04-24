@@ -3,11 +3,16 @@
   /* border: 1px solid var(--color-darker); */
   padding: 25px;
   width: 260px;
+  position: relative;
+  align-self: stretch;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+}
+.filters section {
+  top: 10px;
+  position: sticky;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  align-self: stretch;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
 }
 
 .filters-header {
@@ -171,4 +176,17 @@ input[type="date"] {
 .apply-btn:hover {
   background-color: var(--color-secondary);
   opacity: 0.9;
+}
+.reset-pageButton {
+  background-color: var(--color-neutral);
+  border-radius: 10px;
+  position: sticky;
+
+  &:hover {
+    stroke: var(--color-darker);
+  }
+}
+.div_reset-pageButton {
+  display: flex;
+  justify-content: center;
 }
