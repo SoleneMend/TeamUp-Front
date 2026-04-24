@@ -19,6 +19,11 @@ const Profil = () => {
 
   if (!user) return <p>Chargement...</p>;
 
+  // Pour les Activités récentes
+  const activityIds = [20, 28, 2];
+  // Pour les évènements à venir
+  const upcomingIds = [46, 49, 51, 47];
+
   return (
     <div className="profil">
       <CardProfil
@@ -44,16 +49,20 @@ const Profil = () => {
           </Link>
         </div>
         <div className="Up-coming-grid">
-          {events.slice(0, 4).map((event) => (
-            <UpComingEvent key={event.id} avenir={event} />
-          ))}
+          {events
+            .filter((event) => upcomingIds.includes(event.id))
+            .map((event) => (
+              <UpComingEvent key={event.id} avenir={event} />
+            ))}
         </div>
       </section>
       <section className="achievements-grid">
         <Achievements />
       </section>
       <section className="recent-activity-grid">
-        <RecentActivity events={events.slice(6, 9)} />
+        <RecentActivity
+          events={events.filter((event) => activityIds.includes(event.id))}
+        />
       </section>
     </div>
   );
