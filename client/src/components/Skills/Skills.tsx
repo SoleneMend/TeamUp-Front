@@ -7,6 +7,12 @@ type Sport = {
   duration: number;
 };
 
+const niveauMap: Record<string, number> = {
+  beginner: 1,
+  intermediate: 2,
+  advanced: 3,
+};
+
 interface SkillsProps {
   sport: Sport[];
 }
@@ -29,7 +35,7 @@ const Skills = ({ sport }: SkillsProps) => {
             <h3 className="skills__item-name">{element.name}</h3>
             <p className="skills__item-level">{element.niveau}</p>
           </div>
-          <progress value={element.duration} max={6} />
+          <progress value={niveauMap[element.niveau] ?? 0} max={3} />
         </div>
       ))}
 
