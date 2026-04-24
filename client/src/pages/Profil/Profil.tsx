@@ -22,7 +22,7 @@ const Profil = () => {
   // Pour les Activités récentes
   const activityIds = [20, 28, 2];
   // Pour les évènements à venir
-  const upcomingIds = [46, 49, 51, 47];
+  const upcomingIds = [46, 51, 47, 49];
 
   return (
     <div className="profil">
@@ -44,7 +44,7 @@ const Profil = () => {
             </p>
             <h2>Évènements à venir</h2>
           </div>
-          <Link to="/explorer" className="Up-coming-details">
+          <Link to="/sessions" className="Up-coming-details">
             VOIR TOUT
           </Link>
         </div>
