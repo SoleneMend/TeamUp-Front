@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import "./Filters.css";
-import ButtonFilters from "./buttonFilters";
+import ButtonFilters from "./ButtonFilters";
 
 type FiltersProps = {
   filtreSport: string;
