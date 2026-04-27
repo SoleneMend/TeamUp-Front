@@ -100,102 +100,104 @@ function ZoomCreation() {
 
   return (
     <form onSubmit={AddEvent}>
-      {/* Host ID Tempo */}
-      <input
-        type="number"
-        placeholder="Enter the id of the host"
-        onChange={(e) => setHostID(Number(e.target.value))}
-        required
-      />
-
-      {/* Name */}
-      <input
-        type="text"
-        placeholder="Enter name for the event"
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-
-      {/* Date */}
-      <input
-        type="datetime-local"
-        onChange={(e) => setDate(e.target.value)}
-        required
-      />
-
-      {/* Description */}
-      <input
-        type="text"
-        placeholder="Enter the descritpion for the event"
-        onChange={(e) => setDescription(e.target.value)}
-        required
-      />
-
-      {/* Location */}
-      <input
-        type="text"
-        placeholder="Enter location for the event"
-        onChange={(e) => setLocation(e.target.value)}
-        required
-      />
-
-      {/* Sport*/}
-      <select
-        value={sportID}
-        onChange={(e) => setSportID(e.target.value)}
-        required
-      >
-        <option value="" disabled>
-          -- Choose --
-        </option>
-        {listSport.map((sport) => (
-          <option key={sport.sport_id} value={sport.sport_id}>
-            {sport.sport_name}
-          </option>
-        ))}
-      </select>
-
-      {/* Level -- need update*/}
-      {isComp ? (
+      <div className="zoom-global">
+        {/* Host ID Tempo */}
         <input
           type="number"
-          placeholder="Enter the rating for the event"
-          onChange={(e) => setLevel(e.target.value)}
+          placeholder="Enter the id of the host"
+          onChange={(e) => setHostID(Number(e.target.value))}
           required
         />
-      ) : (
+
+        {/* Name */}
+        <input
+          type="text"
+          placeholder="Enter name for the event"
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        {/* Date */}
+        <input
+          type="datetime-local"
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+
+        {/* Description */}
+        <input
+          type="text"
+          placeholder="Enter the descritpion for the event"
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
+
+        {/* Location */}
+        <input
+          type="text"
+          placeholder="Enter location for the event"
+          onChange={(e) => setLocation(e.target.value)}
+          required
+        />
+
+        {/* Sport*/}
         <select
-          value={level}
-          onChange={(e) => setLevel(e.target.value)}
+          value={sportID}
+          onChange={(e) => setSportID(e.target.value)}
           required
         >
           <option value="" disabled>
             -- Choose --
           </option>
-          {listLevel.map((level) => (
-            <option key={level.level_id} value={level.level_id}>
-              {level.level_name}
+          {listSport.map((sport) => (
+            <option key={sport.sport_id} value={sport.sport_id}>
+              {sport.sport_name}
             </option>
           ))}
         </select>
-      )}
 
-      {/* is Comp*/}
-      <input
-        type="checkbox"
-        checked={isComp}
-        onChange={(e) => setIsComp(e.target.checked)}
-      />
+        {/* Level -- need update*/}
+        {isComp ? (
+          <input
+            type="number"
+            placeholder="Enter the rating for the event"
+            onChange={(e) => setLevel(e.target.value)}
+            required
+          />
+        ) : (
+          <select
+            value={level}
+            onChange={(e) => setLevel(e.target.value)}
+            required
+          >
+            <option value="" disabled>
+              -- Choose --
+            </option>
+            {listLevel.map((level) => (
+              <option key={level.level_id} value={level.level_id}>
+                {level.level_name}
+              </option>
+            ))}
+          </select>
+        )}
 
-      {/* Max people */}
-      <input
-        type="number"
-        placeholder="Enter username of user"
-        onChange={(e) => setMaxPeople(Number(e.target.value))}
-        required
-      />
+        {/* is Comp*/}
+        <input
+          type="checkbox"
+          checked={isComp}
+          onChange={(e) => setIsComp(e.target.checked)}
+        />
 
-      <button type="submit">Add the event</button>
+        {/* Max people */}
+        <input
+          type="number"
+          placeholder="Enter username of user"
+          onChange={(e) => setMaxPeople(Number(e.target.value))}
+          required
+        />
+
+        <button type="submit">Add the event</button>
+      </div>
     </form>
   );
 }

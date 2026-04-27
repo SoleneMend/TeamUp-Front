@@ -20,7 +20,16 @@ function Hero() {
           <NavLink to="/explorer">Explorer</NavLink>
         </li>
         <li className="hero-button-two">
-          <NavLink to="/explorer">Créer une session</NavLink>
+          <button
+            type="button"
+            className="hero-modal-button"
+            // onClick={(e) => {
+            //   e.stopPropagation();
+            //   setModalOpen(true);
+            // }}
+          >
+            Créer une session
+          </button>
         </li>
       </ul>
     </section>

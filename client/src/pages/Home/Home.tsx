@@ -1,6 +1,7 @@
 import CardSports from "../../components/CardSports/CardSports";
 import EventsCard from "../../components/EventsCard/EventsCard";
 import Hero from "../../components/Hero/Hero";
+import ZoomCreation from "../../components/ZoomCreation/ZoomCreation";
 import useEvents from "../../services/useEvents";
 import useSports from "../../services/useSports";
 
@@ -13,6 +14,7 @@ function Home() {
   const homeEventIds = [1, 2, 28, 46];
   return (
     <div className="home-wrap">
+      <ZoomCreation />
       <section className="home-hero_container">
         <Hero />
       </section>

@@ -1,0 +1,49 @@
+.zoom-global {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.zoom-global input,
+.zoom-global select,
+.zoom-global textarea {
+  background: var(--color-darker);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+}
+
+.zoom-global textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.zoom-global button {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* modal {
+  background: var(--color-primary);
+  margin: 24px 24px;
+  padding: 40px 24px;
+  border-radius: 25px;
+  border: 1px solid var(--color-secondary);
+  text-align: center;
+  max-width: 600px;
+} */
