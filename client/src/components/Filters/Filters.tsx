@@ -1,7 +1,6 @@
-// import { useState } from "react";
-// import useEvents from "../../services/useEvents"
-
 import { Link } from "react-router";
+import "./Filters.css";
+import ButtonFilters from "./buttonFilters";
 
 type FiltersProps = {
   filtreSport: string;
@@ -37,19 +36,7 @@ function Filters({
         <div className="filter-group">
           <p>Sport</p>
           <div className="buttons">
-            <button type="button" onClick={() => setFiltreSport("football")}>
-              ⚽ Football
-            </button>
-            <button type="button" onClick={() => setFiltreSport("tennis")}>
-              🎾 Tennis
-            </button>
-
-            <button onClick={() => setFiltreSport("basketball")} type="button">
-              🏀 Basket
-            </button>
-            <button onClick={() => setFiltreSport("volleyball")} type="button">
-              🏐 Volley
-            </button>
+            <ButtonFilters setFiltreSport={setFiltreSport} />
           </div>
         </div>
         <div className="filter-group">
@@ -63,7 +50,7 @@ function Filters({
           />
         </div>
 
-        {/* <div className="filter-group">
+        <div className="filter-group">
           <p>Niveau</p>
           <label>
             <input className="filter-input" type="checkbox" /> Pro{" "}
@@ -78,7 +65,7 @@ function Filters({
           <label>
             <input className="filter-input" type="checkbox" /> Débutant
           </label>
-        </div> */}
+        </div>
 
         <div className="filter-group">
           <p>Date </p>

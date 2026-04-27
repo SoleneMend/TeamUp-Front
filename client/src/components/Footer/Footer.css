@@ -45,11 +45,17 @@
         color: var(--color-secondary);
         font-weight: 500;
       }
+      span {
+        color: var(--color-neutral);
+      }
       .div-text-desc1 {
         color: var(--color-neutral);
         font-size: 1rem;
         text-shadow: 0px 0px 20px black;
         border-radius: 50px;
+        span {
+          color: var(--color-secondary);
+        }
       }
       .div-text-desc2 {
         color: var(--color-neutral);
@@ -64,17 +70,28 @@
         padding: 0.5rem;
         width: 70%;
         border-radius: 50px;
-      }
-      .logo-img {
-        width: 32px;
-        &:hover {
-          transform: scale(1.05);
+
+        span {
+          color: var(--color-secondary);
         }
       }
+
       .div-logo {
         display: flex;
         justify-content: center;
         gap: 16px;
+
+        .logo-img1,
+        .logo-img2 {
+          width: 32px;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+        .logo-img2 {
+          filter: invert(100%);
+        }
       }
     }
     .Footer-div-links {
