@@ -296,6 +296,6 @@
 }
 
 .flip-cardSessions--active {
-  outline: 3px solid var(--color-secondary);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-tertiary);
+  outline-offset: 1px;
 }
