@@ -30,12 +30,14 @@ interface ChatbotProps {
   event?: Event;
   contactName?: string;
   mode?: "session" | "chat";
+  onClose?: () => void;
 }
 
 const Chatbot = ({
   event,
   contactName: nameProp,
   mode = "chat",
+  onClose,
 }: ChatbotProps) => {
   const contactName = event?.name ?? nameProp ?? "Inconnu";
 
@@ -147,6 +149,11 @@ Tu n'utilises pas de listes ou de bullet points. Tu parles comme un humain.`;
           <p className="chatbot__name">{contactName}</p>
           <p className="chatbot__status">En ligne</p>
         </div>
+        {onClose && (
+          <button type="button" className="chatbot__close" onClick={onClose}>
+            ✕
+          </button>
+        )}
       </div>
 
       <div className="chatbot__messages">

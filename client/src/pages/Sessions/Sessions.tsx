@@ -8,6 +8,7 @@ import "./Sessions.css";
 function Sessions() {
   const events = useEvents();
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const filteredEvents = events.filter((e) =>
     [1, 2, 15, 17, 28, 47, 49].includes(e.id),
@@ -21,12 +22,15 @@ function Sessions() {
           {/* Colonne gauche : appelle les SessionsCards */}
           <div className="sessions-col-cards">
             <h2>Mes prochains events</h2>
-            {filteredEvents.map((event) => (
+            {filteredEvents.map((event, index) => (
               <CardSessions
                 key={event.id}
                 event={event}
                 isActive={selectedEvent?.id === event.id}
-                onClick={() => setSelectedEvent(event)}
+                onClick={() => {
+                  setSelectedEvent(event);
+                  setSelectedIndex(index);
+                }}
               />
             ))}
           </div>
@@ -35,7 +39,21 @@ function Sessions() {
           <div className="sessions-col-chat">
             <h2>Contact session</h2>
             {selectedEvent ? (
-              <Chatbot event={selectedEvent} mode="session" />
+              <div
+                className="sessions-chatbox-wrapper"
+                style={{
+                  paddingTop: `calc(${selectedIndex} * (320px + 1rem) + 1rem)`,
+                }}
+              >
+                <Chatbot
+                  event={selectedEvent}
+                  mode="session"
+                  onClose={() => {
+                    setSelectedEvent(null);
+                    setSelectedIndex(0);
+                  }}
+                />
+              </div>
             ) : (
               <p className="sessions-placeholder">
                 Clique sur une session pour démarrer le TeamUp chat!

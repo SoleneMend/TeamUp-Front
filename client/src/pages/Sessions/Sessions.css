@@ -1,10 +1,11 @@
 .sessions-wrap {
   padding: 0 1.5rem;
+  margin-bottom: 80px;
 }
 .sessions-wrap h1 {
   text-align: center;
   padding-top: 80px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   font-size: 60px;
   text-transform: uppercase;
   color: var(--color-secondary);
@@ -20,8 +21,8 @@
 
 .sessions-col-cards > h2,
 .sessions-col-chat > h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
+  text-align: start;
+  margin-bottom: 0.8rem;
 }
 
 .sessions-col-cards {
@@ -32,6 +33,11 @@
 
 .sessions-placeholder {
   color: var(--color-darker);
-  text-align: center;
+  margin-top: 1.7rem;
+  text-align: start;
   font-style: italic;
+}
+
+.sessions-chatbox-wrapper .chatbot {
+  border-radius: 25px;
 }
