@@ -21,12 +21,13 @@ function CardSessions({ event, isActive, onClick }: CardSessionsProps) {
         onClick={onClick}
       >
         <div className="flip-cardSessions-container">
-          <div
-            className="flip-cardSessions-front"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.60)), url(${event.img_url_event})`,
-            }}
-          >
+          <div className="flip-cardSessions-front">
+            <div
+              className="flip-cardSessions-bg"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.60)), url(${event.img_url_event})`,
+              }}
+            />
             <div className="cardSessions-front-text-global">
               <div className="cardSessions-front-text">
                 <span className="cardSessions-badge">{event.sport?.name}</span>

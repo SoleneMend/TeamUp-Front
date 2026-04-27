@@ -36,17 +36,24 @@ function Sessions() {
           </div>
 
           {/* Colonne droite : le chatbox que les cards appellent */}
-          <div
-            className="sessions-col-chat"
-            style={{
-              paddingTop: selectedEvent
-                ? `${selectedIndex * (320 + 16)}px`
-                : "0",
-            }}
-          >
+          <div className="sessions-col-chat">
             <h2>Contact session</h2>
             {selectedEvent ? (
-              <Chatbot event={selectedEvent} mode="session" />
+              <div
+                className="sessions-chatbox-wrapper"
+                style={{
+                  paddingTop: `calc(${selectedIndex} * (320px + 1rem) + 1rem)`,
+                }}
+              >
+                <Chatbot
+                  event={selectedEvent}
+                  mode="session"
+                  onClose={() => {
+                    setSelectedEvent(null);
+                    setSelectedIndex(0);
+                  }}
+                />
+              </div>
             ) : (
               <p className="sessions-placeholder">
                 Clique sur une session pour démarrer le TeamUp chat!

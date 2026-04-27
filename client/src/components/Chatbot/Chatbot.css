@@ -191,3 +191,17 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.chatbot__close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--color-neutral);
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.chatbot__close:hover {
+  opacity: 1;
+}
