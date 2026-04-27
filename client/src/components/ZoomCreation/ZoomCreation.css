@@ -1,49 +1,130 @@
 .zoom-global {
+  background: var(--color-background-filter);
+  margin: 24px;
+  padding: 50px 30px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow:
+    15px 15px 30px var(--color-border),
+    -15px -15px 30px var(--color-neutral);
+}
+
+.zoom-form {
   display: flex;
   flex-direction: column;
-  background-color: black;
-  gap: 12px;
+  gap: 16px;
   max-width: 480px;
   margin: 0 auto;
 }
 
-.zoom-global input,
-.zoom-global select,
-.zoom-global textarea {
-  background: var(--color-darker);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 18px;
-  color: var(--text);
-  font-size: 14px;
-  outline: none;
-}
-
-.zoom-global textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.zoom-global button {
-  background: var(--color-secondary);
+.zoom-headtitle {
   color: var(--color-primary);
-  font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  align-self: center;
+  margin-bottom: 2rem;
+}
+.zoom-headtitle span {
+  color: var(--color-secondary);
 }
 
-/* modal {
-  background: var(--color-primary);
-  margin: 24px 24px;
-  padding: 40px 24px;
-  border-radius: 25px;
-  border: 1px solid var(--color-secondary);
-  text-align: center;
-  max-width: 600px;
-} */
+.zoom-form-host,
+.zoom-form-name,
+.zoom-form-date,
+.zoom-form-resume,
+.zoom-form-loc,
+.zoom-form-sport,
+.zoom-form-rank,
+.zoom-form-guest {
+  background: var(--color-background-filter);
+  color: var(--color-darker);
+  border: none;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 14px;
+  box-shadow:
+    inset 6px 6px 12px var(--color-border),
+    inset -6px -6px 12px var(--color-neutral);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.zoom-form select {
+  background: var(--color-background-filter);
+  color: var(--color-darker);
+  border: none;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 14px;
+  box-shadow:
+    inset 6px 6px 12px var(--color-border),
+    inset -6px -6px 12px var(--color-neutral);
+  outline: none;
+  transition: all 0.2s ease;
+  appearance: none;
+}
+
+.zoom-form select option {
+  background: var(--color-background-filter);
+  color: var(--color-darker);
+}
+
+.zoom-form-level-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.zoom-form-level-row select,
+.zoom-form-level-row.zoom-form-rank {
+  flex: 1;
+  background: var(--color-background-filter);
+  color: var(--color-darker);
+  border: none;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 14px;
+  box-shadow:
+    inset 6px 6px 12px var(--color-border),
+    inset -6px -6px 12px var(--color-neutral);
+  outline: none;
+  transition: all 0.2s ease;
+  appearance: none;
+}
+
+.zoom-form-rank {
+  width: 100%;
+}
+
+.zoom-form-checkbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--color-tertiary);
+  accent-color: var(--color-secondary);
+}
+
+.zoom-form ::placeholder {
+  color: var(--color-darker);
+}
+
+.zoom-form-sub {
+  background: var(--color-secondary);
+  color: var(--color-neutral);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  align-self: center;
+  border-radius: 12px;
+  border: none;
+}
+
+.zoom-form-sub:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+}

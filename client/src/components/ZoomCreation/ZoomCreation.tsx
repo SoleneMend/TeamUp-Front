@@ -99,12 +99,16 @@ function ZoomCreation() {
   }
 
   return (
-    <form onSubmit={AddEvent}>
-      <div className="zoom-global">
+    <div className="zoom-global">
+      <h2 className="zoom-headtitle">
+        Ton <span>événement</span>
+      </h2>
+      <form onSubmit={AddEvent} className="zoom-form">
         {/* Host ID Tempo */}
         <input
           type="number"
-          placeholder="Enter the id of the host"
+          className="zoom-form-host"
+          placeholder="Entrer votre ID"
           onChange={(e) => setHostID(Number(e.target.value))}
           required
         />
@@ -112,7 +116,8 @@ function ZoomCreation() {
         {/* Name */}
         <input
           type="text"
-          placeholder="Enter name for the event"
+          className="zoom-form-name"
+          placeholder="Le nom de ton événement"
           onChange={(e) => setName(e.target.value)}
           required
         />
@@ -120,6 +125,7 @@ function ZoomCreation() {
         {/* Date */}
         <input
           type="datetime-local"
+          className="zoom-form-date"
           onChange={(e) => setDate(e.target.value)}
           required
         />
@@ -127,7 +133,8 @@ function ZoomCreation() {
         {/* Description */}
         <input
           type="text"
-          placeholder="Enter the descritpion for the event"
+          className="zoom-form-resume"
+          placeholder="Descrivez votre événement"
           onChange={(e) => setDescription(e.target.value)}
           required
         />
@@ -135,14 +142,25 @@ function ZoomCreation() {
         {/* Location */}
         <input
           type="text"
-          placeholder="Enter location for the event"
+          className="zoom-form-loc"
+          placeholder="Lieux de l'événement"
           onChange={(e) => setLocation(e.target.value)}
+          required
+        />
+
+        {/* Max people */}
+        <input
+          type="number"
+          className="zoom-form-guest"
+          placeholder="Nombre de participant"
+          onChange={(e) => setMaxPeople(Number(e.target.value))}
           required
         />
 
         {/* Sport*/}
         <select
           value={sportID}
+          className="zoom-form-sport"
           onChange={(e) => setSportID(e.target.value)}
           required
         >
@@ -157,48 +175,45 @@ function ZoomCreation() {
         </select>
 
         {/* Level -- need update*/}
-        {isComp ? (
-          <input
-            type="number"
-            placeholder="Enter the rating for the event"
-            onChange={(e) => setLevel(e.target.value)}
-            required
-          />
-        ) : (
-          <select
-            value={level}
-            onChange={(e) => setLevel(e.target.value)}
-            required
-          >
-            <option value="" disabled>
-              -- Choose --
-            </option>
-            {listLevel.map((level) => (
-              <option key={level.level_id} value={level.level_id}>
-                {level.level_name}
+        <div className="zoom-form-level-row">
+          {isComp ? (
+            <input
+              type="number"
+              className="zoom-form-rank"
+              placeholder="Sélectionne ton rang"
+              onChange={(e) => setLevel(e.target.value)}
+              required
+            />
+          ) : (
+            <select
+              value={level}
+              onChange={(e) => setLevel(e.target.value)}
+              required
+            >
+              <option value="" disabled>
+                -- Choose --
               </option>
-            ))}
-          </select>
-        )}
+              {listLevel.map((level) => (
+                <option key={level.level_id} value={level.level_id}>
+                  {level.level_name}
+                </option>
+              ))}
+            </select>
+          )}
+          {/* is Comp*/}
+          <input
+            type="checkbox"
+            className="zoom-form-checkbox"
+            checked={isComp}
+            onChange={(e) => setIsComp(e.target.checked)}
+          />
+        </div>
 
-        {/* is Comp*/}
-        <input
-          type="checkbox"
-          checked={isComp}
-          onChange={(e) => setIsComp(e.target.checked)}
-        />
-
-        {/* Max people */}
-        <input
-          type="number"
-          placeholder="Enter username of user"
-          onChange={(e) => setMaxPeople(Number(e.target.value))}
-          required
-        />
-
-        <button type="submit">Add the event</button>
-      </div>
-    </form>
+        <button type="submit" className="zoom-form-sub">
+          Créer
+        </button>
+      </form>
+    </div>
   );
 }
 
