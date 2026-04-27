@@ -3,7 +3,11 @@ import HeroImgBg from "../../assets/images/HeroImgBg.svg";
 
 import "./Hero.css";
 
-function Hero() {
+interface HeroProps {
+  onOpenModal: () => void;
+}
+
+function Hero({ onOpenModal }: HeroProps) {
   return (
     <section className="hero">
       <img src={HeroImgBg} alt="" className="hero-img" />
@@ -23,10 +27,7 @@ function Hero() {
           <button
             type="button"
             className="hero-modal-button"
-            // onClick={(e) => {
-            //   e.stopPropagation();
-            //   setModalOpen(true);
-            // }}
+            onClick={onOpenModal}
           >
             Créer une session
           </button>
