@@ -26,7 +26,7 @@ function Explorer() {
   const eventsFiltres = events
     .filter((e) =>
       filtreSport
-        ? e.sport?.name.toLocaleLowerCase() === filtreSport.toLocaleLowerCase()
+        ? e.sports.name.toLocaleLowerCase() === filtreSport.toLocaleLowerCase()
         : true,
     )
     .filter((e) =>

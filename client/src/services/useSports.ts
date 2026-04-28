@@ -10,7 +10,7 @@ export interface Sports {
   date: string;
   max_people: number;
   user_joining?: string[];
-  sport: {
+  sports: {
     name: string;
     level: string;
     image: string;

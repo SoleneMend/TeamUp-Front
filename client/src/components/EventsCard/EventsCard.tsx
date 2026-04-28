@@ -11,7 +11,7 @@ function EventsCard({ event }: Props) {
 
   return (
     <div className="card">
-      <img src={event.sport.image} alt={event.name} />
+      <img src={event.sports.image} alt={event.name} />
 
       <div className="card-header">
         <h3>{event.name}</h3>
