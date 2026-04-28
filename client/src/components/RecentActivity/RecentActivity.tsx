@@ -37,7 +37,7 @@ function RecentActivity({ events }: RecentActivityProps) {
           <p>
             <ClipboardClock />
           </p>
-          <h2>Activités récentes</h2>
+          <h2 className="text-switcher">Activités récentes</h2>
         </div>
       </div>
       <div className="activity-title-tab">
@@ -79,9 +79,6 @@ function RecentActivity({ events }: RecentActivityProps) {
             </div>
             <div>
               <span className="activity-stars">{fakeStars[index]}</span>
-            </div>
-            <div>
-              <span>{fakeStars[index]}</span>
             </div>
           </div>
         );

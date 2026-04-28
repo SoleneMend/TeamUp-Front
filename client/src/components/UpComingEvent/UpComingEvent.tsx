@@ -26,8 +26,8 @@ function UpComingEvent({ avenir }: UpComingEventProps) {
           <p className="Up-coming-number">{day}</p>
         </div>
         <div className="Up-coming-lieux">
-          <h3>{avenir.name}</h3>
-          <p>{avenir.localisation}</p>
+          <h3 className="text-switcher">{avenir.name}</h3>
+          <p className="text-switcher">{avenir.localisation}</p>
         </div>
         <div className="Up-coming-avatar">
           <div className="avatar-stack">
