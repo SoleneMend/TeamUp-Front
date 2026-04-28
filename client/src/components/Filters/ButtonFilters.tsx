@@ -9,7 +9,7 @@ function ButtonFilters({ setFiltreSport }: ButtonFiltersProps) {
 
   // Dédoublonner par nom de sport
   const noRepeat = sportEvent.reduce((acc, event) => {
-    const sportName = event.sports.name;
+    const sportName = event.sport.name;
     if (sportName && !acc.has(sportName)) {
       acc.set(sportName, event);
     }
@@ -24,9 +24,9 @@ function ButtonFilters({ setFiltreSport }: ButtonFiltersProps) {
         <button
           key={e.id}
           type="button"
-          onClick={() => setFiltreSport(e.sports.name ?? "")}
+          onClick={() => setFiltreSport(e.sport.name ?? "")}
         >
-          {e.sports.name}
+          {e.sport.name}
         </button>
       ))}
     </>

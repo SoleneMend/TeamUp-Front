@@ -5,12 +5,12 @@ export interface Event {
   name: string;
   host: string;
   is_comp: boolean;
-  localisation: string;
+  location: string;
   description: string;
   date: string;
   max_people: number;
   user_joining?: string[];
-  sports: {
+  sport: {
     name: string;
     level: string;
     image: string;

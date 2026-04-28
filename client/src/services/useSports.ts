@@ -5,12 +5,12 @@ export interface Sports {
   name: string;
   host: string;
   is_comp: boolean;
-  localisation: string;
+  location: string;
   description: string;
   date: string;
   max_people: number;
   user_joining?: string[];
-  sports: {
+  sport: {
     name: string;
     level: string;
     image: string;
@@ -21,16 +21,16 @@ export interface Sports {
 }
 
 const useSports = () => {
-  const [sports, setSports] = useState<Sports[]>([]);
+  const [spt, setSpt] = useState<Sports[]>([]);
 
   useEffect(() => {
     // vers events car sports n'a pas d'ID dans l'api...
     fetch("http://localhost:3310/bdd/events")
       .then((res) => res.json())
-      .then((data) => setSports(data));
+      .then((data) => setSpt(data));
   }, []);
 
-  return sports;
+  return spt;
 };
 
 export default useSports;

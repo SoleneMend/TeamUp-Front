@@ -26,12 +26,12 @@ function Explorer() {
   const eventsFiltres = events
     .filter((e) =>
       filtreSport
-        ? e.sports.name.toLocaleLowerCase() === filtreSport.toLocaleLowerCase()
+        ? e.sport.name.toLocaleLowerCase() === filtreSport.toLocaleLowerCase()
         : true,
     )
     .filter((e) =>
       filtreVille
-        ? e.localisation
+        ? e.location
             .toLocaleLowerCase()
             .includes(filtreVille.toLocaleLowerCase())
         : true,

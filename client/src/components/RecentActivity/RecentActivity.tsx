@@ -65,7 +65,7 @@ function RecentActivity({ events }: RecentActivityProps) {
               </div>
               <div className="activity-start-data-adress">
                 <span className="activity-event-name">{event.name}</span>
-                <p>{event.localisation}</p>
+                <p>{event.location}</p>
               </div>
             </div>
             <div className="activity-middle-data">

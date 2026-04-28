@@ -11,7 +11,7 @@ function Sessions() {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const filteredEvents = events.filter((e) =>
-    [1, 2, 15, 17, 28, 47, 49].includes(e.id),
+    ["Gym", "Running", "Basketball", "Yoga"].includes(e.sport.name),
   );
 
   return (
