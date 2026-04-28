@@ -1,11 +1,38 @@
 /* modif à valider avec Coline !! */
 .hero {
-  background: var(--color-primary);
   border-radius: 40px;
   padding: 40px;
   width: 100%;
   height: 400px;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* ajuste l'opacité selon le rendu */
+  z-index: 1;
+}
+
+.hero-img,
+.go-years,
+.hero-title,
+.hero-descr,
+.hero-link {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-img {
@@ -21,6 +48,7 @@
   color: var(--color-secondary);
   font-size: 18px;
   font-weight: 700;
+  padding-top: 20px;
 }
 
 .hero-title {
@@ -32,7 +60,7 @@
   color: var(--color-neutral);
   font-size: 1.5rem;
   font-weight: 250;
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 50px;
 }
 
