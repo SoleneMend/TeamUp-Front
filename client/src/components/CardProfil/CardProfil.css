@@ -70,3 +70,7 @@
   display: flex;
   gap: 8px;
 }
+
+.card-profil__button:hover {
+  background-color: var(--color-darker);
+}

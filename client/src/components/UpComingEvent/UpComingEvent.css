@@ -39,11 +39,13 @@
 }
 
 .Up-comming-Event {
-  background-color: var(--color-background-filter);
+  background-color: var(--color-neutral);
   border-radius: 20px;
+  border: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   padding: 15px 20px;
+  height: 100%;
 }
 
 .Up-coming-date {

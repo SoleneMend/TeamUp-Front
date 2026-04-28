@@ -3,6 +3,7 @@
   background-color: var(--color-neutral);
   padding: 1.8rem;
   border-radius: 30px;
+  height: 100%;
 }
 
 .achievements-title-details {
