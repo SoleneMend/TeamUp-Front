@@ -53,10 +53,10 @@ function Filters({
         <div className="filter-group">
           <p>Niveau</p>
           <label>
-            <input className="filter-input" type="checkbox" /> Pro{" "}
+            <input className="filter-input" type="checkbox" /> Pro
           </label>
           <label>
-            <input className="filter-input" type="checkbox" defaultChecked />{" "}
+            <input className="filter-input" type="checkbox" defaultChecked />
             Avancé
           </label>
           <label>
