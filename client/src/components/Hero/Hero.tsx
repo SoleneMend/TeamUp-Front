@@ -3,7 +3,11 @@ import HeroImgBg from "../../assets/images/HeroImgBg.svg";
 
 import "./Hero.css";
 
-function Hero() {
+interface HeroProps {
+  onOpenModal: () => void;
+}
+
+function Hero({ onOpenModal }: HeroProps) {
   return (
     <section className="hero">
       <img src={HeroImgBg} alt="" className="hero-img" />
@@ -20,7 +24,13 @@ function Hero() {
           <NavLink to="/explorer">Explorer</NavLink>
         </li>
         <li className="hero-button-two">
-          <NavLink to="/explorer">Créer une session</NavLink>
+          <button
+            type="button"
+            className="hero-modal-button"
+            onClick={onOpenModal}
+          >
+            Créer une session
+          </button>
         </li>
       </ul>
     </section>
