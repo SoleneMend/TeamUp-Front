@@ -1,5 +1,6 @@
 .skills {
   border: 1px solid var(--color-border);
+  background-color: var(--color-neutral);
   padding: 1.8rem;
   border-radius: 30px;
   display: flex;
@@ -55,7 +56,7 @@ progress {
 }
 
 .skills__button {
-  background-color: var(--color-hover);
+  background-color: var(--color-background-filter);
   border-radius: 10px;
   padding: 1rem;
   cursor: pointer;

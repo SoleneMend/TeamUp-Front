@@ -1,9 +1,9 @@
 .profil--pro {
-  --color-primary: #f1f5f9;
+  --color-primary: #fff;
   --color-neutral: #181818;
-  --color-darker: #cbd5f5;
-  --color-hover: #1e293b;
-  --color-background-filter: #0f172a;
+  --color-darker: #fff;
+  --color-hover: #fff;
+  --color-background-filter: #ff5c01;
   --color-border: #334155;
   --color-secondary: #ff5c01;
 }
@@ -18,7 +18,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
   padding: 30px 60px 60px 60px;
-  background-color: var(--color-neutral);
+  /* background-color: var(--color-neutral); */
 }
 
 /* Cosmétique pour le button switcher -> merci ChatGPT */
@@ -26,7 +26,7 @@
   grid-column: 1 / -1;
   justify-self: end;
   position: relative;
-  background: var(--color-neutral);
+  background: var(--color-primary);
   color: var(--color-secondary);
   padding: 10px 18px;
   border-radius: 999px;
@@ -56,7 +56,7 @@
   content: "";
   position: absolute;
   inset: 2px;
-  background: var(--color-neutral);
+  background: var(--color-primary);
   border-radius: 999px;
   z-index: -1;
 }
@@ -84,7 +84,6 @@
 /* Pour prendre toute la largeur */
 .card-profil {
   grid-column: 1 / -1;
-  background-color: #181818;
 }
 
 /* --------------------------------------------------------------------- */
