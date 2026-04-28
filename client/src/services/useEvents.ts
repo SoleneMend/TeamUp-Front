@@ -3,27 +3,28 @@ import { useEffect, useState } from "react";
 export interface Event {
   id: number;
   name: string;
-  localisation: string;
   host: string;
+  is_comp: boolean;
+  localisation: string;
   description: string;
-  date: number;
-  heure: number;
+  date: string;
   max_people: number;
-  people_joining?: string[];
-  sport?: {
+  user_joining?: string[];
+  sport: {
     name: string;
-    niveau: string;
+    level: string;
+    image: string;
   };
   is_done: boolean;
-  comments: [];
-  img_url_event: string;
+  mvp: string;
+  winners: string[];
 }
 
 const useEvents = () => {
   const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3310/events")
+    fetch("http://localhost:3310/bdd/events")
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);

@@ -7,11 +7,11 @@ type Props = {
 };
 
 function EventsCard({ event }: Props) {
-  const spotsLeft = event.max_people - (event.people_joining?.length ?? 0);
+  const spotsLeft = event.max_people - (event.user_joining?.length ?? 0);
 
   return (
     <div className="card">
-      <img src={event.img_url_event} alt={event.name} />
+      <img src={event.sport.image} alt={event.name} />
 
       <div className="card-header">
         <h3>{event.name}</h3>
@@ -19,13 +19,11 @@ function EventsCard({ event }: Props) {
 
       <div className="card-body">
         <p className="location">📍 {event.localisation}</p>
-        <p className="date">
-          🕐 {event.date}, {event.heure}
-        </p>
+        <p className="date">🕐 {event.date}</p>
 
-        {event.people_joining && event.people_joining.length > 0 && (
+        {event.user_joining && event.user_joining.length > 0 && (
           <div className="participants">
-            {event.people_joining.map((user) => (
+            {event.user_joining.map((user) => (
               <img
                 key={user}
                 src={`https://api.dicebear.com/7.x/initials/svg?seed=${user}`}

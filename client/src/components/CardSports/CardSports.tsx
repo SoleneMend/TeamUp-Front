@@ -11,13 +11,13 @@ function CardSports({ sports }: CardSportsProps) {
     <div
       className="cardSports_Wrap"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.40)), url(${sports.img_url_event})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.40)), url(${sports.sport.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <div className="cardSports_Content">
-        <h3>{sports.sport?.name}</h3>
+        <h3>{sports.sport.name}</h3>
         <p>{sports.description}</p>
         <Link to="/explorer" className="cardSports_Content-link">
           Explore

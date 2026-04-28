@@ -14,7 +14,7 @@ function UpComingEvent({ avenir }: UpComingEventProps) {
   const month = dateObj
     .toLocaleString("fr-FR", { month: "short" })
     .toUpperCase();
-  const users = avenir.people_joining ?? [];
+  const users = avenir.user_joining ?? [];
   const smallyAvatar = users.slice(0, 2);
   const remainingCount = Math.max(users.length - 2, 0);
 
