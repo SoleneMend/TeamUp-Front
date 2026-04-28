@@ -24,7 +24,7 @@ const Performances = ({
           <p>
             <TrendingUp />
           </p>
-          <h2>Performance Analytics</h2>
+          <h2 className="text-switcher">Performance Analytics</h2>
         </div>
       </div>
 

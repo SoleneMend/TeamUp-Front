@@ -1,5 +1,6 @@
 .card-profil {
-  background-color: var(--color-primary);
+  background-color: var(--color-neutral);
+  border: 1px solid var(--color-border);
   border-radius: 20px;
   padding: 1.5rem;
   display: flex;
@@ -23,13 +24,13 @@
 }
 
 .card-profil__name {
-  color: var(--color-neutral);
+  color: var(--color-primary);
   font-weight: bold;
   font-size: 1.3rem;
 }
 
 .card-profil__bio {
-  color: var(--color-neutral);
+  color: var(--color-primary);
   font-size: 0.9rem;
 }
 

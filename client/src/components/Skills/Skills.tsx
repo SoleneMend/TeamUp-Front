@@ -25,7 +25,7 @@ const Skills = ({ sport }: SkillsProps) => {
           <p>
             <Gauge />
           </p>
-          <h2>Skills Level</h2>
+          <h2 className="text-switcher">Skills Level</h2>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 .activity-section {
   border: 1px solid var(--color-border);
+  background-color: var(--color-neutral);
   padding: 1.8rem;
   border-radius: 30px;
 }

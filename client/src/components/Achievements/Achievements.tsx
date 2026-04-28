@@ -11,7 +11,7 @@ function Achievements() {
             <p>
               <Medal />
             </p>
-            <h2>Réalisations</h2>
+            <h2 className="text-switcher">Réalisations</h2>
           </div>
         </div>
       </div>
@@ -21,19 +21,19 @@ function Achievements() {
             <div>
               <Crown />
             </div>
-            <p>top scorer</p>
+            <p className="text-switcher">top scorer</p>
           </div>
           <div className="achievements-badge-darker">
             <div>
               <Handshake />
             </div>
-            <p>fair play</p>
+            <p className="text-switcher">fair play</p>
           </div>
           <div className="achievements-badge-orange">
             <div>
               <Timer />
             </div>
-            <p>iron man</p>
+            <p className="text-switcher">iron man</p>
           </div>
         </div>
         <div className="achievements-bottom">
@@ -41,19 +41,19 @@ function Achievements() {
             <div>
               <ShieldBan />
             </div>
-            <p>centurion</p>
+            <p className="text-switcher">centurion</p>
           </div>
           <div className="achievements-badge-lock">
             <div>
               <ShieldBan />
             </div>
-            <p>traveler</p>
+            <p className="text-switcher">traveler</p>
           </div>
           <div className="achievements-badge-undefined">
             <div>
               <Plus />
             </div>
-            <p>more</p>
+            <p className="text-switcher">more</p>
           </div>
         </div>
       </div>
