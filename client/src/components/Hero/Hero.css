@@ -1,10 +1,6 @@
 /* modif à valider avec Coline !! */
 .hero {
-  background: linear-gradient(
-    to left,
-    var(--color-secondary) 0px,
-    var(--color-primary) 1500px
-  );
+  background: var(--color-primary);
   border-radius: 40px;
   padding: 40px;
   width: 100%;
@@ -50,14 +46,25 @@
   background-color: var(--color-secondary);
 }
 
-.hero-button-two a {
+.hero-modal-button {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1.5px solid rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(4px);
 }
 
-.hero-button-one a,
-.hero-button-two a {
+.hero-button-one a {
+  text-decoration: none;
+  color: var(--color-neutral);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 220px;
+  text-align: center;
+  padding: 18px 0;
+}
+
+.hero-modal-button {
   text-decoration: none;
   color: var(--color-neutral);
   border-radius: 10px;

@@ -1,7 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+// import { useContext } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import "./Navbar.css";
-import { ThemeContext } from "../../hook/useTheme";
+// import { ThemeContext } from "../../hook/useTheme";
 
 interface userProps {
   id: number;
@@ -15,7 +16,7 @@ interface userProps {
 
 function Navbar(): React.JSX.Element {
   const [user, setUser] = useState<userProps | null>(null);
-  const { toggleTheme, theme } = useContext(ThemeContext);
+  // const { toggleTheme, theme } = useContext(ThemeContext);
 
   useEffect(() => {
     fetch("http://localhost:3310/users")
@@ -30,7 +31,7 @@ function Navbar(): React.JSX.Element {
       </h1>
 
       <div className="Navbar-div-notif-profil">
-        <div className="Navbar-div-notif">
+        {/* <div className="Navbar-div-notif">
           <label className="toggle">
             <input
               type="checkbox"
@@ -42,7 +43,7 @@ function Navbar(): React.JSX.Element {
             <span className="slider"></span>
           </label>
           <p>{theme}</p>
-        </div>
+        </div> */}
         <Link to="/profil">
           <div className="Navbar-div-profil">
             <img
