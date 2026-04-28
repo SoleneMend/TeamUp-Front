@@ -11,8 +11,11 @@ import useUsers from "../../services/useUsers";
 
 import "./Profil.css";
 import "../../components/UpComingEvent/UpComingEvent.css";
+import { useState } from "react";
 
 const Profil = () => {
+  // Boutton initialisé à la valeur false = mode normal
+  const [isPro, setIsPro] = useState(false);
   const events = useEvents();
   const users = useUsers();
   const user = users[1];
@@ -25,7 +28,16 @@ const Profil = () => {
   const upcomingIds = [46, 51, 47, 49];
 
   return (
-    <div className="profil">
+    // Condition pour le CSS, si isPro est True alors le className est profil--pro sinon profil
+    <div className={`profil ${isPro ? "profil--pro" : ""}`}>
+      <button
+        type="button"
+        className="btn-switch-profil"
+        // Au click le profil devient l'inverse de ce qu'il est actuellement
+        onClick={() => setIsPro(!isPro)}
+      >
+        {isPro ? "Revenir au mode normal" : "Passer en mode Pro"}
+      </button>
       <CardProfil
         name={user.name}
         bio={user.bio}
@@ -34,7 +46,15 @@ const Profil = () => {
       />
       <div className="profil__content">
         <Skills sport={user.sport} />
-        <Performances matches={142} victories={105} mvpCount={28} streak={5} />
+        {/* Veut juste dire : si c'est le mode pro alors affiche Performances */}
+        {isPro && (
+          <Performances
+            matches={142}
+            victories={105}
+            mvpCount={28}
+            streak={5}
+          />
+        )}{" "}
       </div>
       <section className="Up-coming-section">
         <div className="Up-coming-title-details">
@@ -42,7 +62,7 @@ const Profil = () => {
             <p>
               <Calendar />
             </p>
-            <h2>Évènements à venir</h2>
+            <h2 className="text-switcher">Évènements à venir</h2>
           </div>
           <Link to="/sessions" className="Up-coming-details">
             VOIR TOUT
@@ -56,9 +76,13 @@ const Profil = () => {
             ))}
         </div>
       </section>
-      <section className="achievements-grid">
-        <Achievements />
-      </section>
+      {/* Veut juste dire : si c'est le mode pro alors affiche Achievements */}
+
+      {isPro && (
+        <section className="achievements-grid">
+          <Achievements />
+        </section>
+      )}
       <section className="recent-activity-grid">
         <RecentActivity
           events={events.filter((event) => activityIds.includes(event.id))}
