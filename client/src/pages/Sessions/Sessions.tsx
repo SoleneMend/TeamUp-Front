@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardSessions from "../../components/CardSessions/CardSessions";
 import Chatbot from "../../components/Chatbot/Chatbot";
-import type { Event } from "../../services/useEvents";
-import useEvents from "../../services/useEvents";
+import type { EventType } from "../../services/useEvents";
 import "./Sessions.css";
 
 function Sessions() {
-  const events = useEvents();
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventType | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
-  const filteredEvents = events.filter((e) =>
-    ["Gym", "Running", "Basketball", "Yoga"].includes(e.sport.name),
-  );
+  const [filteredEvents, setFilteredEvents] = useState<EventType[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3310/bdd/events?host=bob_pro&user_joining=bob_pro")
+      .then((res) => res.json())
+      .then((data) => setFilteredEvents(data));
+  });
 
   return (
     <div className="sessions-wrap">

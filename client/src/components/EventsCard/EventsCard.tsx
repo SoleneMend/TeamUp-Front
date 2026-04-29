@@ -1,9 +1,9 @@
 import { Link } from "react-router";
-import type { Event } from "../../services/useEvents";
+import type { EventType } from "../../services/useEvents";
 import "./EventsCard.css";
 
 type Props = {
-  event: Event;
+  event: EventType;
 };
 
 function EventsCard({ event }: Props) {
@@ -36,7 +36,7 @@ function EventsCard({ event }: Props) {
 
         {event.user_joining && event.user_joining.length > 0 && (
           <div className="participants">
-            {event.user_joining.map((user) => (
+            {event.user_joining.map((user: string) => (
               <img
                 key={user}
                 src={`https://api.dicebear.com/7.x/initials/svg?seed=${user}`}

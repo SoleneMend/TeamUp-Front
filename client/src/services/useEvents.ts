@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export interface Event {
+export interface EventType {
   id: number;
   name: string;
   host: string;
@@ -21,7 +21,7 @@ export interface Event {
 }
 
 const useEvents = () => {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [events, setEvents] = useState<EventType[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3310/bdd/events")

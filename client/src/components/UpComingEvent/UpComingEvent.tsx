@@ -1,11 +1,11 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
-import type { Event } from "../../services/useEvents";
+import type { EventType } from "../../services/useEvents";
 
 import "./UpComingEvent.css";
 
 type UpComingEventProps = {
-  avenir: Event;
+  avenir: EventType;
 };
 
 function UpComingEvent({ avenir }: UpComingEventProps) {
@@ -31,7 +31,7 @@ function UpComingEvent({ avenir }: UpComingEventProps) {
         </div>
         <div className="Up-coming-avatar">
           <div className="avatar-stack">
-            {smallyAvatar.map((user) => (
+            {smallyAvatar.map((user: string) => (
               <img
                 key={user}
                 src={`https://api.dicebear.com/7.x/initials/svg?seed=${user}`}
