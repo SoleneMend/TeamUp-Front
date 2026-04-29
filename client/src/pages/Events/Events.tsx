@@ -9,7 +9,18 @@ interface ModalProps {
 
 function Events({ onClose }: ModalProps) {
   return createPortal(
-    <button type="button" className="events-Modal-overlay" onClick={onClose}>
+    // biome-ignore lint/a11y/useSemanticElements: <false>
+    <div
+      className="events-Modal-overlay"
+      onClick={onClose}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === "Escape") {
+          onClose();
+        }
+      }}
+    >
       <dialog
         className="events-Modal-content"
         open
@@ -21,7 +32,7 @@ function Events({ onClose }: ModalProps) {
         </button>
         <ZoomCreation />
       </dialog>
-    </button>,
+    </div>,
     document.body,
   );
 }
