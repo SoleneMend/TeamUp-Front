@@ -7,25 +7,36 @@ type Props = {
 };
 
 function EventsCard({ event }: Props) {
-  const spotsLeft = event.max_people - (event.people_joining?.length ?? 0);
+  const spotsLeft = event.max_people - (event.user_joining?.length ?? 0);
+
+  function joinEvent() {
+    fetch("http://localhost:3310/bdd/add/event_user", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_id: event.id,
+        user_id: 2, // because we are bob for now
+      }),
+    });
+  }
 
   return (
     <div className="card">
-      <img src={event.img_url_event} alt={event.name} />
+      <img src={event.sport.image} alt={event.name} />
 
       <div className="card-header">
         <h3>{event.name}</h3>
       </div>
 
       <div className="card-body">
-        <p className="location">📍 {event.localisation}</p>
+        <p className="location">📍 {event.location}</p>
         <p className="date">
-          🕐 {event.date}, {event.heure}
+          🕐 {`${event.date.slice(5, 10)} ${event.date.slice(11, 16)}`}
         </p>
 
-        {event.people_joining && event.people_joining.length > 0 && (
+        {event.user_joining && event.user_joining.length > 0 && (
           <div className="participants">
-            {event.people_joining.map((user) => (
+            {event.user_joining.map((user) => (
               <img
                 key={user}
                 src={`https://api.dicebear.com/7.x/initials/svg?seed=${user}`}
@@ -40,7 +51,13 @@ function EventsCard({ event }: Props) {
           </div>
         )}
         <Link to="/Sessions">
-          <button type="button" className="join-btn">
+          <button
+            type="button"
+            className="join-btn"
+            onClick={() => {
+              joinEvent();
+            }}
+          >
             {" "}
             Rejoindre l'évènement
           </button>

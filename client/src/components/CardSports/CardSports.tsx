@@ -3,22 +3,22 @@ import type { Sports } from "../../services/useSports";
 import "./CardSports.css";
 
 interface CardSportsProps {
-  sports: Sports;
+  s: Sports;
 }
 
-function CardSports({ sports }: CardSportsProps) {
+function CardSports({ s }: CardSportsProps) {
   return (
     <div
       className="cardSports_Wrap"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.40)), url(${sports.img_url_event})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.40)), url(${s.sport.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <div className="cardSports_Content">
-        <h3>{sports.sport?.name}</h3>
-        <p>{sports.description}</p>
+        <h3>{s.sport.name}</h3>
+        <p>{s.description}</p>
         <Link to="/explorer" className="cardSports_Content-link">
           Explore
         </Link>

@@ -23,9 +23,9 @@ const Profil = () => {
   if (!user) return <p>Chargement...</p>;
 
   // Pour les Activités récentes
-  const activityIds = [20, 28, 2];
+  const activityIds = [2, 10, 11];
   // Pour les évènements à venir
-  const upcomingIds = [46, 51, 47, 49];
+  const upcomingIds = [2, 6, 10, 12];
 
   return (
     // Condition pour le CSS, si isPro est True alors le className est profil--pro sinon profil
@@ -45,7 +45,7 @@ const Profil = () => {
         location={user.location}
       />
       <div className="profil__content">
-        <Skills sport={user.sport} />
+        <Skills sport={user.sports} />
         {/* Veut juste dire : si c'est le mode pro alors affiche Performances */}
         {isPro && (
           <Performances

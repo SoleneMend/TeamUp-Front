@@ -85,7 +85,7 @@ function ZoomCreation() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        host: hostID, //tempo
+        host: hostID || 2, //tempo
         name: name,
         date: dateFormatDB(date),
         description: description,
