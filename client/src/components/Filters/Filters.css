@@ -2,9 +2,10 @@
   background: var(--color-hover);
   /* border: 1px solid var(--color-darker); */
   padding: 25px;
-  width: 260px;
+  width: 100%;
   position: relative;
   height: 100%;
+  overflow-y: scroll;
   align-self: stretch;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
 }
@@ -12,6 +13,7 @@
   top: 10px;
   position: sticky;
   display: flex;
+
   flex-direction: column;
   gap: 30px;
 }
@@ -179,12 +181,14 @@ input[type="date"] {
   opacity: 0.9;
 }
 .reset-pageButton {
-  background-color: var(--color-neutral);
-  border-radius: 10px;
-  position: sticky;
+  /* background-color: var(--color-primary); */
+  /* border-radius: 1000px; */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 
   &:hover {
-    stroke: var(--color-darker);
+    stroke: var(--color-secondary);
   }
 }
 .div_reset-pageButton {
