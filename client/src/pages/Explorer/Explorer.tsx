@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import EventsCard from "../../components/EventsCard/EventsCard";
 import Filters from "../../components/Filters/Filters";
 import type { EventType } from "../../services/useEvents";
@@ -28,6 +29,8 @@ function Explorer() {
   const [filtreSport, setFiltreSport] = useState<string>("");
   const [filtreVille, setFiltreVille] = useState<string>("");
   const [filtreDate, setFiltreDate] = useState<string>("");
+  const [showAllSport, setShowAllSport] = useState<boolean>(false);
+
   const reinitialiserFiltres = () => {
     setFiltreSport("");
     setFiltreVille("");
@@ -57,6 +60,8 @@ function Explorer() {
     <main className="content">
       <div className="layout">
         <Filters
+          showAllSport={showAllSport}
+          setShowAllSport={setShowAllSport}
           filtreDate={filtreDate}
           setFiltreDate={setFiltreDate}
           filtreSport={filtreSport}
@@ -78,6 +83,26 @@ function Explorer() {
             </div>
           </section>
         </div>
+      </div>
+      <div className="div_reset-pageButton">
+        <Link to="/explorer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#010101"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="reset-pageButton"
+          >
+            <title>Arrow Up</title>
+            <circle cx="12" cy="12" r="10" />
+            <path d="m8 14 4-4 4 4" />
+          </svg>
+        </Link>
       </div>
     </main>
   );

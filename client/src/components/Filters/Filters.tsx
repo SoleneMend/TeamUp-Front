@@ -1,10 +1,11 @@
-import { Link } from "react-router";
 import "./Filters.css";
 import ButtonFilters from "./ButtonFilters";
 
 type FiltersProps = {
   filtreSport: string;
   setFiltreSport: React.Dispatch<React.SetStateAction<string>>;
+  showAllSport: boolean;
+  setShowAllSport: React.Dispatch<React.SetStateAction<boolean>>;
   filtreVille: string;
   setFiltreVille: React.Dispatch<React.SetStateAction<string>>;
   filtreDate: string;
@@ -14,8 +15,10 @@ type FiltersProps = {
 function Filters({
   reinitialiserFiltres,
   filtreDate,
+  showAllSport,
   setFiltreDate,
   setFiltreSport,
+  setShowAllSport,
   filtreVille,
   setFiltreVille,
 }: FiltersProps) {
@@ -36,7 +39,11 @@ function Filters({
         <div className="filter-group">
           <p>Sport</p>
           <div className="buttons">
-            <ButtonFilters setFiltreSport={setFiltreSport} />
+            <ButtonFilters
+              showAllSport={showAllSport}
+              setShowAllSport={setShowAllSport}
+              setFiltreSport={setFiltreSport}
+            />
           </div>
         </div>
         <div className="filter-group">
@@ -75,26 +82,6 @@ function Filters({
             className="filter-input"
             type="date"
           />
-        </div>
-        <div className="div_reset-pageButton">
-          <Link to="/explorer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              className="reset-pageButton"
-            >
-              <title>Arrow Up</title>
-              <path d="m5 12 7-7 7 7" />
-              <path d="M12 19V5" />
-            </svg>
-          </Link>
         </div>
       </section>
     </aside>
