@@ -1,9 +1,9 @@
 import { ClipboardClock, History } from "lucide-react";
-import type { Event } from "../../services/useEvents";
+import type { EventType } from "../../services/useEvents";
 import "./RecentActivity.css";
 
 type RecentActivityProps = {
-  events: Event[];
+  events: EventType[];
 };
 
 function formatDateRelative(dateString: string): string {
