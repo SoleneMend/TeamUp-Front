@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EventsCard from "../../components/EventsCard/EventsCard";
 import Filters from "../../components/Filters/Filters";
-import useEvents from "../../services/useEvents";
+import type { EventType } from "../../services/useEvents";
 import "./Explorer.css";
 
 function Explorer() {
   // const [event, setEvent] = useState("");
-  const events = useEvents();
+  // > const events = useEvents();
   // // const [findSport, setFindSport] = useState("");
   // const filteredSport = events.filter((s) =>
   //   s.sport?.name.toLocaleLowerCase().includes(findSport.toLocaleLowerCase()),
@@ -14,6 +14,17 @@ function Explorer() {
   // const filteredEvents = events.filter((e) =>
   //   e.localisation?.toLowerCase().includes(city.toLowerCase()),
   // );
+
+  const [events, setEvents] = useState<EventType[]>([]);
+
+  useEffect(() => {
+    fetch(
+      "http://localhost:3310/bdd/events?nothost=bob_pro&notuser_joining=bob_pro",
+    )
+      .then((res) => res.json())
+      .then((data) => setEvents(data));
+  }, []);
+
   const [filtreSport, setFiltreSport] = useState<string>("");
   const [filtreVille, setFiltreVille] = useState<string>("");
   const [filtreDate, setFiltreDate] = useState<string>("");

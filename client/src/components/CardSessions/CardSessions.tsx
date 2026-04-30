@@ -1,10 +1,10 @@
 import { Calendar, CircleX, Clock, Info, MapPinned, Users } from "lucide-react";
 import { useState } from "react";
-import type { Event } from "../../services/useEvents";
+import type { EventType } from "../../services/useEvents";
 import "./CardSessions.css";
 
 interface CardSessionsProps {
-  event: Event;
+  event: EventType;
   isActive?: boolean;
   onClick?: () => void;
 }

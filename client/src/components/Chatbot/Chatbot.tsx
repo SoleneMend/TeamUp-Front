@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Event } from "../../services/useEvents";
+import type { EventType } from "../../services/useEvents";
 import "./Chatbot.css";
 
 type Message = {
@@ -27,7 +27,7 @@ const getTime = () =>
   });
 
 interface ChatbotProps {
-  event?: Event;
+  event?: EventType;
   contactName?: string;
   mode?: "session" | "chat";
   onClose?: () => void;

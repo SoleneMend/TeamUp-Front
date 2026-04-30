@@ -12,7 +12,7 @@ interface LevelsType {
 }
 
 function ZoomCreation() {
-  const [hostID, setHostID] = useState<number | null>(null);
+  // const [hostID, setHostID] = useState<number | null>(null);
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
@@ -85,7 +85,7 @@ function ZoomCreation() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        host: hostID || 2, //tempo
+        host: 2, //hostID || 2, //tempo
         name: name,
         date: dateFormatDB(date),
         description: description,
@@ -104,14 +104,14 @@ function ZoomCreation() {
         Ton <span>événement</span>
       </h2>
       <form onSubmit={AddEvent} className="zoom-form">
-        {/* Host ID Tempo */}
+        {/* Host ID Tempo 
         <input
           type="number"
           className="zoom-form-host"
           placeholder="Entrer votre ID"
           onChange={(e) => setHostID(Number(e.target.value))}
           required
-        />
+        />*/}
 
         {/* Name */}
         <input
